@@ -1,0 +1,45 @@
+div{
+        text-align: center;
+}
+
+body{
+        background-color: #8B4513;
+}
+    
+#settings{
+    height: 50px;
+    width: 50px;
+    float: right; 
+    border: 2px dashed #000000;
+}
+
+button{
+        height: 100px;
+        width: 300px;
+        border-radius: 5px;
+        background-color: #32CD32;
+        margin:auto;
+        margin-top:10px;
+        margin-bottom: 10px;
+        display: block;
+        border: 2px solid #000000;
+        font-size: 30px;
+        font-family: Lucida Console;
+}
+    
+button:hover{
+        border: 5px solid #000000;
+        font-size: 40px;
+    }
+    
+.headers{
+        text-align: center;
+        font-family: Lucida Console;
+        font-size: 30px;
+        clear:both;
+        font-weight:bold;
+}
+
+#title{
+    font-size: 50px;
+}

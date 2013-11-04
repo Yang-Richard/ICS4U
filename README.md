@@ -1,4 +1,4 @@
 ICS4U
 =====
 
-Monkey de Sinige
+Monkey de Singe
