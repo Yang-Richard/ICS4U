@@ -4,18 +4,40 @@
 		<title>Gameplay</title>
 	</head>
 	<body>
-		<button onclick="startGame();">Click here to begin!</button>
+		<button onclick="nextQuestion();">Next Question</button>
 		<p id="question"></p>
 	<body>
 	
 	<script>
+	var info;
 	
-	function startGame(){
-		document.getElementById("question").innerHTML=createQuestion();
+	function nextQuestion(){
+		var difficulty = sessionStorage.difficulty;
+		var info;
+		
+		/**switch (difficulty)
+		{
+			case 0:
+				info = createQuestion(Math.floor(Math.random() * 2));
+				break;
+			case 1:
+				info = createQuestion(Math.floor(Math.random() * 2 + 2));
+				break;
+			case 2:
+				info = createQuestion(Math.floor(Math.random() * 4));
+				break;
+		}
+		**/
+		document.getElementById("question").innerHTML="1";
 	}
 	
-	function createQuestion(){
-	return sessionStorage.difficulty;
+	
+	function createQuestion(operatorType){
+		var operators = {"+", "-", "x", "/"};
+		var info = new Array();
+		info[0] = 1
+	
+		return 1;
 	}
 	
 	</script>
