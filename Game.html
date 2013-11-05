@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gameplay</title>
+	</head>
+	<body>
+		<button onclick="startGame();">Click here to begin!</button>
+		<p id="question"></p>
+	<body>
+	
+	<script>
+	
+	function startGame(){
+		document.getElementById("question").innerHTML=createQuestion();
+	}
+	
+	function createQuestion(){
+	return sessionStorage.difficulty;
+	}
+	
+	</script>
+	
+</html>
