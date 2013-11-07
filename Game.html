@@ -4,20 +4,14 @@
 		<title>Gameplay</title>
 	</head>
 	<body>
-		<button onclick="startGame()">Generate Question</button>
+		<button onclick="createQuestion()">Generate Question</button>
 		<p id="question"></p>
 	<body>
 	
 	<script>
-
-
-	function startGame(){
-		document.getElementById("question").innerHTML="This is a " + sessionStorage.difficulty + " type question.";
-	}
 	
 	function createQuestion(){
-	return sessionStorage.difficulty;
-	}
+	document.getElementById("question").innerHTML="This is a " + sessionStorage.difficulty + " type question.";
 
 	/** info;
 	
