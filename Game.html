@@ -4,15 +4,96 @@
 		<title>Gameplay</title>
 	</head>
 	<body>
-		<button onclick="createQuestion()">Generate Question</button>
-		<p id="question"></p>
+		<button onclick='createQuestion()'>Generate Question</button>
+		<p id='type'></p>
+		<p id='question'></p>
 	<body>
 	
 	<script>
 	
 	function createQuestion(){
-	document.getElementById("question").innerHTML="This is a " + sessionStorage.difficulty + " type question.";
-
+		$('#type').append(sessionStorage.difficulty)
+}
+		/**
+		var terms;
+		var symbol = createOperator(sessionStorage.difficulty);	
+		final operators = {"+", "-", "x", "/"};
+		
+		
+		//do {
+			terms = createTerms();
+		//} while (isGoodAnswer(terms[2]))
+		
+		var string = terms[0];
+		
+		switch(symbol)
+			{
+				case 0:
+					string += " + " + terms[1] + " = " + [terms2];
+					break;
+				case 1:
+					string += " - " + terms[1] + " = " + [terms2];
+					break;
+				case 2:
+					string += " * " + terms[1] + " = " + [terms2];
+					break;
+				case 3:
+					string += " / " + terms[1] + " = " + [terms2];
+					break;
+			}
+		}
+		
+		document.getElementById("question").innerHTML=symbol;
+	}
+	
+	function isGoodAnswer(answer){
+		return answer === parseInt(answer) && answer >= 0;
+	}
+	
+	function createOperator(difficulty){
+		
+		if (difficulty === null)
+		{
+			difficulty = 2;
+		}
+		
+		switch(difficulty)
+			{
+				case 0:
+					return Math.floor(Math.random() * 2);
+				case 1:
+					return Math.floor(Math.random() * 2 + 2);
+				case 2:
+					return Math.floor(Math.random() * 4);
+			}
+		}
+		
+	function createTerms(){
+		switch(symbol)
+			{
+				case 0:
+					terms[0] = Math.floor(Math.random() * 25);
+					terms[1] = Math.floor(Math.random() * 25);
+					terms[2] = terms[0] + terms[1];
+					return terms;
+				case 1:
+					terms[0] = Math.floor(Math.random() * 25);
+					terms[1] = Math.floor(Math.random() * 25);
+					terms[2] = terms[0] + terms[1];
+					return terms;
+				case 2:
+					terms[0] = Math.floor(Math.random() * 10);
+					terms[1] = Math.floor(Math.random() * 10);
+					terms[2] = terms[0] + terms[1];
+					return terms;
+				case 3:
+					terms[0] = Math.floor(Math.random() * 100);
+					terms[1] = Math.floor(Math.random() * 9 + 1);
+					terms[2] = terms[0] + terms[1];
+					return terms;
+			}
+		}
+	}
 	/** info;
 	
 	function startGame(){
