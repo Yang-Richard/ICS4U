@@ -1,0 +1,41 @@
+body{
+        background-color: #8B4513;
+}
+
+.title {
+	text-align: center;
+	font-size: 25px;
+}
+
+#returnHome{
+		height: 50px;
+		width: 50px;
+		float: left; 
+		border: 2px solid #000000;
+		font-size: 15px;
+}
+
+#easy{
+	background-color: #00FFFF;
+}
+
+#medium {
+	background-color: #FFFF33;
+}
+
+#hard {
+	background-color: #FF0000;
+}
+button{
+        height: 100px;
+        width: 300px;
+        border-radius: 5px;
+        margin:auto;
+        margin-top:10px;
+        margin-bottom: 10px;
+        display: block;
+        border: 2px solid #000000;
+        font-size: 30px;
+        font-family: Lucida Console;
+		background-color: #32CD32;
+}
