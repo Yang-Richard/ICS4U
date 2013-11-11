@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Gameplay</title>
+		<title>Game Play</title>
 	</head>
 	<body>
 		<button onclick='createQuestion()'>Generate Question</button>
-		<p id='type'></p>
+		<p id='type'>HOWDY</p>
 		<p id='question'></p>
 	<body>
 	
 	<script>
 	
 	function createQuestion(){
-		$('#type').append(sessionStorage.difficulty)
-}
+		//$('#type').append(sessionStorage.difficulty);
+		$('#type').append('HELLO')
+		
+		document.getElementById("type").innerHTML = 'Hello';
+	}
 		/**
 		var terms;
 		var symbol = createOperator(sessionStorage.difficulty);	
