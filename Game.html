@@ -2,136 +2,113 @@
 <html>
 	<head>
 		<title>Game Play</title>
+		<script src="jquery.js"></script>
 	</head>
 	<body>
-		<button onclick='createQuestion()'>Generate Question</button>
-		<p id='type'>HOWDY</p>
-		<p id='question'></p>
+		<p id="score">Score: 0</p>
+		<button onclick="createQuestion();">Generate Question</button>
+		<p id="question"></p>
+		<input type="text" id="userInput" placeholder="">
+		<button onclick="checkAnswer();">Check answer?</button>
+		<p id="check"></p>
+		<p id="TEMP_ANSWER"></p>
+
 	<body>
 	
 	<script>
+	var level = parseInt(sessionStorage.difficulty, 10);
+	//var level = 2;
+	var terms = new Array();
+	var score = 0;
+
+	function checkAnswer(){
+		var compAnswer = terms[2];
+		var userAnswer = parseInt(document.getElementById('userInput').value, 10);
+	
+		if (compAnswer == userAnswer){
+			document.getElementById("check").innerHTML = "Correct!";
+			score ++;
+			document.getElementById("score").innerHTML = "Score: " + score;
+		}
+		else{
+			document.getElementById("check").innerHTML = "Incorrect! The correct answer was " + compAnswer;
+		}
+	}
 	
 	function createQuestion(){
 		//$('#type').append(sessionStorage.difficulty);
-		$('#type').append('HELLO')
+		var operator = createOperator(level);
 		
-		document.getElementById("type").innerHTML = 'Hello';
-	}
-		/**
-		var terms;
-		var symbol = createOperator(sessionStorage.difficulty);	
-		final operators = {"+", "-", "x", "/"};
+		do{
+			terms = createTerms(operator);
+		} while(!isGoodAnswer(terms[2]));
 		
 		
-		//do {
-			terms = createTerms();
-		//} while (isGoodAnswer(terms[2]))
-		
-		var string = terms[0];
-		
-		switch(symbol)
-			{
-				case 0:
-					string += " + " + terms[1] + " = " + [terms2];
-					break;
-				case 1:
-					string += " - " + terms[1] + " = " + [terms2];
-					break;
-				case 2:
-					string += " * " + terms[1] + " = " + [terms2];
-					break;
-				case 3:
-					string += " / " + terms[1] + " = " + [terms2];
-					break;
-			}
+		switch(operator)
+		{
+			case 0:
+				terms[3] = "+";
+				break;
+			case 1:
+				terms[3] = "-";
+				break;
+			case 2:
+				terms[3] = "x";
+				break;
+			case 3:
+				terms[3] = "/";
+				break;
 		}
 		
-		document.getElementById("question").innerHTML=symbol;
-	}
+		document.getElementById("question").innerHTML = terms[0] + ' ' + terms[3] + ' ' + terms[1] + ' = ________';
+		document.getElementById("TEMP_ANSWER").innerHTML = terms[0] + ' ' + terms[3] + ' ' + terms[1] + ' = ' + terms[2];
 	
-	function isGoodAnswer(answer){
-		return answer === parseInt(answer) && answer >= 0;
 	}
 	
 	function createOperator(difficulty){
 		
-		if (difficulty === null)
-		{
-			difficulty = 2;
-		}
-		
-		switch(difficulty)
-			{
-				case 0:
-					return Math.floor(Math.random() * 2);
-				case 1:
-					return Math.floor(Math.random() * 2 + 2);
-				case 2:
-					return Math.floor(Math.random() * 4);
-			}
-		}
-		
-	function createTerms(){
-		switch(symbol)
-			{
-				case 0:
-					terms[0] = Math.floor(Math.random() * 25);
-					terms[1] = Math.floor(Math.random() * 25);
-					terms[2] = terms[0] + terms[1];
-					return terms;
-				case 1:
-					terms[0] = Math.floor(Math.random() * 25);
-					terms[1] = Math.floor(Math.random() * 25);
-					terms[2] = terms[0] + terms[1];
-					return terms;
-				case 2:
-					terms[0] = Math.floor(Math.random() * 10);
-					terms[1] = Math.floor(Math.random() * 10);
-					terms[2] = terms[0] + terms[1];
-					return terms;
-				case 3:
-					terms[0] = Math.floor(Math.random() * 100);
-					terms[1] = Math.floor(Math.random() * 9 + 1);
-					terms[2] = terms[0] + terms[1];
-					return terms;
-			}
+		switch(difficulty){
+			case 0:
+				return Math.floor(Math.random() * 2);
+			case 1:
+				return Math.floor(Math.random() * 2 + 2);
+			case 2:
+				return Math.floor(Math.random() * 4);
 		}
 	}
-	/** info;
 	
-	function startGame(){
-		document.getElementById("question").innerHTML=createQuestion();
-	}
 
-	function nextQuestion(){
-		//var difficulty = sessionStorage.difficulty;
-		//var info;
-		
-		/**switch (difficulty)
+	function createTerms(operator){
+		var terms = new Array();
+		switch(operator)
 		{
 			case 0:
-				info = createQuestion(Math.floor(Math.random() * 2));
-				break;
+				terms[0] = Math.floor(Math.random() * 15);
+				terms[1] = Math.floor(Math.random() * 15);
+				terms[2] = terms[0] + terms[1];
+				return terms;
 			case 1:
-				info = createQuestion(Math.floor(Math.random() * 2 + 2));
-				break;
+				terms[0] = Math.floor(Math.random() * 15);
+				terms[1] = Math.floor(Math.random() * 15);
+				terms[2] = terms[0] - terms[1];
+				return terms;
 			case 2:
-				info = createQuestion(Math.floor(Math.random() * 4));
-				break;
+				terms[0] = Math.floor(Math.random() * 5);
+				terms[1] = Math.floor(Math.random() * 5);
+				terms[2] = terms[0] * terms[1];
+				return terms;
+			case 3:
+				terms[0] = Math.floor(Math.random() * 50);
+				terms[1] = Math.floor(Math.random() * 9) + 1;
+				terms[2] = terms[0] / terms[1];
+				return terms;
 		}
-		
-		document.getElementById("question").innerHTML=test();
 	}
+	
 
-	
-	function createQuestion(operatorType){
-		var operators = {"+", "-", "x", "/"};
-		var info = new Array();
-		info[0] = 1
-	
-		return 1;
+	function isGoodAnswer(answer){
+		return answer == parseInt(answer) && answer >= 0;
 	}
-	**/
 	
 	</script>
 	
