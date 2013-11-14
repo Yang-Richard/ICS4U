@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link type="text/css" rel="stylesheet" href="Test 1 - High Scores Easy CSS.css"/>
+		<link type="text/css" rel="stylesheet" href="Test 1 - High Scores CSS.css"/>
 		<title>High Scores</title>
 	</head>
 	<body>
 		<button id="returnHome" onclick="window.location.href='Test 1 - Main Menu.html'">Back</button>
 		<h3 class="headers">
 		High Scores</h3>
-		<div id="scoreArea">
+		<div id="easyScores">
 		<div id="scoreType">
 		<button id="easy" onclick="highScoreEasy()">Easy</button>
 		<button id="medium" onclick="highScoreMedium()"> Medium</button>
@@ -16,19 +16,24 @@
 		</div>
 		</div>
 	<script>
+		var scoreId = "easyScores";
+	
 		function highScoreEasy() {
-			var elem = document.getElementById("scoreArea");
+			var elem = document.getElementById(scoreId);
 			elem.id = "easyScores";
+			scoreId = "easyScores";
 		}
 	
 		function highScoreMedium() {
-			var elem = document.getElementById("scoreArea");
+			var elem = document.getElementById(scoreId);
 			elem.id = "mediumScores";
+			scoreId = "mediumScores";
 		}
 		
 		function highScoreHard() {
-			var elem = document.getElementById("scoreArea");
+			var elem = document.getElementById(scoreId);
 			elem.id = "hardScores";
+			scoreId = "hardScores";
 		}
 		
 	

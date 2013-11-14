@@ -16,8 +16,6 @@ body{
 
 #easy {
 	background-color: #00FFFF;
-	border: 5px solid #000000;
-	font-size: 40px;
 }
 
 #medium {
@@ -57,6 +55,13 @@ button{
 	background-color: #8B4513;
 	height: 800px;
 	width: 298px;
+	float: left;
+}
+
+#scoreArea {
+	background-color: #00FFFF;
+	height: 800px;
+	width: 900px;
 	float: left;
 }
 
