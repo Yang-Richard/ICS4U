@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <!--<meta charset="utf-8" />-->
-  <!--<link href="styles/styles.css" rel="stylesheet" type="text/css" />-->
-  
-    <link type="text/css" rel="stylesheet" href="Test 1 - High Scores Easy CSS.css"/>
-    <!--<script src="Splash_JS.js" type="text/javascript></script>-->
-    <title>High Scores</title>
- </head>
- <body>
-  <button id="returnHome" onclick="window.location.href='Test 1 - Main Menu.html'">Back</button>
-  <h3 class="headers">
-   High Scores</h3>
-    <div id="scoreArea">
-  <div id="scoreType">
-   <button id="easy">Easy</button>
-   <button id="medium" onclick="window.location.href='Test 1 - High Scores Medium.html'">Medium</button>
-   <button id="hard" onclick="window.location.href='Test 1 - High Scores Hard.html'">Hard</button>
-  </div>
-  </div>
-   
-<script>
-
-</script>
-</body>
-
-
-<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
-site which aided in providing how to change from one screen to another-->
+	<head>
+		<link type="text/css" rel="stylesheet" href="Test 1 - High Scores Easy CSS.css"/>
+		<title>High Scores</title>
+	</head>
+	<body>
+		<button id="returnHome" onclick="window.location.href='Test 1 - Main Menu.html'">Back</button>
+		<h3 class="headers">
+		High Scores</h3>
+		<div id="scoreArea">
+		<div id="scoreType">
+		<button id="easy" onclick="highScoreEasy()">Easy</button>
+		<button id="medium" onclick="highScoreMedium()"> Medium</button>
+		<button id="hard" onclick="highScoreHard()">Hard</button>
+		</div>
+		</div>
+	<script>
+		function highScoreEasy() {
+			var elem = document.getElementById("scoreArea");
+			elem.id = "easyScores";
+		}
+	
+		function highScoreMedium() {
+			var elem = document.getElementById("scoreArea");
+			elem.id = "mediumScores";
+		}
+		
+		function highScoreHard() {
+			var elem = document.getElementById("scoreArea");
+			elem.id = "hardScores";
+		}
+		
+	
+	</script>
+	</body>
+	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
+	site which aided in providing how to change from one screen to another-->
 </html>
