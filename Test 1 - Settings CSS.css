@@ -1,5 +1,12 @@
 div{
-    text-align: center;
+	width: 500px;
+	height: 100px;
+	display: inline-block;
+}
+h4 {
+	font-size: 25px;
+	margin-left: 25px;
+	display: inline-block;
 }
 
 body{
@@ -14,6 +21,48 @@ body{
 	font-size: 15px;
 }
 
+#musicOn {
+	height:50px;
+	width:50px;
+	border: 2px solid #000000;
+	font-size: 15px;
+}
+
+#musicOff {
+	height:50px;
+	width:50px;
+	border: 2px solid #000000;
+	font-size: 15px;
+}
+
+#soundOn {
+	height:50px;
+	width:50px;
+	border: 2px solid #000000;
+	font-size: 15px;
+}
+
+#soundOff {
+	height:50px;
+	width:50px;
+	border: 2px solid #000000;
+	font-size: 15px;
+}
+
+#english {
+	height:50px;
+	width:75px;
+	border: 2px solid #000000;
+	font-size: 15px;
+}
+
+#french {
+	height:50px;
+	width:75px;
+	border: 2px solid #000000;
+	font-size: 15px;
+}
+
 button{
     height: 100px;
     width: 300px;
@@ -22,7 +71,8 @@ button{
     margin:auto;
     margin-top:10px;
     margin-bottom: 10px;
-    display: block;
+    /*display: block;*/
+	margin-left: 25px;
     border: 2px solid #000000;
     font-size: 30px;
     font-family: Lucida Console;
