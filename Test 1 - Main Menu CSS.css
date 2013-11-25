@@ -6,10 +6,12 @@ body{
     background-color: #8B4513;
 }
 
-#comapanyLogo{
-	display: none;
-	margin: auto;
+#companyLogo{
+	/*display: none;*/
+	/*margin: auto;*/
 	text-align: auto;
+	height: 1000px;
+	width: 1000px;
 }
     
 #settings{
@@ -17,7 +19,7 @@ body{
     width: 50px;
     float: right; 
     border: 2px dashed #000000;
-	display:none;
+	/*display:none;*/
 }
 
 button{
@@ -28,13 +30,13 @@ button{
     margin:auto;
     margin-top:10px;
     margin-bottom: 10px;
-    /*display: block;*/
+    display: block;
     border: 2px solid #000000;
     font-size: 30px;
     font-family: Lucida Console;
 }
 
-#startButton{
+/*#startButton{
 	display:none;
 }
 
@@ -44,7 +46,7 @@ button{
 
 #highScoresButton{
 	display:none;
-}
+}*/
     
 button:hover{
     border: 5px solid #000000;
@@ -61,9 +63,9 @@ button:hover{
 
 #title{
     font-size: 50px;
-	display:none;
+	/*display:none;*/
 }
 
 #companyTitle{
-	display:none;
+	/*display:none;*/
 }

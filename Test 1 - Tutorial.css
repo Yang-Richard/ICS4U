@@ -1,0 +1,40 @@
+div{
+    text-align: center;
+	background-color: #32CD32;
+	margin: auto;
+	height: 400px;
+	width: 700px;
+	display: block;
+}
+
+body{
+    background-color: #8B4513;
+}
+
+button {
+	display: block;
+}
+
+#returnHome{
+    height: 50px;
+    width: 50px;
+    float: left; 
+    border: 2px solid #000000;
+	background-color: #32CD32;
+	display: block;
+}
+
+button {
+	border: 2px solid #000000;
+}
+
+#monkey {
+	height: 50px;
+	width: 50px;
+	background-color: #8B4513;
+	font-size: 10px;
+	margin: auto;
+	margin-top: 150px;
+	margin-left: 325px;
+	position: absolute;
+}

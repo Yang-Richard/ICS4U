@@ -24,22 +24,21 @@
 			</div>
 		</p>
 		<p>
-			<h4>Language:</h4>
+			<h4>Languages:</h4>
 			<div>
-				<button id="lang1" onclick="languageChange()">English</button>
+				<button id="lang1" onclick="languageChange(lang1, lang2)">English</button>
 				<button id="lang2" onclick="languageChange(lang2, lang1)">French</button>
 			</div>
 		</p>
 		<script>
 		
-			//function languageChange(language, language2) {
-			//alert("HELLO");
-			//var elem = document.getElementById(language);
-			//elem.border = 5px solid #000000;
-			//var elem2 = document.getElementById(language2);
-			//elem2.border = 2px solid #000000;
-			//}
-		}
+			function languageChange(language, language2) {
+			alert("HELLO");
+			var elem = document.getElementById(language);
+			elem.style.border = "10px solid #000000";
+			var elem2 = document.getElementById(language2);
+			elem2.style.border = "2px solid #000000";
+			}
 		
 		</script>
 	</body>

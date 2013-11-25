@@ -9,9 +9,6 @@
 		<title>Swinging Monkey</title>
 		</head>
 	<body>
-	<button id="companyLogo" onclick = "openMenu()" >
-		<img src="Title Page Image.jpg" />
-	</button>
 		<button id="settings" onclick="window.location.href='Test 1 - Settings.html'" ></button>
 		<h1 class="headers" id="title">
 		Swinging Monkey</h1>
@@ -19,40 +16,41 @@
 		Studio de Singe</h3>
 		<div>
 			<button id ="startButton" onclick="window.location.href='testStart.html'">Start Game</button>
-			<button id ="tutorialButton" onclick="sayHello()">Tutorial</button>
+			<button id ="tutorialButton" onclick="window.location.href='Test 1 - Tutorial.html'">Tutorial</button>
 			<button id ="highScoresButton" onclick="window.location.href='Test 1 - High Scores.html'">High Scores</button>
 		</div>
 		<script>
 		
-		var page = true;
+		// code if logo button was on this page
+		//var page = true;  
 		
-			function openMenu() {
-			if(page === true) {
-				var elem = document.getElementById("companyLogo");
-				elem.style.display = "none";
+			//function openMenu() {
+			//if(page === true) {
+			//	var elem = document.getElementById("companyLogo");
+			//	elem.style.display = "none";
 				
-				var elem = document.getElementById("settings");
-				elem.style.display = "inline-block";
+			//	var elem = document.getElementById("settings");
+			//	elem.style.display = "inline-block";
 				
-				var elem = document.getElementById("title");
-				elem.style.display = "block";
+			//	var elem = document.getElementById("title");
+			//	elem.style.display = "block";
 				
-				var elem = document.getElementById("companyTitle");
-				elem.style.display = "block";
+			//	var elem = document.getElementById("companyTitle");
+			//	elem.style.display = "block";
 				
-				var elem = document.getElementById("startButton");
-				elem.style.display = "block";
+			//	var elem = document.getElementById("startButton");
+			//	elem.style.display = "block";
 				
-				var elem = document.getElementById("tutorialButton");
-				elem.style.display = "block";
+			//	var elem = document.getElementById("tutorialButton");
+			//	elem.style.display = "block";
 				
-				var elem = document.getElementById("highScoresButton");
-				elem.style.display = "block";
-				}
-				else {
+			//	var elem = document.getElementById("highScoresButton");
+			//	elem.style.display = "block";
+			//	}
+			//	else {
 				
-				}
-			}
+			//	}
+			//}
 			function startGame(){
 			console.log("clicked");
 			}
