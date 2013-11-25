@@ -5,12 +5,19 @@ div{
 body{
     background-color: #8B4513;
 }
+
+#comapanyLogo{
+	display: none;
+	margin: auto;
+	text-align: auto;
+}
     
 #settings{
     height: 50px;
     width: 50px;
     float: right; 
     border: 2px dashed #000000;
+	display:none;
 }
 
 button{
@@ -21,10 +28,22 @@ button{
     margin:auto;
     margin-top:10px;
     margin-bottom: 10px;
-    display: block;
+    /*display: block;*/
     border: 2px solid #000000;
     font-size: 30px;
     font-family: Lucida Console;
+}
+
+#startButton{
+	display:none;
+}
+
+#tutorialButton{
+	display:none;
+}
+
+#highScoresButton{
+	display:none;
 }
     
 button:hover{
@@ -42,4 +61,9 @@ button:hover{
 
 #title{
     font-size: 50px;
+	display:none;
+}
+
+#companyTitle{
+	display:none;
 }

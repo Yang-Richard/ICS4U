@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link type="text/css" rel="stylesheet" href="Test 1 - Settings CSS.css"/>
-		<title>Swinging Monkey</title>
+		<title>Settings</title>
 	</head>
 	<body>
 		<button id="returnHome" onclick="window.location.href='Test 1 - Main Menu.html'">Back</button>
@@ -26,12 +26,21 @@
 		<p>
 			<h4>Language:</h4>
 			<div>
-				<button id="english">English</button>
-				<button id="french">French</button>
+				<button id="lang1" onclick="languageChange()">English</button>
+				<button id="lang2" onclick="languageChange(lang2, lang1)">French</button>
 			</div>
 		</p>
 		<script>
-
+		
+			//function languageChange(language, language2) {
+			//alert("HELLO");
+			//var elem = document.getElementById(language);
+			//elem.border = 5px solid #000000;
+			//var elem2 = document.getElementById(language2);
+			//elem2.border = 2px solid #000000;
+			//}
+		}
+		
 		</script>
 	</body>
 	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
