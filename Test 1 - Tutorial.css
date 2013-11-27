@@ -11,10 +11,6 @@ body{
     background-color: #8B4513;
 }
 
-button {
-	display: block;
-}
-
 #returnHome{
     height: 50px;
     width: 50px;
@@ -26,7 +22,6 @@ button {
 
 button {
 	border: 2px solid #000000;
-	font-size: 10px;
 	margin: auto;
 }
 
@@ -37,6 +32,8 @@ button {
 	margin-top: 150px;
 	margin-left: 325px;
 	position: absolute;
+	display: block;
+	font-size: 10px;
 }
 
 #gameInfo {
@@ -48,7 +45,7 @@ button {
 	border: 2px solid #000000;
 }
 
-#numbers {
+#calculator {
 	background-color: #888888;
 	text-align: left;
 	width: 120px;
@@ -57,4 +54,76 @@ button {
 	margin-top: 90px;
 	border: 2px solid #000000;
 }
+
+#calculatorScreen {
+	background-color: #E8E8E8;
+	text-align: left;
+	width: 100px;
+	height: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 2px solid #000000;
+	position: absolute;
+}
+.number {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	background-color: #C0C0C0;
+}
+
+#number1 {
+	margin-top: 40px;
+}
+
+#number2 {
+	margin-top: 40px;
+	margin-left: 40px;
+}
+
+#number3 {
+	margin-top: 40px;
+	margin-left: 80px;
+}
+
+#number4 {
+	margin-top: 80px;
+}
+
+#number5{
+	margin-top: 80px;
+	margin-left: 40px;
+}
+
+#number6 {
+	margin-top: 80px;
+	margin-left: 80px;
+}
+
+#number7 {
+	margin-top: 120px;
+}
+
+#number8{
+	margin-top: 120px;
+	margin-left: 40px;
+}
+
+#number9{
+	margin-top: 120px;
+	margin-left: 80px;
+}
+
+#placeHolder1 {
+	margin-top: 160px;
+}
+
+#number0{
+	margin-top: 160px;
+	margin-left: 40px;
+}
+
+#placeHolder2{
+	margin-top: 160px;
+	margin-left: 80px;
 }
