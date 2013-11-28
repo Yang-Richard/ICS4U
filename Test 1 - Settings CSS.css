@@ -63,6 +63,13 @@ body{
 	font-size: 15px;
 }
 
+#red {
+	height:50px;
+	width:75px;
+	border: 2px dashed #000000;
+	font-size: 15px;
+}
+
 button{
     height: 100px;
     width: 300px;

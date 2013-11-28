@@ -5,6 +5,7 @@ div{
 	height: 400px;
 	width: 700px;
 	display: block;
+	border: 2px solid #000000;
 }
 
 body{
@@ -30,19 +31,55 @@ button {
 	width: 50px;
 	background-color: #8B4513;
 	margin-top: 150px;
-	margin-left: 325px;
+	margin-left: 260px;
 	position: absolute;
 	display: block;
 	font-size: 10px;
 }
 
+#vine1 {
+	height: 300px;
+	width: 7px;
+	background-color: #006600;
+	margin-left: 308px;
+	position: absolute;
+}
+
+#banana {
+	height: 30px;
+	width: 30px;
+	background-color: #FFFF00;
+	margin-top: 125px;
+	margin-left: 385px;
+	position: absolute;
+	display: block;
+	font-size: 10px;
+}
+
+#vine2 {
+	height: 300px;
+	width: 7px;
+	background-color: #006600;
+	margin-left: 500px;
+	position: absolute;
+}
+
 #gameInfo {
 	background-color: #00FFFF;
 	text-align: left;
-	width: 145px;
+	width: 143px;
 	height: 100px;
-	margin-left: 555px;
-	border: 2px solid #000000;
+	margin-left: 553px;
+}
+
+#numberArea {
+	height: 40px;
+	width: 250px;
+	margin-top: 235px;
+	margin-left: 225px;
+	font-size: 30px;
+	background-color: #CCFFFF;
+	position: absolute;
 }
 
 #calculator {
@@ -52,7 +89,7 @@ button {
 	height: 200px;
 	margin-left: 575px;
 	margin-top: 90px;
-	border: 2px solid #000000;
+	position: absolute;
 }
 
 #calculatorScreen {
@@ -62,7 +99,6 @@ button {
 	height: 20px;
 	margin-left: 10px;
 	margin-top: 10px;
-	border: 2px solid #000000;
 	position: absolute;
 }
 .number {
