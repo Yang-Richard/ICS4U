@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+   xmlns:rim="http://www.blackberry.com/ns/widgets"
+   version="1.0.0.0" id="swingingMonkey">
+ 
+   <name>Swinging Monkey</name>
+   <description>Help the monkey collect bananas using math!</description>
+   <author>Richard Yang and Sagar Patel</author>
+   <icon src="image.png"/>
+   <content src="test1Logo.html"/>
+
+</widget>
