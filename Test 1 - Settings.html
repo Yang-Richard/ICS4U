@@ -3,16 +3,14 @@
 	<head>
 		<link type="text/css" rel="stylesheet" href="Test 1 - Settings CSS.css"/>
 		<title>Settings</title>
-	</head>
+	</head> 
 	<body>
 		<button id="returnHome" onclick="window.location.href='Test 1 - Main Menu.html'">Back</button>
-		<h3 class="headers">
-			Settings 
-		</h3>
+		<h3 class="headers">Settings </h3>
 		<p>
 			<h4>Music:</h4>
 			<div>
-				<button id="musicOn">On</button>
+				<button id="musicOn" onclick="musicTurnOn()">On</button>
 				<button id="musicOff">Off</button>
 			</div>
 		</p>
@@ -26,17 +24,36 @@
 		<p>
 			<h4>Languages:</h4>
 			<div>
-				<button id="lang1" onclick="languageChange(lang1, lang2)">English</button>
-				<button id="lang2" onclick="languageChange(lang2, lang1)">French</button>
+				<button id="lang1" onclick="languageEnglish()">English</button>
+				<button id="lang2" onclick="languageFrench()">French</button>
 			</div>
 		</p>
 		<script>
 		
-			function languageChange(language, language2) {
-			var elem = document.getElementById(language);
+			function languageChange(language1, language2) {
+			var elem = document.getElementById(language1);
 			elem.id = "red";
 			var elem2 = document.getElementById(language2);
 			elem2.style.border = "2px dashed #000000";
+			}
+			
+			function musicTurnOn() {
+			var elem = document.getElementById("musicOn");
+			elem.id = "red";
+			}
+			
+			function languageEnglish() {
+			var elem = document.getElementById("lang1");
+			elem.style.border = "3px solid #FF3300";
+			var elem2 = document.getElementById("lang2");
+			elem2.style.border = "2px solid #000000";
+			}
+			
+			function languageFrench() {
+			var elem = document.getElementById("lang2");
+			elem.style.border = "3px solid #FF3300";
+			var elem2 = document.getElementById("lang1");
+			elem2.style.border = "2px solid #000000";
 			}
 		
 		</script>
