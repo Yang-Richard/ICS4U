@@ -1,9 +1,18 @@
 div{
     text-align: center;
+	width: 100%;
 }
+
+/*#divBack {
+	background-image:url(menuImage.jpg);
+	width: 100%;
+	height: auto;
+}*/
 
 body{
     background-color: #8B4513;
+	background-image:url(menuImage.jpg);
+	background-size: 1300px 900px;
 }
 
 #companyLogo{
@@ -23,30 +32,39 @@ body{
 }
 
 button{
-    height: 100px;
-    width: 300px;
+    height: 90px;
+    width: 250px;
     border-radius: 5px;
     background-color: #32CD32;
     margin:auto;
     margin-top:10px;
     margin-bottom: 10px;
     display: block;
-    border: 2px solid #000000;
+   /* border: 2px solid #000000;*/
     font-size: 30px;
     font-family: Lucida Console;
+	position: fixed;
 }
 
-/*#startButton{
-	display:none;
+#startButton{
+	margin-top: 490px;
+	margin-left: 435px;
+	background: transparent;
+	border: none;
 }
 
 #tutorialButton{
-	display:none;
+	margin-top: 590px;
+	margin-left: 435px;
+	background: transparent;
+	border: none;
+	
 }
 
 #highScoresButton{
-	display:none;
-}*/
+	margin-top: 690px;
+	margin-left: 435px;
+}
     
 button:hover{
     border: 5px solid #000000;
