@@ -12,7 +12,8 @@ div{
 body{
     background-color: #8B4513;
 	background-image:url(menuImage.jpg);
-	background-size: 1300px 900px;
+	/*background-size: 1300px 900px;*/
+	background-size: 100%;
 }
 
 #companyLogo{
@@ -32,11 +33,16 @@ body{
 }
 
 button{
-    height: 90px;
-    width: 250px;
+    /*height: 90px;
+    width: 250px;*/
+	
+	height: 10%;
+	width: 19%;
+	
+	
     border-radius: 5px;
     background-color: #32CD32;
-    margin:auto;
+    /*margin:auto;*/
     margin-top:10px;
     margin-bottom: 10px;
     display: block;
@@ -47,23 +53,33 @@ button{
 }
 
 #startButton{
-	margin-top: 490px;
-	margin-left: 435px;
+	/*margin-top: 490px;
+	margin-left: 435px;*/
+	
+	margin-left: 33%;
+	margin-top: 41%;
+	
 	background: transparent;
 	border: none;
 }
 
 #tutorialButton{
-	margin-top: 590px;
-	margin-left: 435px;
+	/*margin-top: 590px;
+	margin-left: 435px;*/
+	
+	margin-left: 33%;
+	margin-top: 51%;
+	
+	
 	background: transparent;
 	border: none;
-	
 }
 
 #highScoresButton{
-	margin-top: 690px;
-	margin-left: 435px;
+	/*margin-top: 690px;*/
+	/*margin-left: 435px;*/
+	margin-left: 33%;
+	margin-top: 61%;
 }
     
 button:hover{
@@ -86,4 +102,19 @@ button:hover{
 
 #companyTitle{
 	/*display:none;*/
+}
+
+#monkey {
+	height: 200px;
+	width: 90px;
+	animation: slidein 3s;
+	@-webkit-keyframes slidein {
+		from {
+			margin-left: 50%;
+		}
+
+		to {
+			margin-left: 0%;
+		}
+}
 }
