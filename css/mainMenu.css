@@ -11,7 +11,7 @@ div{
 
 body{
     background-color: #8B4513;
-	background-image:url(menuImage.jpg);
+	background-image:url(../images/menuImage.jpg);
 	/*background-size: 1300px 900px;*/
 	background-size: 100%;
 }
@@ -25,6 +25,7 @@ body{
 }
     
 #settings{
+	position: fixed;
     height: 50px;
     width: 50px;
     float: right; 
@@ -37,7 +38,7 @@ button{
     width: 250px;*/
 	
 	height: 10%;
-	width: 19%;
+	width: 17%;
 	
 	
     border-radius: 5px;
@@ -56,7 +57,7 @@ button{
 	/*margin-top: 490px;
 	margin-left: 435px;*/
 	
-	margin-left: 33%;
+	margin-left: 34%;
 	margin-top: 41%;
 	
 	background: transparent;
@@ -67,7 +68,7 @@ button{
 	/*margin-top: 590px;
 	margin-left: 435px;*/
 	
-	margin-left: 33%;
+	margin-left: 34%;
 	margin-top: 51%;
 	
 	
@@ -78,7 +79,7 @@ button{
 #highScoresButton{
 	/*margin-top: 690px;*/
 	/*margin-left: 435px;*/
-	margin-left: 33%;
+	margin-left: 34%;
 	margin-top: 61%;
 }
     
@@ -105,9 +106,11 @@ button:hover{
 }
 
 #monkey {
+	position: fixed;
 	height: 200px;
 	width: 90px;
-	animation: slidein 3s;
+	margin-left: 150px;
+	/*animation: slidein 3s;
 	@-webkit-keyframes slidein {
 		from {
 			margin-left: 50%;
@@ -115,6 +118,6 @@ button:hover{
 
 		to {
 			margin-left: 0%;
-		}
+		}*/
 }
 }
