@@ -10,6 +10,7 @@ var level = parseInt(sessionStorage.difficulty, 10);
 	
 		if (compAnswer == userAnswer){
 			document.getElementById("check").innerHTML = "Correct!";
+			stopTimer();
 			score ++;
 			document.getElementById("score").innerHTML = "Score: " + score;
 		}
@@ -44,15 +45,17 @@ var level = parseInt(sessionStorage.difficulty, 10);
 		}
 		
 		document.getElementById("question").innerHTML = terms[0] + ' ' + terms[3] + ' ' + terms[1] + ' = ________';
-	
-		var myVar=setInterval(function(){myTimer()},100);
+		time = 15;
+		document.getElementById("timer").innerHTML=time;
+		var myVar=setInterval(function(){myTimer()},1000);
 	}
 	
+	
 	function myTimer()
-{
-	var t = time - 0.1;
-	document.getElementById("timer").innerHTML=t;
-}
+	{
+		time = time - 1;
+		document.getElementById("timer").innerHTML=time;
+	}
 	
 	function createOperator(difficulty){
 		
