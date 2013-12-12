@@ -17,7 +17,7 @@
 			Studio de Singe</h3>-->
 			<div>
 				<!--<img src="menuImage.jpg" /> -->
-				<img id ="monkey" onclick = "movement()" src="images/monkeySwinging.JPG"/><!--monkey that needs to swing around-->
+				<div id="monkeyButton"><img id ="monkey" onclick = "animation()" src="images/monkeySwinging.JPG"/></div><!--monkey that needs to swing around-->
 				<script>sayHello()</script>
 				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
 				<button id ="tutorialButton" onclick="window.location.href='tutorial.html'"></button>
@@ -26,15 +26,19 @@
 		<!--</div>-->
 		<script>
 		
+		//setInterval(setTimeout(function(){animation()}, 1000), 1000);
+		//setInterval(function(){animation()}, 1000);
+		//setTimeout(function(){animation()}, 1000);
 		function animation() {
-			var elem = document.getElementById("monkey");
-			elem.style.right = "2px";
+			var elem = document.getElementById("monkeyButton");
+			alert(distance);
+			elem.style.margin-left = "2px";
 		}
 		
-		function movement() {
-			setTimeout(animation(), 80);
-			setInterval(animation(), 80);
-		}
+		//function movement() {
+			//setTimeout(animation(), 80);
+			//setInterval(animation(), 80);
+		//}
 		
 		// code if logo button was on this page
 		//var page = true;  

@@ -106,10 +106,8 @@ button:hover{
 }
 
 #monkey {
-	position: fixed;
 	height: 200px;
 	width: 90px;
-	margin-left: 150px;
 	/*animation: slidein 3s;
 	@-webkit-keyframes slidein {
 		from {
@@ -120,4 +118,18 @@ button:hover{
 			margin-left: 0%;
 		}*/
 }
+#monkeyButton {
+	position: fixed;
+	height: 200px;
+	width: 90px;
+	margin-right: 0px;
+	/*animation: slidein 3s;
+	@-webkit-keyframes slidein {
+		from {
+			margin-left: 50%;
+		}
+
+		to {
+			margin-left: 0%;
+		}*/
 }
