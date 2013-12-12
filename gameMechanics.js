@@ -1,5 +1,5 @@
-var level = parseInt(sessionStorage.difficulty, 10);
-	//var level = 2;
+
+	var level = parseInt(sessionStorage.difficulty, 10);
 	var terms = new Array();
 	var score = 0;
 	var time=15;

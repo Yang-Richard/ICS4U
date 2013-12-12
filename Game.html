@@ -5,12 +5,20 @@
 		<script src="gameMechanics.js"></script>
 	</head>
 	<body>
-		<p id="score">Score: 0</p>
-		<button onclick="createQuestion();">Generate Question</button>
-		<p id="question"></p>
-		<input type="text" id="userInput" placeholder="">
-		<button onclick="checkAnswer();">Check answer?</button>
-		<p id="check"></p>
-		<p id="timer"></p
+			<p id="score">Score: 0</p>
+			<button onclick="createQuestion();">Generate Question</button>
+			<p id="question"></p>
+			<input type="text" id="userInput" placeholder="">
+			<button onclick="checkAnswer();">Check answer?</button>
+			<p id="check"></p>
+			<p id="timer"></p>
+
+		<canvas id="jungleAnimation" width="800" height="400" style="border:1px solid #000000;"/>
 	<body>
-</html>
+	<script>
+		var c=document.getElementById("jungleAnimation");
+	var ctx=c.getContext("2d");
+	ctx.fillStyle="#FF0000";
+	ctx.fillRect(0,0,800,400);
+</script>
+</html><
