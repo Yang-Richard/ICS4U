@@ -17,7 +17,9 @@
 			Studio de Singe</h3>-->
 			<div>
 				<!--<img src="menuImage.jpg" /> -->
-				<div id="monkeyButton"><img id ="monkey" onclick = "animation()" src="images/monkeySwinging.JPG"/></div><!--monkey that needs to swing around-->
+				<!--<div id="monkeyButton">-->
+				<img id ="monkey" src="images/monkeySwinging.JPG"/>
+				<!--</div> -->
 				<script>sayHello()</script>
 				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
 				<button id ="tutorialButton" onclick="window.location.href='tutorial.html'"></button>
@@ -27,12 +29,12 @@
 		<script>
 		
 		//setInterval(setTimeout(function(){animation()}, 1000), 1000);
-		//setInterval(function(){animation()}, 1000);
-		//setTimeout(function(){animation()}, 1000);
+		setInterval(function(){animation()}, 1000);
+		//setTimeout(function(){animation()}, 100);
 		function animation() {
-			var elem = document.getElementById("monkeyButton");
+			var elem = document.getElementById("monkey");
 			alert(distance);
-			elem.style.margin-left = "2px";
+			elem.style.left = "2px";
 		}
 		
 		//function movement() {
