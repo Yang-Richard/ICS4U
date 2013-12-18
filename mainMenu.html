@@ -8,7 +8,7 @@
 		<!--<script src="Splash_JS.js" type="text/javascript></script>-->
 		<title>Swinging Monkey</title>
 		</head>
-	<body>
+	<body onload="movement();">
 		<!--<div id="divBack">-->
 			<button id="settings" onclick="window.location.href='settings.html'" ></button>
 			<!--<h1 class="headers" id="title">
@@ -18,7 +18,7 @@
 			<div>
 				<!--<img src="menuImage.jpg" /> -->
 				<!--<div id="monkeyButton">-->
-				<img id ="monkey" src="images/monkeySwinging.JPG"/>
+				<img id ="monkey" onclick ="animation()"src="images/monkeySwinging.JPG"/>
 				<!--</div> -->
 				<script>sayHello()</script>
 				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
@@ -29,18 +29,17 @@
 		<script>
 		
 		//setInterval(setTimeout(function(){animation()}, 1000), 1000);
-		setInterval(function(){animation()}, 1000);
+		//setInterval(function(){animation()}, 1000);
 		//setTimeout(function(){animation()}, 100);
 		function animation() {
 			var elem = document.getElementById("monkey");
-			alert(distance);
-			elem.style.left = "2px";
+			elem.style.left = "100px";
 		}
 		
-		//function movement() {
-			//setTimeout(animation(), 80);
-			//setInterval(animation(), 80);
-		//}
+		function movement() {
+		//	setTimeout(animation(), 1000);
+			setInterval(animation(), 1000);
+		}
 		
 		// code if logo button was on this page
 		//var page = true;  
