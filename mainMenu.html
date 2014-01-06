@@ -20,26 +20,31 @@
 				<!--<div id="monkeyButton">-->
 				<img id ="monkey" onclick ="animation()"src="images/monkeySwinging.JPG"/>
 				<!--</div> -->
-				<script>sayHello()</script>
 				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
 				<button id ="tutorialButton" onclick="window.location.href='tutorial.html'"></button>
 				<button id ="highScoresButton" onclick="window.location.href='highScores.html'">High Scores</button>
 			</div>
 		<!--</div>-->
 		<script>
-		
+		var monkeyDistance = document.getElementById("monkey").offsetLeft;
 		//setInterval(setTimeout(function(){animation()}, 1000), 1000);
 		//setInterval(function(){animation()}, 1000);
 		//setTimeout(function(){animation()}, 100);
 		function animation() {
-			var elem = document.getElementById("monkey");
-			elem.style.left = "100px";
+			alert(monkeyDistance);
+			var object = document.getElementById("monkey");
+			var newDist = (monkeyDistance - 100);
+			alert(newDist);
+			monkeyDistance = newDist;
+			object.style.margin-left = "(monkeyDistance + 'px')";
+			var monkeyDistance2 = document.getElementById("monkey").offsetLeft;
+			alert(monkeyDistance2);
 		}
 		
-		function movement() {
+		//function movement() {
 		//	setTimeout(animation(), 1000);
-			setInterval(animation(), 1000);
-		}
+		//	setInterval(animation(), 1000);
+		//}
 		
 		// code if logo button was on this page
 		//var page = true;  
