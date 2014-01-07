@@ -18,7 +18,7 @@
 			<div>
 				<!--<img src="menuImage.jpg" /> -->
 				<!--<div id="monkeyButton">-->
-				<img id ="monkey" onclick ="animation()"src="images/monkeySwinging.JPG"/>
+				<img id ="monkey" onclick ="monkeyAnimation()" src="images/monkeySwinging.JPG"/>
 				<!--</div> -->
 				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
 				<button id ="tutorialButton" onclick="window.location.href='tutorial.html'"></button>
@@ -26,56 +26,22 @@
 			</div>
 		<!--</div>-->
 		<script>
-		var monkeyDistance = document.getElementById("monkey").offsetLeft;
-		//setInterval(setTimeout(function(){animation()}, 1000), 1000);
-		//setInterval(function(){animation()}, 1000);
-		//setTimeout(function(){animation()}, 100);
-		function animation() {
-			alert(monkeyDistance);
+			var monkeyDistance = document.getElementById("monkey").offsetLeft;
 			var object = document.getElementById("monkey");
-			var newDist = (monkeyDistance - 100);
-			alert(newDist);
-			monkeyDistance = newDist;
-			object.style.margin-left = "(monkeyDistance + 'px')";
-			var monkeyDistance2 = document.getElementById("monkey").offsetLeft;
-			alert(monkeyDistance2);
-		}
-		
-		//function movement() {
-		//	setTimeout(animation(), 1000);
-		//	setInterval(animation(), 1000);
-		//}
-		
-		// code if logo button was on this page
-		//var page = true;  
-		
-			//function openMenu() {
-			//if(page === true) {
-			//	var elem = document.getElementById("companyLogo");
-			//	elem.style.display = "none";
-				
-			//	var elem = document.getElementById("settings");
-			//	elem.style.display = "inline-block";
-				
-			//	var elem = document.getElementById("title");
-			//	elem.style.display = "block";
-				
-			//	var elem = document.getElementById("companyTitle");
-			//	elem.style.display = "block";
-				
-			//	var elem = document.getElementById("startButton");
-			//	elem.style.display = "block";
-				
-			//	var elem = document.getElementById("tutorialButton");
-			//	elem.style.display = "block";
-				
-			//	var elem = document.getElementById("highScoresButton");
-			//	elem.style.display = "block";
-			//	}
-			//	else {
-				
-			//	}
-			//}
+
+			setInterval(
+				function monkeyAnimation(){
+					var monkeyDistance = document.getElementById("monkey").offsetLeft - 10;
+					object.style.marginLeft = monkeyDistance + 'px';
+					if(monkeyDistance < 10)
+					{
+						object.style.display = "none";
+						setTimeout(function wait(){object.style.display = "block";}, 3000);
+						object.style.marginLeft = '809px';
+					}
+				}
+			,8);
+
 			function startGame(){
 			console.log("clicked");
 			}
