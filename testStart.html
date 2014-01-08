@@ -13,11 +13,23 @@
 		<a href="Game.html"><button id="medium" onclick="difficulty(1)">Medium</button></a>
 		<a href="Game.html"><button id="hard" onclick="difficulty(2)">Hard</button></a>
 		
-	<body>	
-	
-	<script>
+ 	<body>	
+ 	
+ 	<script>
 	function difficulty(difficultyChosen){
-		sessionStorage.difficulty=difficultyChosen;
-	}
-	</script>
+ 		sessionStorage.difficulty=difficultyChosen;
+		
+		if (difficultyChosen == 0){
+				sessionStorage.gameDifficulty='easy';
+			}
+			else if (difficultyChosen == 1){
+				sessionStorage.gameDifficulty='medium';
+			}
+			else if (difficultyChosen == 2){
+				sessionStorage.gameDifficulty='hard';
+			}
+ 	}
+ 	</script>
+
+	
 </html>

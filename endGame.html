@@ -2,13 +2,61 @@
 <html>
  	<head>
 		<link type="text/css" rel="stylesheet" href="css/endGame.css"/>
-		<title>End Gamet</title>
+		<title>End Game</title>
 	</head>
-	<body>
+	<body onload="checkScore()">
 		<div>
 			<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
 		</div>
 		<script>
+		
+//		sessionStorage.score = '32';
+		sessionStorage.gameDifficulty = 'easy';
+		
+		var scoreDiff = sessionStorage.gameDifficulty+"Score"; 
+		var num1 = 0;
+		var highScore = false;
+		
+		//localStorage.setItem('easy0', '32');
+		//var name = "easy"
+		//alert(localStorage.getItem(name+num1));
+
+		function checkScore(){
+
+			while(num1 < 11 && highScore == false){
+				num1+1;
+//				if(sessionStorage.score > localStorage.getItem(scoreDiff+num1)){
+//					alert(sessionStorage.score);
+//					alert(localStorage.getItem(scoreDiff+num1));
+					highScore = true;
+//				}
+			}
+			
+			if (highScore == true){
+				var player=prompt("Please enter your name","Player1");
+				if(player!=null){
+					var rankNum = 10;
+					while(rankNum > num1){
+						localStorage.setItem(scoreDiff+'Name'+rankNum,localStorage.getItem(scoreDiff+'Name'+(rankNum-1)));
+						localStorage.setItem(scoreDiff+'Rank'+rankNum,localStorage.getItem(scoreDiff+'Rank'+(rankNum-1)));
+						localStorage.setItem(scoreDiff+'Date'+rankNum,localStorage.getItem(scoreDiff+'Date'+(rankNum-1)));
+						rankNum = rankNum-1;
+					}
+					
+					var currentDate = new Date();
+					var day = currentDate.getDate();
+					var month = currentDate.getMonth() + 1;
+					var year = currentDate.getFullYear();
+			
+					localStorage.setItem(scoreDiff+'Name'+rankNum,player);
+					localStorage.setItem(scoreDiff+'Rank'+rankNum,sessionStorage.score);
+					localStorage.setItem(scoreDiff+'Date'+rankNum,(day + "/" + month + "/" + year));
+					alert(player);
+					alert(sessionStorage.score);
+					alert(day + "/" + month + "/" + year);
+				}
+			}
+		}
 		
 			//if(typeof(Storage)!=="undefined"){
 			//	alert("Yes! localStorage and sessionStorage support!");
@@ -20,13 +68,11 @@
 			//localStorage.setItem('favoriteflavor','vanilla');
 			//localStorage.setItem('favoriteflavor2','chocolate');
 			//alert(document.getElementById('favoriteflavor').innerHTML="Last name: "+ localStorage.lastname);
-			var name = "favorite";
-			var name2 = "flavor";
-			var name3 = name+name2;
+			//var name = "favorite";
+			//var name2 = "flavor";
+			//var name3 = name+name2;
 			
 			//alert(localStorage.getItem(name3));
 		</script>
 	</body>
-	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
-	site which aided in providing how to change from one screen to another-->
 </html>
