@@ -1,0 +1,13 @@
+body{
+	background-image:url(../images/deathImage.png);
+	/*background-size: 1300px 900px;*/
+	background-size: 100%;
+}
+
+#startButton {
+	margin-top: 64%;
+	margin-left: 6%;
+	height: 43px;
+	width: 18%;
+	background: transparent;
+}
