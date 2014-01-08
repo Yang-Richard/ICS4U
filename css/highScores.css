@@ -1,16 +1,41 @@
 div{
 	text-align: center;
+	border: 2px solid #000000;
+	background-color: #8B4513;
+	height: 850px;
+}
+
+#back1{
+	width: 25%;
+	float: left;
+}
+
+#back2{
+	width: 74%;
+	float: right;
+	background-image: url(../images/highscore.png);
+	background-size: 100%;
 }
 
 body{
 	background-color: #8B4513;
 }
-	
-#returnHome{
-	height: 50px;
-	width: 50px;
-	float: left; 
+
+button{
+	height: 258px;
+	width: 100%;
+	background-color: #32CD32;
+	display: block;
 	border: 2px solid #000000;
+	border-left: none;
+	border-right: none;
+	font-size: 30px;
+	font-family: Lucida Console;
+}
+
+#returnHome{
+	height: 75px;
+	width: 100%;
 	font-size: 15px;
 }
 
@@ -26,19 +51,6 @@ body{
 	background-color: #FF0000;
 }
 
-
-button{
-	height: 100px;
-	width: 300px;
-	background-color: #32CD32;
-	display: block;
-	border: 2px solid #000000;
-	border-top: 1px solid #000000;
-	border-bottom: 1px solid #000000;
-	font-size: 30px;
-	font-family: Lucida Console;
-}
-    
 .headers{
 	text-align: center;
 	font-family: Lucida Console;
@@ -68,20 +80,68 @@ button{
 #easyScores {
 	background-color: #00FFFF;
 	height: 800px;
-	width: 900px;
+	/*width: 900px;*/
+	width: 100px;
 	float: left;
 }
 
 #mediumScores {
 	background-color: #FFFF33;
 	height: 800px;
-	width: 900px;
+	/*width: 900px;*/
+	width: 100px;
 	float: left;
 }
 
 #hardScores {
 	background-color: #FF0000;
 	height: 800px;
-	width: 900px;
+	/*width: 900px;*/
+	width: 100px;
 	float: left;
+}
+
+.ranks {
+	height: 30px;
+	background: transparent;
+}
+
+#playerRank1{
+	margin-top: 150px;
+}
+
+#playerRank2{
+	margin-top: 15px;
+}
+
+#playerRank3{
+	margin-top: 15px;
+}
+
+#playerRank4{
+	margin-top: 15px;
+}
+
+#playerRank5{
+	margin-top: 15px;
+}
+
+#playerRank6{
+	margin-top: 15px;
+}
+
+#playerRank7{
+	margin-top: 15px;
+}
+
+#playerRank8{
+	margin-top: 15px;
+}
+
+#playerRank9{
+	margin-top: 15px;
+}
+
+#playerRank10{
+	margin-top: 15px;
 }

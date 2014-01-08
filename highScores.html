@@ -5,16 +5,43 @@
 		<title>High Scores</title>
 	</head>
 	<body>
-		<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
-		<h3 class="headers">
-		High Scores</h3>
-		<div id="easyScores">
+		
+		<!--<h3 class="headers">High Scores</h3>-->
+<!--	<div id="easyScores">
+		<div class="ranks" id="playerRank1">Hello1</div>
+		<div class="ranks" id="playerRank2">Hello2</div>
+		<div class="ranks" id="playerRank3">Hello3</div>
+		<div class="ranks" id="playerRank4">Hello4</div>
+		<div class="ranks" id="playerRank5">Hello5</div>
+		<div class="ranks" id="playerRank6">Hello6</div>
+		<div class="ranks" id="playerRank7">Hello7</div>
+		<div class="ranks" id="playerRank8">Hello8</div>
+		<div class="ranks" id="playerRank9">Hello9</div>
+		<div class="ranks" id="playerRank10">Hello10</div>
 		<div id="scoreType">
-		<button id="easy" onclick="highScoreEasy()">Easy</button>
-		<button id="medium" onclick="highScoreMedium()"> Medium</button>
-		<button id="hard" onclick="highScoreHard()">Hard</button>
+		
 		</div>
+		</div> -->
+		
+		<div id="back1">
+			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
+			<button id="easy" onclick="highScoreEasy()">Easy</button>
+			<button id="medium" onclick="highScoreMedium()"> Medium</button>
+			<button id="hard" onclick="highScoreHard()">Hard</button>
 		</div>
+		<div id="back2">
+			<div class="ranks" id="playerRank1">Hello1</div>
+			<div class="ranks" id="playerRank2">Hello2</div>
+			<div class="ranks" id="playerRank3">Hello3</div>
+			<div class="ranks" id="playerRank4">Hello4</div>
+			<div class="ranks" id="playerRank5">Hello5</div>
+			<div class="ranks" id="playerRank6">Hello6</div>
+			<div class="ranks" id="playerRank7">Hello7</div>
+			<div class="ranks" id="playerRank8">Hello8</div>
+			<div class="ranks" id="playerRank9">Hello9</div>
+			<div class="ranks" id="playerRank10">Hello10</div>
+		</div>
+		
 	<script>
 		var scoreId = "easyScores";
 	
@@ -34,6 +61,10 @@
 			var elem = document.getElementById(scoreId);
 			elem.id = "hardScores";
 			scoreId = "hardScores";
+		}
+		
+		function displayScore(){
+		
 		}
 		
 	
