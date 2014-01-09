@@ -4,7 +4,7 @@
 		<link type="text/css" rel="stylesheet" href="css/testStart.css"/>
 		<title>TestStart</title>
 	</head>
-	<body>
+	<body onload="languageSet()">
 
 		<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
 		<h5 class="title">Select Difficulty</h5>
@@ -20,15 +20,30 @@
  		sessionStorage.difficulty=difficultyChosen;
 		
 		if (difficultyChosen == 0){
-				sessionStorage.gameDifficulty='easy';
-			}
-			else if (difficultyChosen == 1){
-				sessionStorage.gameDifficulty='medium';
-			}
-			else if (difficultyChosen == 2){
-				sessionStorage.gameDifficulty='hard';
-			}
+			sessionStorage.gameDifficulty='easy';
+		}
+		else if (difficultyChosen == 1){
+			sessionStorage.gameDifficulty='medium';
+		}
+		else if (difficultyChosen == 2){
+			sessionStorage.gameDifficulty='hard';
+		}
  	}
+	
+	function languageSet() {
+		if(localStorage.getItem('language') == 'english'){
+			document.getElementById("easy").innerHTML="Easy";
+			document.getElementById("medium").innerHTML="Medium";
+			document.getElementById("hard").innerHTML="Hard";
+			document.getElementById("returnHome").innerHTML="Back";
+		}
+		else {
+			document.getElementById("easy").innerHTML="Facile";
+			document.getElementById("medium").innerHTML="Moyen";
+			document.getElementById("hard").innerHTML="Difficile";
+			document.getElementById("returnHome").innerHTML="Retourner";
+		}
+	}
  	</script>
 
 	

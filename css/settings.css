@@ -3,6 +3,19 @@ div{
 	height: 100px;
 	display: inline-block;
 }
+
+
+
+#words{
+	width: 125px;
+	height: 450px;
+}
+
+#options{
+	width: 49%;
+	height: 450px;
+}
+
 h4 {
 	font-size: 25px;
 	margin-left: 25px;
@@ -15,7 +28,7 @@ body{
     
 #returnHome{
 	height:50px;
-	width:50px;
+	width:100px;
 	float: left; 
 	border: 2px solid #000000;
 	font-size: 15px;
@@ -59,7 +72,7 @@ body{
 #lang2{
 	height:50px;
 	width:75px;
-	border: 2px solid #FF3300;
+	border: 2px solid #000000;
 	font-size: 15px;
 }
 

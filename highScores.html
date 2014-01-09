@@ -4,7 +4,7 @@
 		<link type="text/css" rel="stylesheet" href="css/highScores.css"/>
 		<title>High Scores</title>
 	</head>
-	<body onload="displayScore()">
+	<body onload="displayScore(); languageSet()">
 
 		<div id="back1">
 			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
@@ -107,6 +107,22 @@
 					document.getElementById('playerScore'+i).innerHTML="";
 					document.getElementById('date'+i).innerHTML="";
 				}
+			}
+		}
+		
+		
+		function languageSet() {
+			if(localStorage.getItem('language') == 'english'){
+				document.getElementById("easy").innerHTML="Easy";
+				document.getElementById("medium").innerHTML="Medium";
+				document.getElementById("hard").innerHTML="Hard";
+				document.getElementById("returnHome").innerHTML="Back";
+			}
+			else {
+				document.getElementById("easy").innerHTML="Facile";
+				document.getElementById("medium").innerHTML="Moyen";
+				document.getElementById("hard").innerHTML="Difficile";
+				document.getElementById("returnHome").innerHTML="Retourner";
 			}
 		}
 		

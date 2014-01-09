@@ -34,8 +34,7 @@
 				function monkeyAnimation(){
 					var monkeyDistance = document.getElementById("monkey").offsetLeft - 10;
 					object.style.marginLeft = monkeyDistance + 'px';
-					if(monkeyDistance < 10)
-					{
+					if(monkeyDistance < 10){
 						object.style.display = "none";
 						setTimeout(function wait(){object.style.display = "block";}, 3000);
 						object.style.marginLeft = '809px';
