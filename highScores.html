@@ -4,25 +4,8 @@
 		<link type="text/css" rel="stylesheet" href="css/highScores.css"/>
 		<title>High Scores</title>
 	</head>
-	<body>
-		
-		<!--<h3 class="headers">High Scores</h3>-->
-<!--	<div id="easyScores">
-		<div class="ranks" id="playerRank1">Hello1</div>
-		<div class="ranks" id="playerRank2">Hello2</div>
-		<div class="ranks" id="playerRank3">Hello3</div>
-		<div class="ranks" id="playerRank4">Hello4</div>
-		<div class="ranks" id="playerRank5">Hello5</div>
-		<div class="ranks" id="playerRank6">Hello6</div>
-		<div class="ranks" id="playerRank7">Hello7</div>
-		<div class="ranks" id="playerRank8">Hello8</div>
-		<div class="ranks" id="playerRank9">Hello9</div>
-		<div class="ranks" id="playerRank10">Hello10</div>
-		<div id="scoreType">
-		
-		</div>
-		</div> -->
-		
+	<body onload="displayScore()">
+
 		<div id="back1">
 			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
 			<button id="easy" onclick="highScoreEasy()">Easy</button>
@@ -30,46 +13,104 @@
 			<button id="hard" onclick="highScoreHard()">Hard</button>
 		</div>
 		<div id="back2">
-			<div class="ranks" id="playerRank1">Hello1</div>
-			<div class="ranks" id="playerRank2">Hello2</div>
-			<div class="ranks" id="playerRank3">Hello3</div>
-			<div class="ranks" id="playerRank4">Hello4</div>
-			<div class="ranks" id="playerRank5">Hello5</div>
-			<div class="ranks" id="playerRank6">Hello6</div>
-			<div class="ranks" id="playerRank7">Hello7</div>
-			<div class="ranks" id="playerRank8">Hello8</div>
-			<div class="ranks" id="playerRank9">Hello9</div>
-			<div class="ranks" id="playerRank10">Hello10</div>
+			<div class="ranks" id="playerRank1">
+				<div class="rank" id="rank1"></div>
+				<div class="name" id="name1"></div>
+				<div class="playerScore" id="playerScore1"></div>
+				<div class="date" id="date1">-</div>
+			</div>
+			<div class="ranks" id="playerRank2">
+				<div class="rank" id="rank2"></div>
+				<div class="name" id="name2"></div>
+				<div class="playerScore" id="playerScore2"></div>
+				<div class="date" id="date2"></div>
+			</div>
+			<div class="ranks" id="playerRank3">
+				<div class="rank" id="rank3"></div>
+				<div class="name" id="name3"></div>
+				<div class="playerScore" id="playerScore3"></div>
+				<div class="date" id="date3"></div>
+			</div>
+			<div class="ranks" id="playerRank4">
+				<div class="rank" id="rank4"></div>
+				<div class="name" id="name4"></div>
+				<div class="playerScore" id="playerScore4"></div>
+				<div class="date" id="date4"></div>
+			</div>
+			<div class="ranks" id="playerRank5">
+				<div class="rank" id="rank5"></div>
+				<div class="name" id="name5"></div>
+				<div class="playerScore" id="playerScore5"></div>
+				<div class="date" id="date5"></div>
+			</div>
+			<div class="ranks" id="playerRank6">
+				<div class="rank" id="rank6"></div>
+				<div class="name" id="name6"></div>
+				<div class="playerScore" id="playerScore6"></div>
+				<div class="date" id="date6"></div>
+			</div>
+			<div class="ranks" id="playerRank7">
+				<div class="rank" id="rank7"></div>
+				<div class="name" id="name7"></div>
+				<div class="playerScore" id="playerScore7"></div>
+				<div class="date" id="date7"></div>
+			</div>
+			<div class="ranks" id="playerRank8">
+				<div class="rank" id="rank8"></div>
+				<div class="name" id="name8"></div>
+				<div class="playerScore" id="playerScore8"></div>
+				<div class="date" id="date8"></div>
+			</div>
+			<div class="ranks" id="playerRank9">
+				<div class="rank" id="rank9"></div>
+				<div class="name" id="name9"></div>
+				<div class="playerScore" id="playerScore9"></div>
+				<div class="date" id="date9"></div>
+			</div>
+			<div class="ranks" id="playerRank10">
+				<div class="rank" id="rank10"></div>
+				<div class="name" id="name10"></div>
+				<div class="playerScore" id="playerScore10"></div>
+				<div class="date" id="date10"></div>
+			</div>
 		</div>
 		
 	<script>
-		var scoreId = "easyScores";
+		var scoreId = "easy";
 	
 		function highScoreEasy() {
-			var elem = document.getElementById(scoreId);
-			elem.id = "easyScores";
-			scoreId = "easyScores";
+			scoreId = "easy";
+			displayScore();
 		}
 	
 		function highScoreMedium() {
-			var elem = document.getElementById(scoreId);
-			elem.id = "mediumScores";
-			scoreId = "mediumScores";
+			scoreId = "medium";
+			displayScore();
 		}
-		
 		function highScoreHard() {
-			var elem = document.getElementById(scoreId);
-			elem.id = "hardScores";
-			scoreId = "hardScores";
+			scoreId = "hard";
+			displayScore();
 		}
 		
 		function displayScore(){
-		
+			for (var i = 1; i < 11; i++) {
+				if(localStorage.getItem(scoreId+'Score'+i) != '0' &&
+				localStorage.getItem(scoreId+'Score'+i) != null){
+					document.getElementById('rank'+i).innerHTML=i;
+					document.getElementById('name'+i).innerHTML=localStorage.getItem(scoreId+'Name'+i);
+					document.getElementById('playerScore'+i).innerHTML=localStorage.getItem(scoreId+'Score'+i);
+					document.getElementById('date'+i).innerHTML=localStorage.getItem(scoreId+'Date'+i);
+				}
+				else {
+					document.getElementById('rank'+i).innerHTML="";
+					document.getElementById('name'+i).innerHTML="";
+					document.getElementById('playerScore'+i).innerHTML="";
+					document.getElementById('date'+i).innerHTML="";
+				}
+			}
 		}
 		
 	
 	</script>
 	</body>
-	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
-	site which aided in providing how to change from one screen to another-->
 </html>

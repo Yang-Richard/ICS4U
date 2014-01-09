@@ -2,7 +2,7 @@ div{
 	text-align: center;
 	border: 2px solid #000000;
 	background-color: #8B4513;
-	height: 850px;
+	height: 675px;
 }
 
 #back1{
@@ -13,7 +13,7 @@ div{
 #back2{
 	width: 74%;
 	float: right;
-	background-image: url(../images/highscore.png);
+	background-image: url(../images/highscoreNew.png);
 	background-size: 100%;
 }
 
@@ -22,7 +22,7 @@ body{
 }
 
 button{
-	height: 258px;
+	height: 200px;
 	width: 100%;
 	background-color: #32CD32;
 	display: block;
@@ -104,10 +104,11 @@ button{
 .ranks {
 	height: 30px;
 	background: transparent;
+	text-align: left;
 }
 
 #playerRank1{
-	margin-top: 150px;
+	margin-top: 135px;
 }
 
 #playerRank2{
@@ -145,3 +146,42 @@ button{
 #playerRank10{
 	margin-top: 15px;
 }
+
+.rank {
+	border-top:none;
+	border-bottom: none;
+	border-left:none;
+	height: 30px;
+	width: 19%;
+	background: transparent;
+	display:inline-block;
+}
+
+.name {
+	border-top:none;
+	border-bottom: none;
+	border-left:none;
+	height: 30px;
+	width: 26%;
+		background: transparent;
+	display:inline-block;
+}
+
+.playerScore {
+	border-top:none;
+	border-bottom: none;
+	border-left:none;
+	height: 30px;
+	width: 23%;
+		background: transparent;
+	display:inline-block;
+}
+
+.date {
+	border: none;
+	height: 30px;
+	width: 25%;
+		background: transparent;
+	display:inline-block;
+}
+

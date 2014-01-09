@@ -31,33 +31,32 @@
 		<script>
 		
 			function languageChange(language1, language2) {
-			var elem = document.getElementById(language1);
-			elem.id = "red";
-			var elem2 = document.getElementById(language2);
-			elem2.style.border = "2px dashed #000000";
+				var elem = document.getElementById(language1);
+				elem.id = "red";
+				var elem2 = document.getElementById(language2);
+				elem2.style.border = "2px dashed #000000";
 			}
 			
 			function musicTurnOn() {
-			var elem = document.getElementById("musicOn");
-			elem.id = "red";
+				var elem = document.getElementById("musicOn");
+				elem.id = "red";
 			}
 			
 			function languageEnglish() {
-			var elem = document.getElementById("lang1");
-			elem.style.border = "3px solid #FF3300";
-			var elem2 = document.getElementById("lang2");
-			elem2.style.border = "2px solid #000000";
-			var object = document.getElementById("headers");
-			object.innerHTML="Settings";
+				var elem = document.getElementById("lang1");
+				elem.style.border = "3px solid #FF3300";
+				var elem2 = document.getElementById("lang2");
+				elem2.style.border = "2px solid #000000";
+				var object = document.getElementById("headers");
+				object.innerHTML="Settings";
 			}
 			
 			function languageFrench() {
-			var elem = document.getElementById("lang2");
-			elem.style.border = "3px solid #FF3300";
-			var elem2 = document.getElementById("lang1");
-			elem2.style.border = "2px solid #000000";
-			var object = document.getElementById("headers");
-			object.innerHTML="French Settings";
+				var elem = document.getElementById("lang2");
+				elem.style.border = "3px solid #FF3300";
+				var elem2 = document.getElementById("lang1");
+				elem2.style.border = "2px solid #000000";
+				document.getElementById("headers").innerHTML="French Settings";
 			}
 		
 		</script>
