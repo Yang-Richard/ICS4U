@@ -4,25 +4,25 @@
 		<link type="text/css" rel="stylesheet" href="css/settings.css"/>
 		<title>Settings</title>
 	</head> 
-	<body>
+	<body onload="languageSet()">
 		<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
 		<h3 id="headers">Settings</h3>
 		<p>
-			<h4>Music:</h4>
+			<h4 id="music">Music:</h4>
 			<div>
 				<button id="musicOn" onclick="musicTurnOn()">On</button>
 				<button id="musicOff">Off</button>
 			</div>
 		</p>
 		<p>
-			<h4>Sounds:</h4>
+			<h4 id="sounds">Sounds:</h4>
 			<div>
 				<button id="soundOn">On</button>
 				<button id="soundOff">Off</button>
 			</div>
 		</p>
 		<p>
-			<h4>Languages:</h4>
+			<h4 id="language">Languages:</h4>
 			<div>
 				<button id="lang1" onclick="languageEnglish()">English</button>
 				<button id="lang2" onclick="languageFrench()">French</button>
@@ -43,24 +43,38 @@
 			}
 			
 			function languageEnglish() {
+				localStorage.setItem('language', 'english');
 				var elem = document.getElementById("lang1");
 				elem.style.border = "3px solid #FF3300";
 				var elem2 = document.getElementById("lang2");
 				elem2.style.border = "2px solid #000000";
-				var object = document.getElementById("headers");
-				object.innerHTML="Settings";
+				languageSet();
 			}
 			
 			function languageFrench() {
+				localStorage.setItem('language', 'french');
 				var elem = document.getElementById("lang2");
 				elem.style.border = "3px solid #FF3300";
 				var elem2 = document.getElementById("lang1");
 				elem2.style.border = "2px solid #000000";
-				document.getElementById("headers").innerHTML="French Settings";
+				languageSet();
+			}
+			
+			function languageSet() {
+				if(localStorage.getItem('language') == 'english'){
+					document.getElementById("headers").innerHTML="Settings";
+					document.getElementById("music").innerHTML="Musis";
+					document.getElementById("sounds").innerHTML="Sounds";
+					document.getElementById("language").innerHTML="Language";
+				}
+				else {
+					document.getElementById("headers").innerHTML="French Settings";
+					document.getElementById("music").innerHTML="Musique";
+					document.getElementById("sounds").innerHTML="Sonore";
+					document.getElementById("language").innerHTML="Langue";
+				}
 			}
 		
 		</script>
 	</body>
-	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
-	site which aided in providing how to change from one screen to another-->
 </html>

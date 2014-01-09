@@ -10,13 +10,13 @@
 		</div>
 		<script>
 		
-		sessionStorage.score = '1';
-		sessionStorage.gameDifficulty = 'medium';
+		sessionStorage.score = '13';
+		sessionStorage.gameDifficulty = 'hard';
 		
 		var scoreDiff = sessionStorage.gameDifficulty;
 		var num1 = 0;
 		var highScore = false;
-
+		
 		function checkScore(){
 			
 			for(var k = 0; k < 3; k++){
@@ -30,10 +30,14 @@
 				else if(k == 2){
 					diff = "hard";
 				}
+				
+				
 				for(var j = 1; j < 11; j++){
 					if(localStorage.getItem(diff+'Score'+j) == null){
 						localStorage.setItem(diff+'Score'+j, '0');
 					}
+
+					
 //					alert(scoreDiff+'Score'+j);
 //					alert(localStorage.getItem(scoreDiff+'Score'+j));
 				}
@@ -41,15 +45,15 @@
 			
 			while(num1 < 11 && highScore == false){
 				num1++;
-				alert(num1);
-				alert(localStorage.getItem(scoreDiff+'Score'+num1));
+//				alert(num1);
+//				alert(localStorage.getItem(scoreDiff+'Score'+num1));
 				
 				if(sessionStorage.score > localStorage.getItem(scoreDiff+'Score'+num1)){
 					
 //					alert(sessionStorage.score);
 //					alert(localStorage.getItem(scoreDiff+num1));
 					highScore = true;
-					alert('reached');
+//					alert('reached');
 				}
 			}
 			
@@ -73,10 +77,10 @@
 					localStorage.setItem(scoreDiff+'Score'+rankNum,sessionStorage.score);
 					localStorage.setItem(scoreDiff+'Date'+rankNum,(day + "/" + month + "/" + year));
 					
-					alert(scoreDiff+'Name'+rankNum);
-					alert(localStorage.getItem(scoreDiff+'Name'+rankNum));
-					alert(localStorage.getItem(scoreDiff+'Score'+rankNum));
-					alert(localStorage.getItem(scoreDiff+'Date'+rankNum));
+//					alert(scoreDiff+'Name'+rankNum);
+//					alert(localStorage.getItem(scoreDiff+'Name'+rankNum));
+//					alert(localStorage.getItem(scoreDiff+'Score'+rankNum));
+//					alert(localStorage.getItem(scoreDiff+'Date'+rankNum));
 				}
 			}
 		}
