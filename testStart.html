@@ -7,7 +7,9 @@
 	<body onload="languageSet()">
 
 		<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
-		<h5 class="title">Select Difficulty</h5>
+		<div>
+			<h5 class="title" id="top">Select Difficulty</h5>
+		</div>
 		
 		<a href="Game.html"><button id="easy" onclick="difficulty(0)">Easy</button></a>
 		<a href="Game.html"><button id="medium" onclick="difficulty(1)">Medium</button></a>
@@ -32,12 +34,14 @@
 	
 	function languageSet() {
 		if(localStorage.getItem('language') == 'english'){
+			document.getElementById("top").innerHTML="Select Difficulty";
 			document.getElementById("easy").innerHTML="Easy";
 			document.getElementById("medium").innerHTML="Medium";
 			document.getElementById("hard").innerHTML="Hard";
 			document.getElementById("returnHome").innerHTML="Back";
 		}
 		else {
+			document.getElementById("top").innerHTML="Difficult&eacute";
 			document.getElementById("easy").innerHTML="Facile";
 			document.getElementById("medium").innerHTML="Moyen";
 			document.getElementById("hard").innerHTML="Difficile";

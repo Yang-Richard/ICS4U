@@ -1,6 +1,6 @@
 div{
     text-align: center;
-	background-color: #32CD32;
+/*	background-color: #32CD32;*/
 	margin: auto;
 	height: 400px;
 	width: 700px;
@@ -34,8 +34,8 @@ button {
 #monkey {
 	height: 100px;
 	width: 75px;
-	background-color: #8B4513;
-	background-image:url(../images/monkey.png);
+	background-color: transparent;
+	background-image:url(../images/monkeyClear.png);
 	background-size: 100%;
 	margin-top: 150px;
 	margin-left: 260px;
@@ -56,8 +56,8 @@ button {
 #banana {
 	height: 30px;
 	width: 30px;
-	background-color: #FFFF00;
-	background-image:url(../images/banana.png);
+	
+	background-image:url(../images/bananaClear.png);
 	background-size: 100%;
 	margin-top: 125px;
 	margin-left: 385px;
