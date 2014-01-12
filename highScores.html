@@ -5,76 +5,76 @@
 		<title>High Scores</title>
 	</head>
 	<body onload="displayScore(); languageSet()">
-
-		<div id="back1">
-			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
-			<button id="easy" onclick="highScoreEasy()">Easy</button>
-			<button id="medium" onclick="highScoreMedium()"> Medium</button>
-			<button id="hard" onclick="highScoreHard()">Hard</button>
+		<div id="veryBack">
+			<div id="back1">
+				<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
+				<button id="easy" onclick="highScoreEasy()">Easy</button>
+				<button id="medium" onclick="highScoreMedium()"> Medium</button>
+				<button id="hard" onclick="highScoreHard()">Hard</button>
+			</div>
+			<div id="back2">
+				<div class="ranks" id="playerRank1">
+					<div class="rank" id="rank1"></div>
+					<div class="name" id="name1"></div>
+					<div class="playerScore" id="playerScore1"></div>
+					<div class="date" id="date1">-</div>
+				</div>
+				<div class="ranks" id="playerRank2">
+					<div class="rank" id="rank2"></div>
+					<div class="name" id="name2"></div>
+					<div class="playerScore" id="playerScore2"></div>
+					<div class="date" id="date2"></div>
+				</div>
+				<div class="ranks" id="playerRank3">
+					<div class="rank" id="rank3"></div>
+					<div class="name" id="name3"></div>
+					<div class="playerScore" id="playerScore3"></div>
+					<div class="date" id="date3"></div>
+				</div>
+				<div class="ranks" id="playerRank4">
+					<div class="rank" id="rank4"></div>
+					<div class="name" id="name4"></div>
+					<div class="playerScore" id="playerScore4"></div>
+					<div class="date" id="date4"></div>
+				</div>
+				<div class="ranks" id="playerRank5">
+					<div class="rank" id="rank5"></div>
+					<div class="name" id="name5"></div>
+					<div class="playerScore" id="playerScore5"></div>
+					<div class="date" id="date5"></div>
+				</div>
+				<div class="ranks" id="playerRank6">
+					<div class="rank" id="rank6"></div>
+					<div class="name" id="name6"></div>
+					<div class="playerScore" id="playerScore6"></div>
+					<div class="date" id="date6"></div>
+				</div>
+				<div class="ranks" id="playerRank7">
+					<div class="rank" id="rank7"></div>
+					<div class="name" id="name7"></div>
+					<div class="playerScore" id="playerScore7"></div>
+					<div class="date" id="date7"></div>
+				</div>
+				<div class="ranks" id="playerRank8">
+					<div class="rank" id="rank8"></div>
+					<div class="name" id="name8"></div>
+					<div class="playerScore" id="playerScore8"></div>
+					<div class="date" id="date8"></div>
+				</div>
+				<div class="ranks" id="playerRank9">
+					<div class="rank" id="rank9"></div>
+					<div class="name" id="name9"></div>
+					<div class="playerScore" id="playerScore9"></div>
+					<div class="date" id="date9"></div>
+				</div>
+				<div class="ranks" id="playerRank10">
+					<div class="rank" id="rank10"></div>
+					<div class="name" id="name10"></div>
+					<div class="playerScore" id="playerScore10"></div>
+					<div class="date" id="date10"></div>
+				</div>
+			</div>
 		</div>
-		<div id="back2">
-			<div class="ranks" id="playerRank1">
-				<div class="rank" id="rank1"></div>
-				<div class="name" id="name1"></div>
-				<div class="playerScore" id="playerScore1"></div>
-				<div class="date" id="date1">-</div>
-			</div>
-			<div class="ranks" id="playerRank2">
-				<div class="rank" id="rank2"></div>
-				<div class="name" id="name2"></div>
-				<div class="playerScore" id="playerScore2"></div>
-				<div class="date" id="date2"></div>
-			</div>
-			<div class="ranks" id="playerRank3">
-				<div class="rank" id="rank3"></div>
-				<div class="name" id="name3"></div>
-				<div class="playerScore" id="playerScore3"></div>
-				<div class="date" id="date3"></div>
-			</div>
-			<div class="ranks" id="playerRank4">
-				<div class="rank" id="rank4"></div>
-				<div class="name" id="name4"></div>
-				<div class="playerScore" id="playerScore4"></div>
-				<div class="date" id="date4"></div>
-			</div>
-			<div class="ranks" id="playerRank5">
-				<div class="rank" id="rank5"></div>
-				<div class="name" id="name5"></div>
-				<div class="playerScore" id="playerScore5"></div>
-				<div class="date" id="date5"></div>
-			</div>
-			<div class="ranks" id="playerRank6">
-				<div class="rank" id="rank6"></div>
-				<div class="name" id="name6"></div>
-				<div class="playerScore" id="playerScore6"></div>
-				<div class="date" id="date6"></div>
-			</div>
-			<div class="ranks" id="playerRank7">
-				<div class="rank" id="rank7"></div>
-				<div class="name" id="name7"></div>
-				<div class="playerScore" id="playerScore7"></div>
-				<div class="date" id="date7"></div>
-			</div>
-			<div class="ranks" id="playerRank8">
-				<div class="rank" id="rank8"></div>
-				<div class="name" id="name8"></div>
-				<div class="playerScore" id="playerScore8"></div>
-				<div class="date" id="date8"></div>
-			</div>
-			<div class="ranks" id="playerRank9">
-				<div class="rank" id="rank9"></div>
-				<div class="name" id="name9"></div>
-				<div class="playerScore" id="playerScore9"></div>
-				<div class="date" id="date9"></div>
-			</div>
-			<div class="ranks" id="playerRank10">
-				<div class="rank" id="rank10"></div>
-				<div class="name" id="name10"></div>
-				<div class="playerScore" id="playerScore10"></div>
-				<div class="date" id="date10"></div>
-			</div>
-		</div>
-		
 	<script>
 		var scoreId = "easy";
 	

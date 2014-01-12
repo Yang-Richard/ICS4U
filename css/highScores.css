@@ -5,9 +5,15 @@ div{
 	height: 675px;
 }
 
+#veryBack {
+	height: 600px;
+	width: 1024px;
+}
+
 #back1{
 	width: 25%;
 	float: left;
+	height: 600px;
 }
 
 #back2{
@@ -15,6 +21,7 @@ div{
 	float: right;
 	background-image: url(../images/highscoreNew.png);
 	background-size: 100%;
+	height: 600px;
 }
 
 body{
@@ -22,7 +29,7 @@ body{
 }
 
 button{
-	height: 200px;
+	height: 180px;
 	width: 100%;
 	background-color: #32CD32;
 	display: block;
@@ -34,7 +41,7 @@ button{
 }
 
 #returnHome{
-	height: 75px;
+	height: 60px;
 	width: 100%;
 	font-size: 15px;
 }
@@ -108,7 +115,7 @@ button{
 }
 
 #playerRank1{
-	margin-top: 135px;
+	margin-top: 105px;
 }
 
 #playerRank2{

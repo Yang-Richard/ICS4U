@@ -1,5 +1,14 @@
 body{
-        background-color: #8B4513;
+	height: 600px;
+	width: 1024px;
+}
+
+#back {
+	background-image:url(../images/difficultyChoice.png);
+	background-size: 1024px 600px;
+	height: 600px;
+	width: 1024px;
+	position: fixed;
 }
 
 .title {
@@ -9,34 +18,57 @@ body{
 }
 
 #returnHome{
-		height: 50px;
-		width: 100px;
-		float: left; 
+		height: 110px;
+		width: 25%;
+		/*float: left; */
+		margin-left: 0px;
+		margin-bottom: 0px;
 		border: 2px solid #000000;
 		font-size: 15px;
 }
 
 #easy{
-	background-color: #00FFFF;
+	margin-top: 60px;
+	height: 100px;
+	/*margin-top: 100px;
+	background-color: #00FFFF;*/
 }
 
 #medium {
-	background-color: #FFFF33;
+	margin-top: 6px;
+	height: 85px;
+/*	background-color: #FFFF33;*/
 }
 
 #hard {
-	background-color: #FF0000;
+	height: 85px;
+	/*background-color: #FF0000;*/
 }
 button{
         height: 100px;
-        width: 300px;
+        /*width: 200px;*/
         border-radius: 5px;
-        margin:auto;
-        margin-top:10px;
+        /*margin:auto;*/
         margin-bottom: 10px;
-        display: block;
+        /*display: block;*/
         border: 2px solid #000000;
         font-size: 30px;
         font-family: Lucida Console;
-		background-color: #32CD32;
+		/*background-color: #32CD32;*/
+		background-color: transparent;
+		
+		margin-left: 37%;
+		width: 20%;
+}
+
+#returnHome{
+		height: 110px;
+		width: 299px;
+		clear: all;
+		margin-top: 120px;
+		margin-left: 0px;
+		margin-bottom: none;
+		display: block;
+		border: 2px solid #000000;
+		font-size: 15px;
 }
