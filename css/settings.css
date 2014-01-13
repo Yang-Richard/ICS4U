@@ -4,7 +4,10 @@ div{
 	display: inline-block;
 }
 
-
+#back {
+	height: 600px;
+	width: 1024px;
+}
 
 #words{
 	width: 125px;

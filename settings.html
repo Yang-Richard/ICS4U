@@ -5,39 +5,41 @@
 		<title>Settings</title>
 	</head> 
 	<body onload="languageSet()">
-		<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
-		<h3 id="headers">Settings</h3>
-		<div id="words">
-			<p>
-				<h4 id="music">Music:</h4>
-			</p>
-			<p>
-				<h4 id="sounds">Sounds:</h4>
-			</p>
-			<p>
-				<h4 id="language">Languages:</h4>
-			</p>
-		</div>
-		<div id="options">
-			<p>
-				<div>
-					<button id="musicOn" onclick="musicTurnOn()">On</button>
-					<button id="musicOff">Off</button>
-				</div>
-			</p>
-			<p>
-				<div>
-					<button id="soundOn">On</button>
-					<button id="soundOff">Off</button>
-				</div>
-			</p>
-			<p>
-				<div>
-					<button id="lang1" onclick="languageEnglish()">English</button>
-					<button id="lang2" onclick="languageFrench()">French</button>
-				</div>
-			</p>
-		</div>
+		<div id="back">
+			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
+			<h3 id="headers">Settings</h3>
+			<div id="words">
+				<p>
+					<h4 id="music">Music:</h4>
+				</p>
+				<p>
+					<h4 id="sounds">Sounds:</h4>
+				</p>
+				<p>
+					<h4 id="language">Languages:</h4>
+				</p>
+			</div>
+			<div id="options">
+				<p>
+					<div>
+						<button id="musicOn" onclick="musicTurnOn()">On</button>
+						<button id="musicOff">Off</button>
+					</div>
+				</p>
+				<p>
+					<div>
+						<button id="soundOn">On</button>
+						<button id="soundOff">Off</button>
+					</div>
+				</p>
+				<p>
+					<div>
+						<button id="lang1" onclick="languageEnglish()">English</button>
+						<button id="lang2" onclick="languageFrench()">French</button>
+					</div>
+				</p>
+			</div>
+		</div>	
 		<script>
 		
 			function languageChange(language1, language2) {
@@ -83,7 +85,7 @@
 				else {
 					var elem = document.getElementById("lang2");
 					elem.style.border = "3px solid #FF3300";
-					document.getElementById("headers").innerHTML="French Settings";
+					document.getElementById("headers").innerHTML="Param&egravetres";
 					document.getElementById("music").innerHTML="Musique";
 					document.getElementById("sounds").innerHTML="Sonore";
 					document.getElementById("language").innerHTML="Langue";

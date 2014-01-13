@@ -1,11 +1,19 @@
 body{
+	height: 600px;
+	width: 1024px;
+	/*background-image:url(../images/deathImage.png);
+	background-size: 1300px 900px;
+	background-size: 100%;*/
+}
+#back{
+	height: 600px;
+	width: 1024px;
 	background-image:url(../images/deathImage.png);
-	/*background-size: 1300px 900px;*/
-	background-size: 100%;
+	background-size: 1024px 600px;
 }
 
 #startButton {
-	margin-top: 64%;
+	margin-top: 500px;
 	margin-left: 6%;
 	height: 43px;
 	width: 18%;
