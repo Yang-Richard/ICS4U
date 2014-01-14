@@ -24,12 +24,14 @@
 				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
 				<button id ="tutorialButton" onclick="window.location.href='tutorial.html'"></button>
 				<button id ="highScoresButton" onclick="window.location.href='highScores.html'"></button>
-				<object id="music"height="1" width="1" data="music/panamaHatNV.mp3"></object>
+				<object id="music" height="1" width="1" <!--data="music/panamaHatNV.mp3"-->></object>
 			<!--</div>-->
 		</div>
 		<script>
 			var monkeyDistance = document.getElementById("monkey").offsetLeft;
 			var object = document.getElementById("monkey");
+			
+			var clickSound = new Audio('music/panamaHatNV.mp3');
 			
 			
 			setInterval(
@@ -46,23 +48,25 @@
 			
 			function languageSet() {
 				if(localStorage.getItem('language') == 'english'){
-				//	document.getElementById("startButton").innerHTML="Start Game";
-				//	document.getElementById("tutorialButton").innerHTML="Instructions";
-				//	document.getElementById("highScoresButton").innerHTML="High Scores"
+					document.getElementById("startButton").innerHTML="Start Game";
+					document.getElementById("tutorialButton").innerHTML="Instructions";
+					document.getElementById("highScoresButton").innerHTML="High Scores"
 				}
 				else {
-				//	document.getElementById("startButton").innerHTML="Joue";
-				//	document.getElementById("tutorialButton").innerHTML="Instructions";
-				//	document.getElementById("highScoresButton").innerHTML="Haut Scores"
+					document.getElementById("startButton").innerHTML="Joue";
+					document.getElementById("tutorialButton").innerHTML="Instructions";
+					document.getElementById("highScoresButton").innerHTML="Haut Scores"
 				}
 			}
 			
 			function musicSet(){
 				if(localStorage.getItem('music') == 'off'){
-					document.getElementById("music").data = "";
+				//	document.getElementById("music").setAttribute('data', 'null');
+				clickSound.stop();
 				}
 				else {
-					document.getElementById("music").data = "music/panamaHatNV.mp3";
+				//	document.getElementById("music").setAttribute('data', 'music/panamaHatNV.mp3');
+				clickSound.play();
 				}
 			}
 

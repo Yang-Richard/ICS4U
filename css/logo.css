@@ -1,7 +1,12 @@
 #companyLogo {
-		/*display: none;*/
-		/*margin: auto;*/
-		text-align: auto;
-		width: 100%;
-		/*!--width: auto\9;-->*/
-		}
+	/*display: none;*/
+	/*margin: auto;*/
+	text-align: auto;
+	width: 100%;
+	/*!--width: auto\9;-->*/
+}
+
+body{
+	height: 600px;
+	width: 1024px;
+}

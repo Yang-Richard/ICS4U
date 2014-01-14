@@ -13,6 +13,12 @@
 				<button id="hard" onclick="highScoreHard()">Hard</button>
 			</div>
 			<div id="back2">
+				<div class="ranks" id="playerRank0">
+					<div class="rank" id="rank0"></div>
+					<div class="name" id="name0"></div>
+					<div class="playerScore" id="playerScore0"></div>
+					<div class="date" id="date0">-</div>
+				</div>
 				<div class="ranks" id="playerRank1">
 					<div class="rank" id="rank1"></div>
 					<div class="name" id="name1"></div>
@@ -117,12 +123,21 @@
 				document.getElementById("medium").innerHTML="Medium";
 				document.getElementById("hard").innerHTML="Hard";
 				document.getElementById("returnHome").innerHTML="Back";
+				document.getElementById("rank0").innerHTML="Place";
+				document.getElementById("name0").innerHTML="Name";
+				document.getElementById("playerScore0").innerHTML="Score";
+				document.getElementById("date0").innerHTML="Date";
+				
 			}
 			else {
 				document.getElementById("easy").innerHTML="Facile";
 				document.getElementById("medium").innerHTML="Moyen";
 				document.getElementById("hard").innerHTML="Difficile";
 				document.getElementById("returnHome").innerHTML="Retourner";
+				document.getElementById("rank0").innerHTML="Place";
+				document.getElementById("name0").innerHTML="Nom";
+				document.getElementById("playerScore0").innerHTML="Score";
+				document.getElementById("date0").innerHTML="Date";
 			}
 		}
 		

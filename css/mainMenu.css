@@ -4,7 +4,7 @@ div{
 }
 
 #divBack {
-	background-image:url(../images/titlePage.png);
+	background-image:url(../images/titlePageNew.png);
 	background-size: 1024px 600px;
 	width: 1024px;
 	height: 600px;
@@ -53,14 +53,14 @@ button{
     margin-bottom: 10px;
     display: block;
    /* border: 2px solid #000000;*/
-    font-size: 30px;
+    font-size: 18px;
     font-family: Lucida Console;
 	position: fixed;
 }
 
 #startButton{
 	margin-top: 330px;
-	margin-left: 350px;
+	margin-left: 340px;
 	
 	/*margin-left: 34%;
 	margin-top: 41%;*/
@@ -70,7 +70,7 @@ button{
 
 #tutorialButton{
 	margin-top: 395px;
-	margin-left: 350px;
+	margin-left: 340px;
 	
 	/*margin-left: 34%;
 	margin-top: 50%;*/
@@ -80,17 +80,17 @@ button{
 
 #highScoresButton{
 	margin-top: 470px;
-	margin-left: 350px;
+	margin-left: 340px;
 	/*margin-left: 34%;
 	margin-top: 60%;*/
 	background: transparent;
 	border: none;
 }
     
-button:hover{
+/*button:hover{
     border: 5px solid #000000;
     font-size: 40px;
-    }
+    }*/
     
 .headers{
     text-align: center;

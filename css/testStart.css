@@ -4,7 +4,7 @@ body{
 }
 
 #back {
-	background-image:url(../images/difficultyChoice.png);
+	background-image:url(../images/difficultyChoiceNew.png);
 	background-size: 1024px 600px;
 	height: 600px;
 	width: 1024px;
@@ -15,16 +15,6 @@ body{
 	text-align: center;
 	font-size: 25px;
 	clear: both;
-}
-
-#returnHome{
-		height: 110px;
-		width: 25%;
-		/*float: left; */
-		margin-left: 0px;
-		margin-bottom: 0px;
-		border: 2px solid #000000;
-		font-size: 15px;
 }
 
 #easy{
@@ -51,13 +41,13 @@ button{
         /*margin:auto;*/
         margin-bottom: 10px;
         /*display: block;*/
-        border: 2px solid #000000;
-        font-size: 30px;
+        /*border: 2px solid #000000;*/
+        font-size: 28px;
         font-family: Lucida Console;
 		/*background-color: #32CD32;*/
-		background-color: transparent;
+		background: transparent;
 		
-		margin-left: 37%;
+		margin-left: 38%;
 		width: 20%;
 }
 
@@ -69,6 +59,6 @@ button{
 		margin-left: 0px;
 		margin-bottom: none;
 		display: block;
-		border: 2px solid #000000;
-		font-size: 15px;
+		/*border: 2px solid #000000;
+		font-size: 15px;*/
 }
