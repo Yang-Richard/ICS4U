@@ -58,7 +58,11 @@
 			}
 			
 			if (highScore == true){
-				var player=prompt("Please enter your name","Player1");
+				var player;
+				
+				while(player == null || player.length > '20'){
+					player = prompt("Please enter your name(maximum 20 characters)","Player1");
+				}
 				if(player!=null){
 					var rankNum = 10;
 					while(rankNum > num1){

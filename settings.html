@@ -4,7 +4,7 @@
 		<link type="text/css" rel="stylesheet" href="css/settings.css"/>
 		<title>Settings</title>
 	</head> 
-	<body onload="languageSet(); musicSettings()">
+	<body onload="languageSet(); musicSettings(); soundSettings()">
 		<div id="back">
 			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
 			<h3 id="headers">Settings</h3>
@@ -28,8 +28,8 @@
 				</p>
 				<p>
 					<div>
-						<button id="soundOn">On</button>
-						<button id="soundOff">Off</button>
+						<button id="soundOn"  onclick="soundOn()">On</button>
+						<button id="soundOff"  onclick="soundOff()">Off</button>
 					</div>
 				</p>
 				<p>
@@ -70,6 +70,31 @@
 					var elem = document.getElementById("musicOn");
 					elem.style.border = "3px solid #FF3300";
 					var elem2 = document.getElementById("musicOff");
+					elem2.style.border = "2px solid #000000";
+				}
+			}
+			
+			function soundOn(){
+				localStorage.setItem('sound', 'on');
+				 soundSettings();
+			}
+			
+			function soundOff(){
+				localStorage.setItem('sound', 'off');
+				 soundSettings();
+			}
+			
+			function soundSettings() {
+				if(localStorage.getItem('sound') == 'off'){
+					var elem = document.getElementById("soundOff");
+					elem.style.border = "3px solid #FF3300";
+					var elem2 = document.getElementById("soundOn");
+					elem2.style.border = "2px solid #000000";
+				}
+				else {
+					var elem = document.getElementById("soundOn");
+					elem.style.border = "3px solid #FF3300";
+					var elem2 = document.getElementById("soundOff");
 					elem2.style.border = "2px solid #000000";
 				}
 			}
