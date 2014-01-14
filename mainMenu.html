@@ -10,7 +10,6 @@
 		</head>
 		<body onload="languageSet(); musicSet()">
 		<div id="divBack">
-			
 			<button id="settings" onclick="window.location.href='settings.html'" ></button>
 			<!--<h1 class="headers" id="title">
 			Swinging Monkey</h1>
@@ -24,24 +23,48 @@
 				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
 				<button id ="tutorialButton" onclick="window.location.href='tutorial.html'"></button>
 				<button id ="highScoresButton" onclick="window.location.href='highScores.html'"></button>
-				<object id="music" height="1" width="1" <!--data="music/panamaHatNV.mp3"-->></object>
+				<object id="music" height="1" width="1"></object>
 			<!--</div>-->
 		</div>
 		<script>
 			var monkeyDistance = document.getElementById("monkey").offsetLeft;
 			var object = document.getElementById("monkey");
-			
+			var facingRight = false;
 			var clickSound = new Audio('music/panamaHatNV.mp3');
 			
 			
 			setInterval(
 				function monkeyAnimation(){
-					var monkeyDistance = document.getElementById("monkey").offsetLeft - 10;
-					object.style.marginLeft = monkeyDistance + 'px';
-					if(monkeyDistance < 10){
-						object.style.display = "none";
-						setTimeout(function wait(){object.style.display = "block";}, 3000);
-						object.style.marginLeft = '900px';
+				//	var monkeyDistance = document.getElementById("monkey").offsetLeft - 10;
+				//	object.style.marginLeft = monkeyDistance + 'px';
+				//	if(monkeyDistance < 10){
+				//		object.style.display = "none";
+				//		setTimeout(function wait(){object.style.display = "block";}, 3000);
+				//		object.style.marginLeft = '900px';
+				//	}
+				
+					if(facingRight == false){
+						monkeyDistance = monkeyDistance - 2;
+						object.style.marginLeft = monkeyDistance + 'px';
+						if(monkeyDistance < 30){
+						//	object.style.display = "none";
+						//	setTimeout(function wait(){object.style.display = "block";}, 3000);
+						//	object.style.marginLeft = '900px';
+							facingRight = true;
+							object.src = 'images/monkeySwingingNew2.png';
+						}
+					}
+					
+					if(facingRight == true){
+						monkeyDistance = monkeyDistance + 2;
+						object.style.marginLeft = monkeyDistance + 'px';
+						if(monkeyDistance > 890){
+						//	object.style.display = "none";
+						//	setTimeout(function wait(){object.style.display = "block";}, 3000);
+						//	object.style.marginLeft = '900px';
+							facingRight = false;
+							object.src = 'images/monkeySwingingNew.png';
+						}
 					}
 				}
 			,8);

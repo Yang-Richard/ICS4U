@@ -61,7 +61,13 @@
 				var player;
 				
 				while(player == null || player.length > '20'){
-					player = prompt("Please enter your name(maximum 20 characters)","Player1");
+					if(localStorage.getItem('language') == 'english'){
+						player = prompt("Please enter your name(max. 20)","Player1");
+					}
+					else{
+						player = prompt("Votre Nom(max. 20)","Player1");
+					
+					}
 				}
 				if(player!=null){
 					var rankNum = 10;
