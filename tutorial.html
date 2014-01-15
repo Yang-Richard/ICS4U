@@ -4,7 +4,7 @@
 		<link type="text/css" rel="stylesheet" href="css/tutorial.css"/>
 		<title>Tutorial</title>
 		</head>
-	<body>
+	<body onload="languageSet()">
 		<div id="back">
 			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
 			<div id="mainBackground">
@@ -35,9 +35,21 @@
 					<button id = "placeHolder2" class = "number"></button>-->
 				</div>
 			</div>
+			<div id="gameInstructions">
+				<!--Une singe qui est un roi presque d&eacutetruire l'&icircle. Banane, une singe qui aime des bananes et vie sur l'&icircle d&eacutecider qu'il veut arr&ecirct le roi. Banane oscillant sur les vignes et ramasse les bananes. Il r&eacuteponse des math&eacutematiques questions. Il y a l'eau sous les vignes alors, Banane ne veut pas tomber dans l'eau.-->
+			</div>
 		</div>
 		<script>
-
+			function languageSet(){
+				if(localStorage.getItem('language') == 'english'){
+					document.getElementById("gameInstructions").innerHTML="A monkey swings on vines to collect bananas. Each vine has a math question. To swing to the next vine, you must correctly answer the math question in 15 seconds. If time runs out, you lose a life! The objective of the game is to answer all the questions and gain the most points as you can. There are buttons to write the answer.";
+					document.getElementById("returnHome").innerHTML="Back";
+				}
+				else {
+					document.getElementById("gameInstructions").innerHTML="Une singe qui est un roi presque d&eacutetruire l'&icircle. Banane, une singe qui aime des bananes et vie sur l'&icircle d&eacutecider qu'il veut arr&ecirct le roi. Banane oscillant sur les vignes et ramasse les bananes. Il r&eacuteponse des math&eacutematiques questions. Il y a l'eau sous les vignes alors, Banane ne veut pas tomber dans l'eau.";
+					document.getElementById("returnHome").innerHTML="Retourner";
+				}
+			}
 		</script>
 	</body>
 	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html

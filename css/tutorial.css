@@ -2,7 +2,7 @@ div{
     text-align: center;
 /*	background-color: #32CD32;*/
 	margin: auto;
-	height: 400px;
+	height: 399px;
 	width: 700px;
 	display: block;
 	border: 2px solid #000000;
@@ -21,6 +21,8 @@ body{
 #mainBackground {
 	background-image:url(../images/background.png);
 	background-size: 100%;
+	margin: none;
+	margin-right: 0px;
 }
 
 body{
@@ -28,12 +30,21 @@ body{
 }
 
 #returnHome{
-    height: 50px;
-    width: 50px;
+    height: 403px;
+    width: 320px;
     float: left; 
     border: 2px solid #000000;
 	background-color: #32CD32;
 	display: block;
+	font-size: 30px;
+}
+
+#gameInstructions{
+	width: 1022px;
+	height: 199px;
+	font-size: 28px;
+	font-family: Lucida Console;
+	background-color: #CCFFFF;
 }
 
 button {
