@@ -98,10 +98,37 @@
 			displayScore();
 		}
 		
+		function scoreCheck(){
+			for(var k = 1; k < 4; k++){
+				var diff;
+				
+				if(k == 1){
+					diff = "easy";
+				}
+				else if(k == 2){
+					diff = "medium";
+				}
+				else if(k == 3){
+					diff = "hard";
+				}
+				for(var j = 1; j < 11; j++){
+					if(localStorage.getItem(diff+'Score'+j) == 'null'){
+						localStorage.setItem(diff+'Score'+j, '0');
+					}
+				}
+			}
+		}
+		
 		function displayScore(){
+			for(var j = 1; j < 11; j++){
+				if(localStorage.getItem(scoreId+'Score'+j) == 'null'){
+					localStorage.setItem(scoreId+'Score'+j, '0');
+				}
+			}
 			for (var i = 1; i < 11; i++) {
 				if(localStorage.getItem(scoreId+'Score'+i) != '0' &&
-				localStorage.getItem(scoreId+'Score'+i) != null){
+					localStorage.getItem(scoreId+'Score'+i) != null){
+		//			alert(localStorage.getItem(scoreId+'Score'+i));
 					document.getElementById('rank'+i).innerHTML=i;
 					document.getElementById('name'+i).innerHTML=localStorage.getItem(scoreId+'Name'+i);
 					document.getElementById('playerScore'+i).innerHTML=localStorage.getItem(scoreId+'Score'+i);
@@ -115,8 +142,7 @@
 				}
 			}
 		}
-		
-		
+			
 		function languageSet() {
 			if(localStorage.getItem('language') == 'english'){
 				document.getElementById("easy").innerHTML="Easy";
@@ -140,8 +166,6 @@
 				document.getElementById("date0").innerHTML="Date";
 			}
 		}
-		
-	
 	</script>
 	</body>
 </html>

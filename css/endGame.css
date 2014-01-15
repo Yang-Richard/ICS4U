@@ -8,7 +8,7 @@ body{
 #back{
 	height: 600px;
 	width: 1024px;
-	background-image:url(../images/deathImage.png);
+	background-image:url(../images/deathImageNew.png);
 	background-size: 1024px 600px;
 }
 
@@ -18,4 +18,6 @@ body{
 	height: 43px;
 	width: 18%;
 	background: transparent;
+	font-size: 18px;
+    font-family: Lucida Console;
 }
