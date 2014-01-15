@@ -21,9 +21,7 @@
 	
 	function goHome(){
 		buttonSound();
-		setTimeout(
-		function(){window(location.href='mainMenu.html')}
-		, 200);
+		setTimeout(function(){window(location.href='mainMenu.html')}, 400);
 	}
 			
 	function buttonSound(){
@@ -46,7 +44,7 @@
 		else if (difficultyChosen == 2){
 			sessionStorage.gameDifficulty='hard';
 		}
-		setTimeout(function(){window(location.href='loadingScreen.html')}, 200)	
+		setTimeout(function(){window(location.href='loadingScreen.html')}, 400)	
  	}
 	
 	function languageSet() {
