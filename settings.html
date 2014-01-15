@@ -6,7 +6,7 @@
 	</head> 
 	<body onload="languageSet(); musicSettings(); soundSettings()">
 		<div id="back">
-			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
+			<button id="returnHome" onclick="goBack()">Back</button>
 			<h3 id="headers">Settings</h3>
 			<div id="words">
 				<p>
@@ -42,6 +42,14 @@
 		</div>	
 		<script>
 		
+			function goBack(){
+				buttonSound();
+			//	document.write(location.href='mainMenu.html');
+				setTimeout(
+				function(){window(location.href='mainMenu.html')}
+				, 200);
+			}
+		
 			function languageChange(language1, language2) {
 				var elem = document.getElementById(language1);
 				elem.id = "red";
@@ -51,12 +59,14 @@
 			
 			function musicOn(){
 				localStorage.setItem('music', 'on');
-				 musicSettings();
+				buttonSound();
+				musicSettings();
 			}
 			
 			function musicOff(){
 				localStorage.setItem('music', 'off');
-				 musicSettings();
+				buttonSound();
+				musicSettings();
 			}
 			
 			function musicSettings() {
@@ -76,12 +86,13 @@
 			
 			function soundOn(){
 				localStorage.setItem('sound', 'on');
-				 soundSettings();
+				buttonSound();
+				soundSettings();
 			}
 			
 			function soundOff(){
 				localStorage.setItem('sound', 'off');
-				 soundSettings();
+				soundSettings();
 			}
 			
 			function soundSettings() {
@@ -99,21 +110,22 @@
 				}
 			}
 			
+			function buttonSound(){
+				if(localStorage.getItem('sound') != 'off'){
+					var clickSound = new Audio('music/click.mp3');
+					clickSound.play();
+				}
+			}
+			
 			function languageEnglish() {
 				localStorage.setItem('language', 'english');
-				var elem = document.getElementById("lang1");
-				elem.style.border = "3px solid #FF3300";
-				var elem2 = document.getElementById("lang2");
-				elem2.style.border = "2px solid #000000";
+				buttonSound();
 				languageSet();
 			}
 			
 			function languageFrench() {
 				localStorage.setItem('language', 'french');
-				var elem = document.getElementById("lang2");
-				elem.style.border = "3px solid #FF3300";
-				var elem2 = document.getElementById("lang1");
-				elem2.style.border = "2px solid #000000";
+				buttonSound();
 				languageSet();
 			}
 			
@@ -121,6 +133,8 @@
 				if(localStorage.getItem('language') == 'english'){
 					var elem = document.getElementById("lang1");
 					elem.style.border = "3px solid #FF3300";
+					var elem2 = document.getElementById("lang2");
+					elem2.style.border = "2px solid #000000";
 					document.getElementById("headers").innerHTML="Settings";
 					document.getElementById("music").innerHTML="Music";
 					document.getElementById("sounds").innerHTML="Sounds";
@@ -130,6 +144,8 @@
 				else {
 					var elem = document.getElementById("lang2");
 					elem.style.border = "3px solid #FF3300";
+					var elem2 = document.getElementById("lang1");
+					elem2.style.border = "2px solid #000000";
 					document.getElementById("headers").innerHTML="Param&egravetres";
 					document.getElementById("music").innerHTML="Musique";
 					document.getElementById("sounds").innerHTML="Sonore";

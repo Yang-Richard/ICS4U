@@ -10,7 +10,7 @@
 		</head>
 		<body onload="languageSet(); musicSet()">
 		<div id="divBack">
-			<button id="settings" onclick="window.location.href='settings.html'" ></button>
+			<button id="settings" onclick="goSettings()" ></button>
 			<!--<h1 class="headers" id="title">
 			Swinging Monkey</h1>
 			<h3 class="headers" id="companyTitle">
@@ -20,10 +20,11 @@
 				<!--<div id="monkeyButton">-->
 				<img id ="monkey" onclick ="monkeyAnimation()" src="images/monkeySwingingNew.png"/>
 				<!--</div> -->
-				<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
-				<button id ="tutorialButton" onclick="window.location.href='tutorial.html'"></button>
-				<button id ="highScoresButton" onclick="window.location.href='highScores.html'"></button>
+				<button id ="startButton" onclick="gameStart()"></button>
+				<button id ="tutorialButton" onclick="goInstructions()"></button>
+				<button id ="highScoresButton" onclick="goScores()"></button>
 				<object id="music" height="1" width="1"></object>
+				<div id="credit">Music by audionautix.com</div>
 			<!--</div>-->
 		</div>
 		<script>
@@ -32,6 +33,40 @@
 			var facingRight = false;
 			var clickSound = new Audio('music/panamaHatNV.mp3');
 			
+			function gameStart(){
+				buttonSound();
+				setTimeout(
+				function(){window(location.href='testStart.html')}
+				, 200);
+			}
+			
+			function goInstructions(){
+				buttonSound();
+				setTimeout(
+				function(){window(location.href='tutorial.html')}
+				, 200);
+			}
+			
+			function goScores(){
+				buttonSound();
+				setTimeout(
+				function(){window(location.href='highScores.html')}
+				, 200);
+			}
+			
+			function goSettings(){
+				buttonSound();
+				setTimeout(
+				function(){window(location.href='settings.html')}
+				, 200);
+			}
+			
+			function buttonSound(){
+				if(localStorage.getItem('sound') != 'off'){
+					var clickSound = new Audio('music/click.mp3');
+					clickSound.play();
+				}
+			}
 			
 			setInterval(
 				function monkeyAnimation(){
@@ -89,7 +124,7 @@
 				}
 				else {
 				//	document.getElementById("music").setAttribute('data', 'music/panamaHatNV.mp3');
-					clickSound.play()
+					clickSound.play();
 				}
 			}
 

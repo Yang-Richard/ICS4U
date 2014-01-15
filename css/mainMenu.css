@@ -12,6 +12,15 @@ div{
 	/*background-size: 100%;*/
 }
 
+#credit{
+	margin-top: 550px;
+	margin-left: 810px;
+	height: 20px;
+	width: 200px;
+	font-size: 12px;
+    font-family: Lucida Console;
+}
+
 body{
     background-color: #8B4513;
 	height: 600px;

@@ -7,7 +7,7 @@
 	<body onload="displayScore(); languageSet()">
 		<div id="veryBack">
 			<div id="back1">
-				<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
+				<button id="returnHome" onclick="goHome()">Back</button>
 				<button id="easy" onclick="highScoreEasy()">Easy</button>
 				<button id="medium" onclick="highScoreMedium()"> Medium</button>
 				<button id="hard" onclick="highScoreHard()">Hard</button>
@@ -83,17 +83,35 @@
 		</div>
 	<script>
 		var scoreId = "easy";
-	
+		
+		function buttonSound(){
+			if(localStorage.getItem('sound') != 'off'){
+				var clickSound = new Audio('music/click.mp3');
+				clickSound.play();
+			}
+		}
+		
+		function goHome(){
+			buttonSound();
+			setTimeout(
+			function(){window(location.href='mainMenu.html')}
+			, 200);
+		}
+		
 		function highScoreEasy() {
+			buttonSound();
 			scoreId = "easy";
 			displayScore();
 		}
 	
 		function highScoreMedium() {
+			buttonSound();
 			scoreId = "medium";
 			displayScore();
 		}
+		
 		function highScoreHard() {
+			buttonSound();
 			scoreId = "hard";
 			displayScore();
 		}

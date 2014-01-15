@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="css/loadingScreen.css"/>
+		<title>Swinging Monkey</title>
+	</head>
+	<body onload="languageSet()">
+		<div id ="loadingImage">
+		<div id="story">	
+		</div>
+			<button id="loadButton" onclick="goStart()">Easy</button>
+		</div>
+	</body>
+	<script>
+	
+	function goStart(){
+		buttonSound();
+		setTimeout(
+		function(){window(location.href='Game.html')}
+		, 200);
+	}
+	
+	function buttonSound(){
+		if(localStorage.getItem('sound') != 'off'){
+			var clickSound = new Audio('music/click.mp3');
+			clickSound.play();
+		}
+	}
+			
+		setTimeout(function(){document.getElementById('loadButton').style.display = "inline-block"},3000);
+			
+		function languageSet(){
+			if(localStorage.getItem('language') == 'english'){
+				document.getElementById("loadButton").innerHTML="Start Game";
+				document.getElementById("story").innerHTML="The monkey king has almost destroy the island. Banane, a monkey who loves bananas and life on the island, has decide to stop the king. He must swinging on vines and collect bananas by answering mathematics questions. There is water under the vines, so make sure that he doesn't fall!";				
+			}
+			else {
+				document.getElementById("loadButton").innerHTML="Joue";
+				document.getElementById("story").innerHTML="Une singe qui est un roi presque d&eacutetruire l'&icircle. Banane, une singe qui aime des bananes et vie sur l'&icircle d&eacutecider qu'il veut arr&ecirct le roi. Banane oscillant sur les vignes et ramasse les bananes. Il r&eacuteponse des math&eacutematiques questions. Il y a l'eau sous les vignes alors, Banane ne veut pas tomber dans l'eau.";								
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,37 @@
+#loadingImage{
+	/*display: none;*/
+	/*margin: auto;*/
+	height: 600px;
+	width: 1024px;
+	background-size: 1024px 600px;
+	background-image:url(../images/loadScreen.png);
+	/*!--width: auto\9;-->*/
+}
+
+body{
+	height: 600px;
+	width: 1024px;
+}
+
+#loadButton{
+	background-color: #32CD32;
+	height: 75px;
+	width: 240px;
+	margin-top: 371px;
+	margin-left: 325px;
+	font-size: 28px;
+    font-family: Lucida Console;
+	border: 2px solid #000000;
+	display: none;
+}
+
+#story{
+	width: 1000px;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid #000000;
+	background-color: #CCFFFF;
+	font-size: 16px;
+    font-family: Lucida Console;
+}

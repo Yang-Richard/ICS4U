@@ -6,16 +6,33 @@
 	</head>
 	<body onload="languageSet()">
 		<div id="back">
-			<button id ="startButton" onclick="window.location.href='testStart.html'"></button>
+			<button id ="startButton" onclick="goStart()"></button>
 		</div>
 		<script>
-		
+		if(localStorage.getItem('sound') != 'off'){
+			var clickSound = new Audio('music/endGame.mp3');
+			clickSound.play();
+		}
 		sessionStorage.score = '20';
 		sessionStorage.gameDifficulty = 'hard';
 		
 		var scoreDiff = sessionStorage.gameDifficulty;
 		var num1 = 0;
 		var highScore = false;
+		
+		function goStart(){
+			buttonSound();
+			setTimeout(
+			function(){window(location.href='testStart.html')}
+			, 200);
+		}
+			
+		function buttonSound(){
+			if(localStorage.getItem('sound') != 'off'){
+				var clickSound = new Audio('music/click.mp3');
+				clickSound.play();
+			}
+		}
 		
 		function checkScore(){
 			for(var k = 1; k < 4; k++){

@@ -10,15 +10,31 @@
 				<h5 class="title" id="top">Select Difficulty</h5>
 			</div>-->
 		
-			<a href="Game.html"><button id="easy" onclick="difficulty(0)">Easy</button></a>
-			<a href="Game.html"><button id="medium" onclick="difficulty(1)">Medium</button></a>
-			<a href="Game.html"><button id="hard" onclick="difficulty(2)">Hard</button></a>
-			<button id="returnHome" onclick="window.location.href='mainMenu.html'">Back</button>
+			<button id="easy" onclick="difficulty(0)">Easy</button>
+			<button id="medium" onclick="difficulty(1)">Medium</button>
+			<button id="hard" onclick="difficulty(2)">Hard</button>
+			<button id="returnHome" onclick="goHome()">Back</button>
 		</div>
  	<body>	
  	
  	<script>
+	
+	function goHome(){
+		buttonSound();
+		setTimeout(
+		function(){window(location.href='mainMenu.html')}
+		, 200);
+	}
+			
+	function buttonSound(){
+		if(localStorage.getItem('sound') != 'off'){
+			var clickSound = new Audio('music/click.mp3');
+			clickSound.play();
+		}
+	}
+	
 	function difficulty(difficultyChosen){
+		buttonSound();
  		sessionStorage.difficulty=difficultyChosen;
 		
 		if (difficultyChosen == 0){
@@ -30,6 +46,7 @@
 		else if (difficultyChosen == 2){
 			sessionStorage.gameDifficulty='hard';
 		}
+		setTimeout(function(){window(location.href='loadingScreen.html')}, 200)	
  	}
 	
 	function languageSet() {
