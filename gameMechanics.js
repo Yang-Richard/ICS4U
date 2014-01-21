@@ -8,6 +8,7 @@
         var myTimer;
         var ctx;
         var monkeyYPos = 0;
+        var backgroundPos = 1;
         
         var background1 = new Image();
         var background2 = new Image();
@@ -15,6 +16,10 @@
         var banana1 = new Image();
         var banana2 = new Image();
         var banana3 = new Image();
+        
+        var banana4 = new Image();
+        var banana5 = new Image();
+        var banana6 = new Image();
         
         function init(){
             ctx=document.getElementById("jungleAnimation").getContext("2d");
@@ -26,12 +31,19 @@
             banana2.src = 'images/banana2.png';
             banana3.src = 'images/banana3.png';
             
+            banana4.src = 'images/banana1.png';
+            banana5.src = 'images/banana2.png';
+            banana6.src = 'images/banana3.png';
+            
             background1.onload = function() {
                  ctx.drawImage(background1, 0, 0, 652, 500);
-                 ctx.drawImage(monkey, 135, 40, 70, 70);
+                 ctx.drawImage(monkey, 120, 40, 70, 70);
                  ctx.drawImage(banana1, 300, 160, 70, 30);
                  ctx.drawImage(banana2, 300, 90, 70, 30);
                  ctx.drawImage(banana3, 300, 20, 70, 30);
+                 ctx.drawImage(banana4, 650, 160, 70, 30);
+                 ctx.drawImage(banana5, 650, 90, 70, 30);
+                 ctx.drawImage(banana6, 650, 20, 70, 30);    
             };
 
         }
@@ -41,7 +53,7 @@
             document.getElementById("timer").innerHTML=timer;
             disableButtons();
             
-            timer = 3;
+            timer = 1;
             myTimer=setInterval(function(){
                 timer = timer - 1;
                 // INITIAL COUNTDOWN CODE
@@ -59,13 +71,16 @@
             timer = 15;// REMEMBER TO PUT BACK HERE
             userAnswer = "";
             document.getElementById("timer").innerHTML=timer;
-			console.log(questionNumber);
              
+            banana1.src = 'images/banana1.png';
+            banana2.src = 'images/banana2.png';
+            banana3.src = 'images/banana3.png';
+            
             myTimer=setInterval(function(){
                 timer = timer - 0.1;
                 document.getElementById("timer").innerHTML=Math.floor(timer);
                 drawBackgroundAndBananas();
-                ctx.drawImage(monkey, 135, 180 - (timer*9.3) , 70, 70);
+                ctx.drawImage(monkey, 120, 180 - (timer*9.3) , 70, 70);
                 
                 monkeyYPos = 180 - (timer*9.3);
 
@@ -93,6 +108,11 @@
 
 
 	function calculatorClicked(value){
+            if(localStorage.getItem('sound') != 'off'){
+                    var clickSound = new Audio('music/click.mp3');
+                    clickSound.play();
+            }
+            
             userAnswer += value + "";
             editFooter();
            
@@ -113,7 +133,6 @@
                 disableButtons();
                 userAnswer = "";
                 questionNumber ++;
-                document.getElementById("score").innerHTML = score;
                 nextQuestion(numBananas);
             }
             else{}
@@ -122,55 +141,81 @@
         function nextQuestion(bananaType){
             var interval;
             if (bananaType === 3){
-                interval = (monkeyYPos-40)/1;
+                interval = (monkeyYPos-40);
             }
             else if(bananaType === 2){
-                interval = (monkeyYPos-40)/1;
+                interval = (monkeyYPos-40);
             }
             else {
-                interval = (monkeyYPos-40)/1;
+                interval = (monkeyYPos-40);
             }
             timer = 0;
             myTimer=setInterval(function(){
                 timer = timer + 0.1;
                 ctx.clearRect(0,0,652,500);
-                ctx.drawImage(background1, 0, 0, 652, 500);
+                ctx.drawImage(background1, getBackgroundPos(0), 0, 652, 500);
+                ctx.drawImage(background2, getBackgroundPos(1), 0, 652, 500);
                 
-				if (timer < 1){
+		if (timer < 1){
                     drawBackgroundAndBananas();
-                    ctx.drawImage(monkey, 135 + (timer*100), monkeyYPos - interval*timer , 70, 70);
+                    ctx.drawImage(monkey, 125 + (timer*118), monkeyYPos - interval*timer , 70, 70);
                 }
-                if (timer > 1 && timer <=1.3){
+                else if (timer > 1 && timer <=1.3){
                     drawBackgroundAndBananas();
-                    ctx.drawImage(monkey, 135 + (timer*100), 40, 70, 70);
+                    ctx.drawImage(monkey, 125 + (timer*118), 40, 70, 70);
                 }
-                else if (timer > 1.3 && timer <=2.8){
+                else if (timer > 1.3 && timer <=2.8){    
+                    drawBackgroundAndBananas();
                     if (bananaType === 3){
-                        ctx.drawImage(banana1, 300, 160, 70, 30);
-                        ctx.drawImage(banana2, 300, 90, 70, 30);
+                        banana3.src = null;
                     }
                     else if(bananaType === 2){
-                        ctx.drawImage(banana1, 300, 160, 70, 30);
-                        ctx.drawImage(banana3, 300, 20, 70, 30);
+                        banana2.src = null;
                     }
                     else {
-                        ctx.drawImage(banana2, 300, 90, 70, 30);
-                        ctx.drawImage(banana3, 300, 20, 70, 30);
+                        banana1.src = null;
                     } 
-                    ctx.drawImage(monkey, 135 + (timer*100), 40, 70, 70);
+                    ctx.drawImage(monkey, 125 + (timer*118), 40, 70, 70);
                 }
                 else{
                     clearInterval(myTimer);
+                    drawBackgroundAndBananas();
+                    ctx.drawImage(monkey, 125 + (timer*118), 40, 70, 70);
                     score += bananaType;
+                    document.getElementById("score").innerHTML = score;
                     
                     if (questionNumber === 21){
                         sessionStorage.highScoreInput=score;
                         setTimeout(function(){window(location.href='Game.html')}, 400)	
                      }
                     else{
-                        timer = 0;
+                        timer = -1;
                         myTimer=setInterval(function(){
-                             // INSERT CODE TO MOVE BACKGROUND ETC TO APPROPREATE SPOTS 
+                            timer += 0.1;
+                            
+                            if (timer > 0 && timer < 2.9)
+                            {
+                                ctx.clearRect(0,0,652,500);
+                                ctx.drawImage(background1, getBackgroundPos(0)-(timer*118), 0, 652, 500);
+                                ctx.drawImage(background2, getBackgroundPos(1)-(timer*118), 0, 652, 500);
+                                ctx.drawImage(monkey, 444-(timer*116), 40, 70, 70);
+                                ctx.drawImage(banana1, 300-(timer*130), 160, 70, 30);
+                                ctx.drawImage(banana2, 300-(timer*130), 90, 70, 30);
+                                ctx.drawImage(banana3, 300-(timer*130), 20, 70, 30);
+                                ctx.drawImage(banana4, 650-(timer*125), 160, 70, 30);
+                                ctx.drawImage(banana5, 650-(timer*125), 90, 70, 30);
+                                ctx.drawImage(banana6, 650-(timer*125), 20, 70, 30); 
+                            }
+                            else if (timer > 2.9){
+                                clearInterval(myTimer);                   
+                                backgroundPos++;
+                                if (backgroundPos === 5){
+                                    backgroundPos = 1;
+                                }
+                                game();
+                            }
+                            else{   
+                            }
                         },50);
                     }
                 } 
@@ -192,7 +237,7 @@
             myTimer=setInterval(function(){
                 timer = timer + 0.1;
                 drawBackgroundAndBananas();
-                ctx.drawImage(monkey, 135, 180 + (timer*100) , 70, 70);
+                ctx.drawImage(monkey, 125, 180 + (timer*100) , 70, 70);
 
                 if (timer > 2.5){
                     clearInterval(myTimer);
@@ -211,7 +256,7 @@
 
                             if (timer % 2 === 0){
                                 drawBackgroundAndBananas();
-                                ctx.drawImage(monkey, 135, 40, 70, 70);
+                                ctx.drawImage(monkey, 120, 40, 70, 70);
                             }
                             else{
                                 drawBackgroundAndBananas();
@@ -219,7 +264,7 @@
 
                             if (timer === 6){
                                 clearInterval(myTimer);
-								questionNumber ++;
+				questionNumber ++;
                                 game();
                             }  
                         },500);
@@ -230,10 +275,38 @@
 	
         function drawBackgroundAndBananas(){
             ctx.clearRect(0,0,652,500);
-            ctx.drawImage(background1, 0, 0, 652, 500);
+            ctx.drawImage(background1, getBackgroundPos(0), 0, 652, 500);
+            ctx.drawImage(background2, getBackgroundPos(1), 0, 652, 500);
             ctx.drawImage(banana1, 300, 160, 70, 30);
             ctx.drawImage(banana2, 300, 90, 70, 30);
             ctx.drawImage(banana3, 300, 20, 70, 30);
+            ctx.drawImage(banana4, 650, 160, 70, 30);
+            ctx.drawImage(banana5, 650, 90, 70, 30);
+            ctx.drawImage(banana6, 650, 20, 70, 30);   
+        }
+        
+        function getBackgroundPos(backgroundValue)
+        {
+            var returnValue  = backgroundPos + (backgroundValue*4);
+            
+            switch(returnValue){
+                case 1:
+                    return 0;
+                case 2:
+                    return -330;
+                case 3:
+                    return 630;    
+                case 4:
+                    return 300; 
+                case 5:
+                    return 630;
+                case 6:
+                    return 300;
+                case 7:
+                    return 0;    
+                case 8:
+                    return -330; 
+            }  
         }
         
 	function createQuestion(){
