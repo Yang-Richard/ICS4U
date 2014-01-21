@@ -59,6 +59,7 @@
             timer = 15;// REMEMBER TO PUT BACK HERE
             userAnswer = "";
             document.getElementById("timer").innerHTML=timer;
+			console.log(questionNumber);
              
             myTimer=setInterval(function(){
                 timer = timer - 0.1;
@@ -73,7 +74,7 @@
                     clearInterval(myTimer);
                     lifeLost();
                 }  
-            },150); // Needs to be 150 for the calcInput function to work properly
+            },125); // Needs to be 150 for the calcInput function to work properly
         }
 
         function disableButtons(){
@@ -121,13 +122,13 @@
         function nextQuestion(bananaType){
             var interval;
             if (bananaType === 3){
-                interval = (monkeyYPos-20)/1.4;
+                interval = (monkeyYPos-40)/1;
             }
             else if(bananaType === 2){
-                interval = (monkeyYPos-90)/1.4;
+                interval = (monkeyYPos-40)/1;
             }
             else {
-                interval = (monkeyYPos-160)/1.4;
+                interval = (monkeyYPos-40)/1;
             }
             timer = 0;
             myTimer=setInterval(function(){
@@ -135,9 +136,13 @@
                 ctx.clearRect(0,0,652,500);
                 ctx.drawImage(background1, 0, 0, 652, 500);
                 
-                if (timer < 1.5){
+				if (timer < 1){
                     drawBackgroundAndBananas();
                     ctx.drawImage(monkey, 135 + (timer*100), monkeyYPos - interval*timer , 70, 70);
+                }
+                if (timer > 1 && timer <=1.3){
+                    drawBackgroundAndBananas();
+                    ctx.drawImage(monkey, 135 + (timer*100), 40, 70, 70);
                 }
                 else if (timer > 1.3 && timer <=2.8){
                     if (bananaType === 3){
@@ -152,7 +157,7 @@
                         ctx.drawImage(banana2, 300, 90, 70, 30);
                         ctx.drawImage(banana3, 300, 20, 70, 30);
                     } 
-                    ctx.drawImage(monkey, 135 + (timer*100), monkeyYPos - interval*(2.8-timer) , 70, 70);
+                    ctx.drawImage(monkey, 135 + (timer*100), 40, 70, 70);
                 }
                 else{
                     clearInterval(myTimer);
@@ -199,8 +204,7 @@
                         setTimeout(function(){window(location.href='endGame.html')}, 400)
                     }
                     else{
-                        ctx.clearRect(0,0,652,500);
-                        ctx.drawImage(background1, 0, 0, 652, 500);
+                        drawBackgroundAndBananas();
                         timer = 0;
                         myTimer=setInterval(function(){
                             timer = timer + 1;
@@ -215,6 +219,7 @@
 
                             if (timer === 6){
                                 clearInterval(myTimer);
+								questionNumber ++;
                                 game();
                             }  
                         },500);
