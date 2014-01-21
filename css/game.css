@@ -1,0 +1,171 @@
+body{
+	height: 600px;
+	width: 1024px;
+}
+
+#lives{
+	background-size: 524px 50px;
+	height: 50px;
+	width: 524px;
+	position: fixed;
+        border: 2px solid #000000;
+        float: left;
+}
+
+#points{
+	background-size: 300px 50px;
+	height: 50px;
+	width: 300px;
+	position: fixed;
+        border: 2px solid #000000;
+        margin-left: 524px;
+}
+
+#time{
+	background-size: 200px 50px;
+	height: 50px;
+	width: 200px;
+	position: fixed;
+        border: 2px solid #000000;
+        margin-left: 824px;
+}
+
+#calculator{
+    margin-top: 52px;
+    margin-left: 652px;
+    height: 500px;
+    width: 372px;
+    float: right;
+    border: 2px solid #000000;
+    position:fixed;
+}
+
+#jungleAnimation{
+    position:fixed;
+    margin-top: 52px;
+    border: 2px solid #000000;
+    float: left;
+}
+
+#footer{
+        background-image: url(../images/footer.png);
+        margin-top: 550px;
+	height: 50px;
+	width: 1024px;
+	position: fixed;
+        border: 2px solid #000000;
+        float:bottom;
+        position:fixed;
+       
+        line-height: 50px;
+        text-align: center;
+        font-size: 30px;
+        font-family: Comic Sans;
+}
+
+#timer{
+        margin-top: 3px;
+        font-size:40px;
+        font-family: Comic Sans;
+        margin-left: 130px;
+}
+
+#score{
+        margin-top: 3px;
+        font-size:40px;
+        font-family: Comic Sans;
+        margin-left: 175px;
+}
+
+.heart{
+    content:url(../images/heart.png);
+}
+
+#life1{
+    margin-top: 5px;
+    margin-left: 120px;
+}
+
+#life2{
+    margin-left: 20px;
+}
+
+#life3{
+    margin-left: 20px;
+}
+
+#life4{
+    margin-left: 20px;
+}
+
+#life5{
+    margin-left: 20px;
+}
+
+button{
+    display: block;
+    position: fixed;
+    opacity:0;
+    height: 70px;
+    width: 70px;
+}
+
+#calc1{
+    margin-left: 13px;
+    margin-top: 27px;
+}
+
+#calc2{
+    margin-left: 150px;
+    margin-top: 27px;
+}
+
+#calc3{
+    margin-left: 285px;
+    margin-top: 27px;
+}
+
+#calc4{
+    margin-left: 13px;
+    margin-top: 150px;
+}
+
+#calc5{
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+#calc6{
+    margin-left: 285px;
+    margin-top: 150px;
+}
+
+#calc7{
+    margin-left: 13px;
+    margin-top: 270px;
+}
+
+#calc8{
+    margin-left: 150px;
+    margin-top: 270px;
+}
+
+#calc9{
+    margin-left: 285px;
+    margin-top: 270px;
+}
+
+#calc0{
+    margin-left: 110px;
+    margin-top: 390px;
+}
+
+#backspace{
+    margin-left: 220px;
+    margin-top: 390px;
+    width: 140px;
+}
+
+	
+
+    

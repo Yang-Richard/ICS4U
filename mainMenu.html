@@ -11,21 +11,13 @@
 		<body onload="languageSet(); musicSet()">
 		<div id="divBack">
 			<button id="settings" onclick="goSettings()" ></button>
-			<!--<h1 class="headers" id="title">
-			Swinging Monkey</h1>
-			<h3 class="headers" id="companyTitle">
-			Studio de Singe</h3>-->
-			<!--<div>-->
-				<!--<img src="menuImage.jpg" /> -->
-				<!--<div id="monkeyButton">-->
 				<img id ="monkey" onclick ="monkeyAnimation()" src="images/monkeySwingingNew.png"/>
-				<!--</div> -->
 				<button id ="startButton" onclick="gameStart()"></button>
 				<button id ="tutorialButton" onclick="goInstructions()"></button>
 				<button id ="highScoresButton" onclick="goScores()"></button>
+                                <button id ="easterEgg" onclick="easterEgg()"></button>
 				<object id="music" height="1" width="1"></object>
 				<div id="credit">Music by audionautix.com</div>
-			<!--</div>-->
 		</div>
 		<script>
 			var monkeyDistance = document.getElementById("monkey").offsetLeft;
@@ -35,7 +27,7 @@
 			
 			function gameStart(){
 				buttonSound();
-				setTimeout(function(){window(location.href='testStart.html')}, 400);
+				setTimeout(function(){window(location.href='chooseDifficulty.html')}, 400);
 			}
 			
 			function goInstructions(){
@@ -68,21 +60,10 @@
 			
 			setInterval(
 				function monkeyAnimation(){
-				//	var monkeyDistance = document.getElementById("monkey").offsetLeft - 10;
-				//	object.style.marginLeft = monkeyDistance + 'px';
-				//	if(monkeyDistance < 10){
-				//		object.style.display = "none";
-				//		setTimeout(function wait(){object.style.display = "block";}, 3000);
-				//		object.style.marginLeft = '900px';
-				//	}
-				
 					if(facingRight == false){
 						monkeyDistance = monkeyDistance - 2;
 						object.style.marginLeft = monkeyDistance + 'px';
 						if(monkeyDistance < 30){
-						//	object.style.display = "none";
-						//	setTimeout(function wait(){object.style.display = "block";}, 3000);
-						//	object.style.marginLeft = '900px';
 							facingRight = true;
 							object.src = 'images/monkeySwingingNew2.png';
 						}
@@ -92,9 +73,6 @@
 						monkeyDistance = monkeyDistance + 2;
 						object.style.marginLeft = monkeyDistance + 'px';
 						if(monkeyDistance > 890){
-						//	object.style.display = "none";
-						//	setTimeout(function wait(){object.style.display = "block";}, 3000);
-						//	object.style.marginLeft = '900px';
 							facingRight = false;
 							object.src = 'images/monkeySwingingNew.png';
 						}
@@ -125,18 +103,11 @@
 					clickSound.play();
 				}
 			}
-
-			function startGame(){
-			console.log("clicked");
-			}
-
-			function sayHello(){
-			alert('Hello');
-			}
-			console.log("hi");
-
+                        
+                        function easterEgg(){
+                            document.getElementById('divBack').style.backgroundImage = 'url(images/easterEgg.png)';
+                        }
+                      
 		</script>
 	</body>
-	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
-	site which aided in providing how to change from one screen to another-->
 </html>

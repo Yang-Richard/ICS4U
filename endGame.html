@@ -13,8 +13,6 @@
 			var clickSound = new Audio('music/endGame.mp3');
 			clickSound.play();
 		}
-		sessionStorage.score = '20';
-		sessionStorage.gameDifficulty = 'hard';
 		
 		var scoreDiff = sessionStorage.gameDifficulty;
 		var num1 = 0;
@@ -22,7 +20,7 @@
 		
 		function goStart(){
 			buttonSound();
-			setTimeout(function(){window(location.href='testStart.html')}, 400);
+			setTimeout(function(){window(location.href='chooseDifficulty.html')}, 400);
 		}
 			
 		function buttonSound(){
@@ -61,7 +59,7 @@
 	
 			while(num1 < 10 && highScore == false){
 				num1++;
-				if(sessionStorage.score > localStorage.getItem(scoreDiff+'Score'+num1)){
+				if(sessionStorage.highScoreInput > localStorage.getItem(scoreDiff+'Score'+num1)){
 					highScore = true;
 				}
 			}
@@ -91,7 +89,7 @@
 					var year = currentDate.getFullYear();
 			
 					localStorage.setItem(scoreDiff+'Name'+rankNum,player);
-					localStorage.setItem(scoreDiff+'Score'+rankNum,sessionStorage.score);
+					localStorage.setItem(scoreDiff+'Score'+rankNum,sessionStorage.highScoreInput);
 					localStorage.setItem(scoreDiff+'Date'+rankNum,(day + "/" + month + "/" + year));
 				}
 			}

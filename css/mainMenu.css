@@ -88,7 +88,7 @@ button{
 }
 
 #highScoresButton{
-	margin-top: 470px;
+	margin-top: 475px;
 	margin-left: 340px;
 	/*margin-left: 34%;
 	margin-top: 60%;*/
@@ -135,4 +135,16 @@ button{
 		to {
 			margin-left: 0%;
 		}*/
+}
+
+
+#easterEgg{
+    margin-top: 360px;
+    margin-left: 40px;
+    position: fixed;
+    height: 200px;
+    width: 200px;
+    float: left; 
+    background: transparent;
+    border: none;
 }

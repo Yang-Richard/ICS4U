@@ -3,22 +3,41 @@
 	<head>
 		<title>Game Play</title>
 		<script src="gameMechanics.js"></script>
+                <link type="text/css" rel="stylesheet" href="css/game.css"/>
 	</head>
-	<body>
-			<p id="score">Score: 0</p>
-			<button onclick="createQuestion();">Generate Question</button>
-			<p id="question"></p>
-			<input type="text" id="userInput" placeholder="">
-			<button onclick="checkAnswer();">Check answer?</button>
-			<p id="check"></p>
-			<p id="timer"></p>
+	<body onload="countdown(); languageSet(); init()">
+            
+            <div id="lives">
+                <img class="heart" id="life1">
+                <img class="heart" id="life2">
+                <img class="heart" id="life3">
+                <img class="heart" id="life4">
+                <img class="heart" id="life5">
+            </div>
+            
+            <div id="points">
+                <p id="score">0</p>
+            </div>
+            
+            <div id="time">
+                <p id="timer"></p>
+            </div>
 
-		<canvas id="jungleAnimation" width="800" height="400" style="border:1px solid #000000;"/>
-	<body>
-	<script>
-		var c=document.getElementById("jungleAnimation");
-	var ctx=c.getContext("2d");
-	ctx.fillStyle="#FF0000";
-	ctx.fillRect(0,0,800,400);
-</script>
-</html><
+            <canvas id="jungleAnimation" width="700" height="498"></canvas>
+            
+            <div id="calculator">
+                <button id="calc1" onclick="calculatorClicked(1)"></button>
+                <button id="calc2" onclick="calculatorClicked(2)"></button>
+                <button id="calc3" onclick="calculatorClicked(3)"></button>
+                <button id="calc4" onclick="calculatorClicked(4)"></button>
+                <button id="calc5" onclick="calculatorClicked(5)"></button>
+                <button id="calc6" onclick="calculatorClicked(6)"></button>
+                <button id="calc7" onclick="calculatorClicked(7)"></button>
+                <button id="calc8" onclick="calculatorClicked(8)"></button>
+                <button id="calc9" onclick="calculatorClicked(9)"></button>
+                <button id="calc0" onclick="calculatorClicked(0)"></button>
+                <button id="backspace" onclick="backspace()"></button>
+            </div>
+            
+            <div id="footer"></div>
+</html>

@@ -1,0 +1,65 @@
+body{
+	height: 600px;
+	width: 1024px;
+}
+
+#back {
+	background-image:url(../images/difficultyChoiceNew.png);
+	background-size: 1024px 600px;
+	height: 600px;
+	width: 1024px;
+	position: fixed;
+}
+
+.title {
+	text-align: center;
+	font-size: 25px;
+	clear: both;
+}
+
+#easy{
+	margin-top: 60px;
+	height: 100px;
+	/*margin-top: 100px;
+	background-color: #00FFFF;*/
+}
+
+#medium {
+	margin-top: 6px;
+	height: 85px;
+/*	background-color: #FFFF33;*/
+}
+
+#hard {
+	height: 85px;
+	/*background-color: #FF0000;*/
+}
+button{
+        height: 100px;
+        /*width: 200px;*/
+        border-radius: 5px;
+        /*margin:auto;*/
+        margin-bottom: 10px;
+        /*display: block;*/
+        /*border: 2px solid #000000;*/
+        font-size: 28px;
+        font-family: Lucida Console;
+		border: none;
+		/*background-color: #32CD32;*/
+		background: transparent;
+		
+		margin-left: 38%;
+		width: 20%;
+}
+
+#returnHome{
+		height: 110px;
+		width: 299px;
+		clear: all;
+		margin-top: 120px;
+		margin-left: 0px;
+		margin-bottom: none;
+		display: block;
+		/*border: 2px solid #000000;
+		font-size: 15px;*/
+}
