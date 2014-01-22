@@ -5,65 +5,35 @@
 		<title>Tutorial</title>
 		</head>
 	<body onload="languageSet()">
-		<div id="back">
-			<button id="returnHome" onclick="goHome()">Back</button>
-			<div id="mainBackground">
-				<button id="monkey"></button>
-<!--			<div id = "vine1"></div>-->
-				<div id = "banana"></div>
-<!--			<div id = "vine2"></div> -->
-				<div id="gameInfo">
-					Time: 10 seconds
-					Scores: 15 points
-					Difficulty: Medium
-					Lives: <3<3<3<3<3
-				</div>
-				<div id = "numberArea"> 6 + 4 = ___ </div>
-				<div id="calculatorScreen"> 2 </div>
-				<div id="calculator">
-					<!--<button id = "number1" class = "number">1</button>
-					<button id = "number2" class = "number">2</button>
-					<button id = "number3" class = "number">3</button>
-					<button id = "number4" class = "number">4</button>
-					<button id = "number5" class = "number">5</button>
-					<button id = "number6" class = "number">6</button>
-					<button id = "number7" class = "number">7</button>
-					<button id = "number8" class = "number">8</button>
-					<button id = "number9" class = "number">9</button>
-					<button id = "placeHolder1" class = "number"></button>
-					<button id = "number0" class = "number">0</button>
-					<button id = "placeHolder2" class = "number"></button>-->
-				</div>
-			</div>
-			<div id="gameInstructions">
-				<!--Une singe qui est un roi presque d&eacutetruire l'&icircle. Banane, une singe qui aime des bananes et vie sur l'&icircle d&eacutecider qu'il veut arr&ecirct le roi. Banane oscillant sur les vignes et ramasse les bananes. Il r&eacuteponse des math&eacutematiques questions. Il y a l'eau sous les vignes alors, Banane ne veut pas tomber dans l'eau.-->
-			</div>
-		</div>
-		<script>
-		
-		function goHome(){
-			buttonSound();
-			setTimeout(function(){window(location.href='mainMenu.html')}, 400);
-		}
-			
-		function buttonSound(){
-			if(localStorage.getItem('sound') != 'off'){
-				var clickSound = new Audio('music/click.mp3');
-				clickSound.play();
-			}
-		}
-		function languageSet(){
-			if(localStorage.getItem('language') == 'english'){
-				document.getElementById("gameInstructions").innerHTML="A monkey swings on vines to collect bananas. Each vine has a math question. To swing to the next vine, you must correctly answer the math question in 15 seconds. If time runs out, you lose a life! The objective of the game is to answer all the questions and gain the most points as you can. There are buttons to write the answer.";
-				document.getElementById("returnHome").innerHTML="Back";
-			}
-			else {
-				document.getElementById("gameInstructions").innerHTML="Un singe oscillant sur une vigne et essayer de va prend des bananes. Chaque vigne a une question de math&eacutematique. Si tu restes sur le vigne pour longtemps et si tu ne r&eacuteponse pas la question raison tu perds une vie. Si tu faire la question raison, tu continue. Tu aussi a 15 sec pour r&eacuteponse la question. Si tu prends des bananes, tu peut augmentation les pointes sur une c&ocirc;te, il y a des boutons pour &eacutecrire la r&eacuteponse.";
-				document.getElementById("returnHome").innerHTML="Retourner";
-			}
-		}
-		</script>
+		<button id="returnHome" onclick="goHome()">Back</button>
+                <img src="images/tutorial.png" id="tutorialImage" alt=""/>
+                <div id="gameInstructions"></div>
+            
+            <script>
+                function goHome(){
+                    buttonSound();
+                    window(location.href='mainMenu.html');
+                }
+
+                function buttonSound(){
+                    if(sessionStorage.getItem('sound') !== 'off'){
+                            var clickSound = new Audio('music/click.mp3');
+                            clickSound.play();
+                    }
+                }
+
+                function languageSet(){
+                    if(sessionStorage.getItem('language') === 'english'){
+                        document.getElementById("gameInstructions").innerHTML="A monkey swings on vines to collect bananas. Each vine has a math question. To swing to the next vine, you must correctly answer the math question in 15 seconds. If time runs out, you lose a life! The objective of the game is to answer all the questions and gain the most points as you can. There are buttons to write the answer.";
+                        document.getElementById("gameInstructions").style.lineHeight = "34px";
+                        document.getElementById("returnHome").innerHTML="Back";
+                    }
+                    else {
+                        document.getElementById("gameInstructions").innerHTML="Un singe oscillant sur une vigne et essayer de va prend des bananes. Chaque vigne a une question de math&eacutematique. Si tu restes sur le vigne pour longtemps et si tu ne r&eacuteponse pas la question raison tu perds une vie. Si tu faire la question raison, tu continue. Tu aussi a 15 sec pour r&eacuteponse la question. Si tu prends des bananes, tu peut augmentation les pointes sur une c&ocirc;te, il y a des boutons pour &eacutecrire la r&eacuteponse.";
+                        document.getElementById("gameInstructions").style.lineHeight = "24px";
+                        document.getElementById("returnHome").innerHTML="Retourner";
+                    }
+                }
+            </script>
 	</body>
-	<!--http://www.hotscripts.com/forums/php/57676-how-redirect-another-page-once-click-html-button.html
-	site which aided in providing how to change from one screen to another-->
 </html>

@@ -3,10 +3,10 @@
    xmlns:rim="http://www.blackberry.com/ns/widgets"
    version="1.0.0.0" id="swingingMonkey">
  
-   <name>Swinging Monkey</name>
-   <description>Help the monkey collect bananas using math!</description>
+   <name>Studio de Singe</name>
+   <description>Aidez le petit singe à ramasser les bananes en utilisant les mathématiques!</description>
    <author>Richard Yang and Sagar Patel</author>
-   <icon src="image.png"/>
-   <content src="test1Logo.html"/>
+   <icon src="icon.png"/>
+   <content src="logo.html"/>
 
 </widget>

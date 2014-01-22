@@ -1,24 +1,42 @@
 body{
-	height: 600px;
-	width: 1024px;
-	/*background-image:url(../images/deathImage.png);
-	background-size: 1300px 900px;
-	background-size: 100%;*/
+    height: 600px;
+    width: 1024px;
 }
-#back{
-	height: 600px;
-	width: 1024px;
-	background-image:url(../images/deathImageNew.png);
-	background-size: 1024px 600px;
+#background{
+    height: 600px;
+    width: 1024px;
+    background-size: 1024px 600px;
+    position: absolute;
 }
 
-#startButton {
-	margin-top: 500px;
-	margin-left: 6%;
-	height: 43px;
-	width: 18%;
-	background: transparent;
-	font-size: 18px;
+#return {
+    margin-top: 512px;
+    margin-left: 90px;
+}
+
+#highscores{
+    margin-top: 512px;
+    margin-left: 740px;
+}
+
+#userName{
+    margin-top: 512px;
+    margin-left: 420px;
+    height: 43px;
+    width: 190px;
+    position: absolute;
+    border: 2px solid #000000;
+    font-size: 28px;
+    text-align:center; 
+}
+
+button{
+    height: 43px;
+    width: 200px;
+    background: transparent;
+    font-size: 28px;
     font-family: Lucida Console;
-	border: none;
+    border: none;
+    position: absolute;
+    outline:none;
 }

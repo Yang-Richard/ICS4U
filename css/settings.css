@@ -1,119 +1,86 @@
-div{
-	width: 500px;
-	height: 100px;
-	display: inline-block;
-}
-
-#back {
-	height: 600px;
-	width: 1024px;
-}
-
-#words{
-	width: 125px;
-	height: 450px;
-}
-
-#options{
-	width: 49%;
-	height: 450px;
-}
-
-h4 {
-	font-size: 25px;
-	margin-left: 25px;
-	display: inline-block;
-}
-
 body{
     background-color: #8B4513;
 }
-    
+
 #returnHome{
-	height:50px;
-	width:100px;
-	float: left; 
-	border: 2px solid #000000;
-	font-size: 15px;
+    height:150px;
+    width:250px;
+    float: left; 
+    border: 2px solid #000000;
+    font-size: 50px;
+    position: fixed;
+    background-color: #FFFF00;
+    border: 2px solid #000000;
+}
+
+#header{
+    height:146px;
+    width:774px;
+    position: fixed;
+    margin-left:250px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #FFFF00;
+}
+
+#headerText{
+    font-family: Lucida Console;
+    font-size: 100px;
+    margin-top:30px;
+    width:774px;
+    height:146px;
+    border: none;
+}
+
+div{
+    width:1024px;
+    height:150px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    position: fixed;
+}
+
+#music{
+    margin-top:150px;
+}
+
+#sounds{
+    margin-top:300px;
+}
+
+#language{
+    margin-top:450px;
+}
+
+p{
+    text-align: center;
+    position: fixed;
+    float:left;
+    width:250px;
+    height:150px;
+    font-family: Lucida Console;
+    font-size: 45px;
+    border-radius: 5px;
 }
 
 #musicOn {
-	height:50px;
-	width:50px;
-	border: 2px solid #000000;
-	font-size: 15px;
-}
-
-#musicOff {
-	height:50px;
-	width:50px;
-	border: 2px solid #000000;
-	font-size: 15px;
+        margin-left:250px;
 }
 
 #soundOn {
-	height:50px;
-	width:50px;
-	border: 2px solid #000000;
-	font-size: 15px;
-}
-
-#soundOff {
-	height:50px;
-	width:50px;
-	border: 2px solid #000000;
-	font-size: 15px;
+        margin-left:250px;
 }
 
 #lang1 {
-	height:50px;
-	width:75px;
-	border: 2px solid #000000;
-	font-size: 15px;
-}
-
-#lang2{
-	height:50px;
-	width:75px;
-	border: 2px solid #000000;
-	font-size: 15px;
-}
-
-#red {
-	height:50px;
-	width:75px;
-	border: 2px dashed #000000;
-	font-size: 15px;
+        margin-left:250px;
 }
 
 button{
-    height: 100px;
-    width: 300px;
     border-radius: 5px;
-    background-color: #32CD32;
-    margin:auto;
-    margin-top:10px;
-    margin-bottom: 10px;
-    /*display: block;*/
-	margin-left: 25px;
-    border: 2px solid #000000;
-    font-size: 30px;
+    background-color: #FF3300;
     font-family: Lucida Console;
-}
-
-button:hover{
-    border: 5px solid #000000;
-    font-size: 40px;
-    }
-    
-#headers{
-    text-align: center;
-    font-family: Lucida Console;
+    height:150px;
+    width:385px;
     font-size: 30px;
-    clear:both;
-    font-weight:bold;
-}
-
-#title{
-    font-size: 50px;
+    border:3px solid #000000;
 }

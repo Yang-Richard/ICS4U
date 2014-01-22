@@ -8,18 +8,16 @@
         var myTimer;
         var ctx;
         var monkeyYPos = 0;
-        var backgroundPos = 1;
+        var backgroundPos = 0;
         
         var background1 = new Image();
         var background2 = new Image();
         var monkey = new Image();
-        var banana1 = new Image();
-        var banana2 = new Image();
-        var banana3 = new Image();
         
-        var banana4 = new Image();
-        var banana5 = new Image();
-        var banana6 = new Image();
+        var banana = new Array();
+        
+        var backgroundOneInfo = [[0, -330, 630, 320], [118,114,110.5,114]];
+        var backgroundTwoInfo = [[650, 320, 0, -330], [118,114,118,114]];
         
         function init(){
             ctx=document.getElementById("jungleAnimation").getContext("2d");
@@ -27,23 +25,15 @@
             background1.src = 'images/background1.png';
             background2.src = 'images/background2.png';
             monkey.src = 'images/monkey.png';
-            banana1.src = 'images/banana1.png';
-            banana2.src = 'images/banana2.png';
-            banana3.src = 'images/banana3.png';
             
-            banana4.src = 'images/banana1.png';
-            banana5.src = 'images/banana2.png';
-            banana6.src = 'images/banana3.png';
+            for (var a = 0; a < 6; a++){
+                banana[a] = new Image();
+                banana[a].src = 'images/banana' + ((a % 3) + 1) + '.png';
+            }
             
             background1.onload = function() {
-                 ctx.drawImage(background1, 0, 0, 652, 500);
-                 ctx.drawImage(monkey, 120, 40, 70, 70);
-                 ctx.drawImage(banana1, 300, 160, 70, 30);
-                 ctx.drawImage(banana2, 300, 90, 70, 30);
-                 ctx.drawImage(banana3, 300, 20, 70, 30);
-                 ctx.drawImage(banana4, 650, 160, 70, 30);
-                 ctx.drawImage(banana5, 650, 90, 70, 30);
-                 ctx.drawImage(banana6, 650, 20, 70, 30);    
+                 drawBackgroundAndBananas();
+                 ctx.drawImage(monkey, 120, 40, 70, 70);  
             };
 
         }
@@ -52,13 +42,16 @@
             document.getElementById("score").innerHTML=score;
             document.getElementById("timer").innerHTML=timer;
             disableButtons();
+            ctx.font="300px Arial";
             
-            timer = 1;
+            timer = 3;
             myTimer=setInterval(function(){
+                drawBackgroundAndBananas();
+                ctx.drawImage(monkey, 120, 40, 70, 70);  
+                ctx.fillText("" + timer,240,350);
+                
                 timer = timer - 1;
-                // INITIAL COUNTDOWN CODE
-
-                if (timer === 0){
+                if (timer === -1){
                     clearInterval(myTimer);
                     game();
                 }
@@ -67,26 +60,27 @@
 
         function game(){
             createQuestion();
-            enableButtons()
+            enableButtons();
             timer = 15;// REMEMBER TO PUT BACK HERE
             userAnswer = "";
             document.getElementById("timer").innerHTML=timer;
-             
-            banana1.src = 'images/banana1.png';
-            banana2.src = 'images/banana2.png';
-            banana3.src = 'images/banana3.png';
+            console.log(mathAnswer);
+            
+            for (var a = 0; a < 3; a++){
+                banana[a].src = 'images/banana' + (a + 1) + '.png';
+            }
             
             myTimer=setInterval(function(){
                 timer = timer - 0.1;
-                document.getElementById("timer").innerHTML=Math.floor(timer);
+                document.getElementById("timer").innerHTML=Math.round(timer);
                 drawBackgroundAndBananas();
                 ctx.drawImage(monkey, 120, 180 - (timer*9.3) , 70, 70);
                 
                 monkeyYPos = 180 - (timer*9.3);
-
                 if (timer < 0){
                     document.getElementById("timer").innerHTML="0";
                     clearInterval(myTimer);
+                    disableButtons();
                     lifeLost();
                 }  
             },125); // Needs to be 150 for the calcInput function to work properly
@@ -108,13 +102,17 @@
 
 
 	function calculatorClicked(value){
-            if(localStorage.getItem('sound') != 'off'){
+            buttonSound();
+            
+            if(localStorage.getItem('sound') !== 'off'){
                     var clickSound = new Audio('music/click.mp3');
                     clickSound.play();
             }
             
-            userAnswer += value + "";
-            editFooter();
+            if (userAnswer.length < 2){
+                userAnswer += value + "";
+                editFooter();
+            }
            
             if (parseInt(userAnswer) === mathAnswer){
                 clearInterval(myTimer);
@@ -141,52 +139,55 @@
         function nextQuestion(bananaType){
             var interval;
             if (bananaType === 3){
-                interval = (monkeyYPos-40);
+                interval = (monkeyYPos-10)/1.3;
             }
             else if(bananaType === 2){
-                interval = (monkeyYPos-40);
+                interval = (monkeyYPos-80)/1.3;
             }
             else {
-                interval = (monkeyYPos-40);
+                interval = (monkeyYPos-150)/1.3;
             }
             timer = 0;
+            var playedBananaAudio = false;
             myTimer=setInterval(function(){
                 timer = timer + 0.1;
                 ctx.clearRect(0,0,652,500);
-                ctx.drawImage(background1, getBackgroundPos(0), 0, 652, 500);
-                ctx.drawImage(background2, getBackgroundPos(1), 0, 652, 500);
+                ctx.drawImage(background1, backgroundOneInfo[0][backgroundPos], 0, 652, 500);
+                ctx.drawImage(background2, backgroundTwoInfo[0][backgroundPos], 0, 652, 500);
                 
-		if (timer < 1){
+                if (timer <=1.3){
                     drawBackgroundAndBananas();
                     ctx.drawImage(monkey, 125 + (timer*118), monkeyYPos - interval*timer , 70, 70);
-                }
-                else if (timer > 1 && timer <=1.3){
-                    drawBackgroundAndBananas();
-                    ctx.drawImage(monkey, 125 + (timer*118), 40, 70, 70);
                 }
                 else if (timer > 1.3 && timer <=2.8){    
                     drawBackgroundAndBananas();
                     if (bananaType === 3){
-                        banana3.src = null;
+                        banana[2].src = null;
                     }
                     else if(bananaType === 2){
-                        banana2.src = null;
+                        banana[1].src = null;
                     }
                     else {
-                        banana1.src = null;
+                        banana[0].src = null;
                     } 
-                    ctx.drawImage(monkey, 125 + (timer*118), 40, 70, 70);
+                    ctx.drawImage(monkey, 125 + (timer*118), monkeyYPos - interval*(2.8-timer), 70, 70);
+                    
+                    if(!playedBananaAudio){
+                        gainBananas();
+                        playedBananaAudio = true;
+                    }
                 }
                 else{
                     clearInterval(myTimer);
                     drawBackgroundAndBananas();
-                    ctx.drawImage(monkey, 125 + (timer*118), 40, 70, 70);
+                    ctx.drawImage(monkey, 125 + (timer*118), monkeyYPos, 70, 70);
                     score += bananaType;
                     document.getElementById("score").innerHTML = score;
                     
                     if (questionNumber === 21){
                         sessionStorage.highScoreInput=score;
-                        setTimeout(function(){window(location.href='Game.html')}, 400)	
+                        window(location.href='endGame.html');	
+                        sessionStorage.outcome = 1;
                      }
                     else{
                         timer = -1;
@@ -195,22 +196,22 @@
                             
                             if (timer > 0 && timer < 2.9)
                             {
-                                ctx.clearRect(0,0,652,500);
-                                ctx.drawImage(background1, getBackgroundPos(0)-(timer*118), 0, 652, 500);
-                                ctx.drawImage(background2, getBackgroundPos(1)-(timer*118), 0, 652, 500);
-                                ctx.drawImage(monkey, 444-(timer*116), 40, 70, 70);
-                                ctx.drawImage(banana1, 300-(timer*130), 160, 70, 30);
-                                ctx.drawImage(banana2, 300-(timer*130), 90, 70, 30);
-                                ctx.drawImage(banana3, 300-(timer*130), 20, 70, 30);
-                                ctx.drawImage(banana4, 650-(timer*125), 160, 70, 30);
-                                ctx.drawImage(banana5, 650-(timer*125), 90, 70, 30);
-                                ctx.drawImage(banana6, 650-(timer*125), 20, 70, 30); 
+                                ctx.clearRect(0,0,630,500);
+                                ctx.drawImage(background1, backgroundOneInfo[0][backgroundPos]-(timer*backgroundOneInfo[1][backgroundPos]), 0, 652, 500);
+                                ctx.drawImage(background2, backgroundTwoInfo[0][backgroundPos]-(timer*backgroundTwoInfo[1][backgroundPos]), 0, 652, 500);
+                                ctx.drawImage(monkey, 444-(timer*116), monkeyYPos - (monkeyYPos-40)/2.9*timer, 70, 70);
+                                ctx.drawImage(banana[0], 300-(timer*130), 150, 70, 30);
+                                ctx.drawImage(banana[1], 300-(timer*130), 80, 70, 30);
+                                ctx.drawImage(banana[2], 300-(timer*130), 10, 70, 30);
+                                ctx.drawImage(banana[3], 650-(timer*125), 150, 70, 30);
+                                ctx.drawImage(banana[4], 650-(timer*125), 80, 70, 30);
+                                ctx.drawImage(banana[5], 650-(timer*125), 10, 70, 30); 
                             }
                             else if (timer > 2.9){
                                 clearInterval(myTimer);                   
                                 backgroundPos++;
-                                if (backgroundPos === 5){
-                                    backgroundPos = 1;
+                                if (backgroundPos === 4){
+                                    backgroundPos = 0;
                                 }
                                 game();
                             }
@@ -241,12 +242,14 @@
 
                 if (timer > 2.5){
                     clearInterval(myTimer);
+                    waterSplash();
                     document.getElementById("life" + lives).style.opacity = 0;
                     lives -= 1;
                     
                     if (lives === 0){
                         sessionStorage.highScoreInput=score;
-                        setTimeout(function(){window(location.href='endGame.html')}, 400)
+                        sessionStorage.outcome = 0;
+                        window(location.href='endGame.html');
                     }
                     else{
                         drawBackgroundAndBananas();
@@ -275,40 +278,16 @@
 	
         function drawBackgroundAndBananas(){
             ctx.clearRect(0,0,652,500);
-            ctx.drawImage(background1, getBackgroundPos(0), 0, 652, 500);
-            ctx.drawImage(background2, getBackgroundPos(1), 0, 652, 500);
-            ctx.drawImage(banana1, 300, 160, 70, 30);
-            ctx.drawImage(banana2, 300, 90, 70, 30);
-            ctx.drawImage(banana3, 300, 20, 70, 30);
-            ctx.drawImage(banana4, 650, 160, 70, 30);
-            ctx.drawImage(banana5, 650, 90, 70, 30);
-            ctx.drawImage(banana6, 650, 20, 70, 30);   
+            ctx.drawImage(background1, backgroundOneInfo[0][backgroundPos], 0, 652, 500);
+            ctx.drawImage(background2, backgroundTwoInfo[0][backgroundPos], 0, 652, 500);
+            ctx.drawImage(banana[0], 300, 150, 70, 30);
+            ctx.drawImage(banana[1], 300, 80, 70, 30);
+            ctx.drawImage(banana[2], 300, 10, 70, 30);
+            ctx.drawImage(banana[3], 650, 150, 70, 30);
+            ctx.drawImage(banana[4], 650, 80, 70, 30);
+            ctx.drawImage(banana[5], 650, 10, 70, 30);   
         }
-        
-        function getBackgroundPos(backgroundValue)
-        {
-            var returnValue  = backgroundPos + (backgroundValue*4);
-            
-            switch(returnValue){
-                case 1:
-                    return 0;
-                case 2:
-                    return -330;
-                case 3:
-                    return 630;    
-                case 4:
-                    return 300; 
-                case 5:
-                    return 630;
-                case 6:
-                    return 300;
-                case 7:
-                    return 0;    
-                case 8:
-                    return -330; 
-            }  
-        }
-        
+
 	function createQuestion(){
             switch(sessionStorage.gameDifficulty){
                     case 'easy':
@@ -329,25 +308,27 @@
             info[0] = Math.floor(Math.random() * 4);  
             info[2] = createTerm(info[0]);
             info[3] = createTerm(info[0]);
-
-            switch(info[0])
-            {
-                case 0:
-                        info[1] = info[2] + info[3];
-                        return info; 
-                case 1:
-                        info[1] = info[2] - info[3];
-                        return info; 
-                case 2:
-                        info[1] = info[2] * info[3];
-                        return info; 
-                case 3:
-                        var temp = info[2]*info[3];
-                        info[1] = info[3];
-                        info[3] = info[2];
-                        info[2] = temp;
-                        return info; 
-            }
+            
+            do{
+                switch(info[0])
+                {
+                    case 0:
+                            info[1] = info[2] + info[3];
+                            return info; 
+                    case 1:
+                            info[1] = info[2] - info[3];
+                            return info; 
+                    case 2:
+                            info[1] = info[2] * info[3];
+                            return info; 
+                    case 3:
+                            var temp = info[2]*info[3];
+                            info[1] = info[3];
+                            info[3] = info[2];
+                            info[2] = temp;
+                            return info; 
+                }
+            } while(info[0] === 3 && info[1] === 0);
 	}
         
        function generateEasyQuestion(){
@@ -355,6 +336,7 @@
                 var info = generateQuestion();
                 mathAnswer = info[1];
                 mathQuestion = info[2] + " " + determineOperator(info[0]) + " " + info[3] + " = ___";
+                catchDivideZeroException = mathQuestion.search("/ 0");
             }while(mathAnswer < 0); 
        }
        
@@ -364,7 +346,7 @@
                 if (info[0] === 0 || info[0] === 1)
                     info[4] = Math.floor(Math.random() * 2);
                 else
-                    info[4] = 2
+                    info[4] = 2;
                 info[5] = createTerm(info[4]);
                 
                 switch(info[4])
@@ -417,17 +399,39 @@
             }
 	}
         
+        
+        function buttonSound(){
+                    if(sessionStorage.getItem('sound') != 'off'){
+                            var clickSound = new Audio('music/click.mp3');
+                            clickSound.play();
+                    }
+        }
+        
+        function waterSplash(){
+                    if(sessionStorage.getItem('sound') != 'off'){
+                            var clickSound = new Audio('music/waterSplash.mp3');
+                            clickSound.play();
+                    }
+            }
+            
+         function gainBananas(){
+                    if(sessionStorage.getItem('sound') != 'off'){
+                            var clickSound = new Audio('music/gainBanana.mp3');
+                            clickSound.play();
+                    }
+         }
+            
         function languageSet(){
-            if(localStorage.getItem('language') == 'english'){
+            if(localStorage.getItem('language') === 'english'){
                 document.getElementById('lives').style.backgroundImage = 'url(images/livesEnglish.png)';
                 document.getElementById('points').style.backgroundImage = 'url(images/pointsEnglish.png)';
                 document.getElementById('time').style.backgroundImage = 'url(images/timeEnglish.png)';
-                document.getElementById('calculator').style.backgroundImage = 'url(images/calc.png)';
+                document.getElementById('calculator').style.backgroundImage = 'url(images/calcEnglish.png)';
             }
             else{
                 document.getElementById('lives').style.backgroundImage = 'url(images/livesFrench.png)';
                 document.getElementById('points').style.backgroundImage = 'url(images/pointsFrench.png)';
                 document.getElementById('time').style.backgroundImage = 'url(images/timeFrench.png)';
-                document.getElementById('calculator').style.backgroundImage = 'url(images/calc.png)';
+                document.getElementById('calculator').style.backgroundImage = 'url(images/calcFrench.png)';
             }
         }

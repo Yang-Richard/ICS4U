@@ -1,37 +1,34 @@
 #loadingImage{
-	/*display: none;*/
-	/*margin: auto;*/
-	height: 600px;
+	height: 520px;
 	width: 1024px;
-	background-size: 1024px 600px;
+	background-size: 1024px 520px;
 	background-image:url(../images/loadScreen.png);
-	/*!--width: auto\9;-->*/
-}
-
-body{
-	height: 600px;
-	width: 1024px;
+        border: 2px solid #000000;
+        position:absolute;
+        
 }
 
 #loadButton{
 	background-color: #32CD32;
-	height: 75px;
-	width: 240px;
-	margin-top: 371px;
-	margin-left: 325px;
+	height: 60px;
+	width: 220px;
+	margin-top: 402px;
+	margin-left: 335px;
 	font-size: 28px;
-    font-family: Lucida Console;
+        font-family: Lucida Console;
 	border: 2px solid #000000;
 	display: none;
+        position:absolute;
 }
 
 #story{
-	width: 1000px;
+	width: 1024px;
 	height: 80px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top:520px;
 	border: 2px solid #000000;
 	background-color: #CCFFFF;
 	font-size: 16px;
-    font-family: Lucida Console;
+        font-family: Lucida Console;
+        text-align:center;
+        position:absolute;
 }

@@ -20,19 +20,18 @@ body{
 #easy{
 	margin-top: 60px;
 	height: 100px;
-	/*margin-top: 100px;
-	background-color: #00FFFF;*/
+	outline:none;
 }
 
 #medium {
 	margin-top: 6px;
 	height: 85px;
-/*	background-color: #FFFF33;*/
+        outline:none;
 }
 
 #hard {
 	height: 85px;
-	/*background-color: #FF0000;*/
+	outline:none;
 }
 button{
         height: 100px;

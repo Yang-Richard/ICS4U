@@ -10,49 +10,44 @@
 		</head>
 		<body onload="languageSet(); musicSet()">
 		<div id="divBack">
-			<button id="settings" onclick="goSettings()" ></button>
+                    <button id="settings" onclick="goSettings()"></button>
 				<img id ="monkey" onclick ="monkeyAnimation()" src="images/monkeySwingingNew.png"/>
 				<button id ="startButton" onclick="gameStart()"></button>
 				<button id ="tutorialButton" onclick="goInstructions()"></button>
 				<button id ="highScoresButton" onclick="goScores()"></button>
                                 <button id ="easterEgg" onclick="easterEgg()"></button>
 				<object id="music" height="1" width="1"></object>
-				<div id="credit">Music by audionautix.com</div>
+				<div id="credit">Music by www.audionautix.com, Sounds by www.SoundBible.com, snottyboy, Delsym, and Mike Koenig</div>
 		</div>
 		<script>
 			var monkeyDistance = document.getElementById("monkey").offsetLeft;
 			var object = document.getElementById("monkey");
 			var facingRight = false;
-			var clickSound = new Audio('music/panamaHatNV.mp3');
+			var music = new Audio('music/panamaHatNV.mp3');
+                        music.loop = true;
 			
 			function gameStart(){
 				buttonSound();
-				setTimeout(function(){window(location.href='chooseDifficulty.html')}, 400);
+				window(location.href='chooseDifficulty.html')
 			}
 			
 			function goInstructions(){
 				buttonSound();
-				setTimeout(
-				function(){window(location.href='tutorial.html')}
-				, 400);
+				window(location.href='tutorial.html');
 			}
 			
 			function goScores(){
 				buttonSound();
-				setTimeout(
-				function(){window(location.href='highScores.html')}
-				, 400);
+				window(location.href='highScores.html');
 			}
 			
 			function goSettings(){
 				buttonSound();
-				setTimeout(
-				function(){window(location.href='settings.html')}
-				, 400);
+				window(location.href='settings.html');
 			}
 			
 			function buttonSound(){
-				if(localStorage.getItem('sound') != 'off'){
+				if(sessionStorage.getItem('sound') != 'off'){
 					var clickSound = new Audio('music/click.mp3');
 					clickSound.play();
 				}
@@ -81,7 +76,7 @@
 			,8);
 			
 			function languageSet() {
-				if(localStorage.getItem('language') == 'english'){
+				if(sessionStorage.getItem('language') == 'english'){
 					document.getElementById("startButton").innerHTML="Start Game";
 					document.getElementById("tutorialButton").innerHTML="Instructions";
 					document.getElementById("highScoresButton").innerHTML="High Scores"
@@ -94,13 +89,11 @@
 			}
 			
 			function musicSet(){
-				if(localStorage.getItem('music') == 'off'){
-				//	document.getElementById("music").setAttribute('data', 'null');
-				clickSound.stop();
+				if(sessionStorage.getItem('music') == 'off'){
+                                    music.stop();
 				}
 				else {
-				//	document.getElementById("music").setAttribute('data', 'music/panamaHatNV.mp3');
-					clickSound.play();
+                                    music.play();
 				}
 			}
                         
