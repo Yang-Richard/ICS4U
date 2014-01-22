@@ -5,14 +5,14 @@
 		<title>High Scores</title>
 	</head>
 	<body onload="languageSet(); writeHighscores()">
-			<div id="back1">
+			<div id="buttonColumn">
 				<button id="returnHome" onclick="goHome()">Back</button>
 				<button id="easy" onclick="highScoreEasy()">Easy</button>
 				<button id="medium" onclick="highScoreMedium()"> Medium</button>
 				<button id="hard" onclick="highScoreHard()">Hard</button>
 			</div>
                     <div id="table">
-                        <table border="1">
+                        <table border="0">
                             <tr>
                             <th id="rank">Rank</th>
                             <th id="name">Name</th>
@@ -128,44 +128,57 @@
                 }
             }
                 
-                function writeHighscores(){
-                    var highScoreData;
-                    
-
-//                    if(localStorage.highScoreData){
-//                        highScoreData = JSON.parse(localStorage.highScoreData);
-//                    }
-//                    else{
-                      
-//                    }
-
-                        highScoreData = [[[0,23,0],[0,21,0],[0,43,0],[0,21,0],[0,42,0],[0,25,0],[0,23,0],[0,324,0],[0,23,0],[0,5,0]],
+                function resetHighscores(){
+                    var highScoreData = [[[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]],
                                         [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]],
                                         [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]];
-                                  
-                        var alreadyInput = "";
+                    localStorage.highScoreData = JSON.stringify(highScoreData);
+                    console.log("highscores reset");
+                }
+                
+                function writeHighscores(){
+                    var highScoreData;
+                    var alreadyInput = "";
                         var lowestScore = 0;
+                    
+
+                    if(localStorage.highScoreData){
+                        highScoreData = JSON.parse(localStorage.highScoreData);
+                    }
+                    else{
+                        highScoreData = [[[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]],
+                                        [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]],
+                                        [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]];
+                    }      
+                    
+                    
+                        
                         
                        for(var a = 0; a < 10; a++){
                             if (highScoreData[difficultyType()][a][1] < highScoreData[difficultyType()][lowestScore][1]){
                                 lowestScore=a;
                             }
-                        }
-                                    
+                        } 
                     for(var a = 0; a < 10; a++){
                         var highestScore = lowestScore;// start it at the array number of the lowest score value
                         for(var b = 0; b < 10; b++){
                            
                             if (highScoreData[difficultyType()][b][1] >= highScoreData[difficultyType()][highestScore][1] && alreadyInput.indexOf(b) === -1){
                                 highestScore=b;
-                                console.log(alreadyInput.indexOf(b) === -1);
                             }
                         }
                         alreadyInput += "" + highestScore;
-                        console.log(alreadyInput);
-                        document.getElementById('userName' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][0];
-                        document.getElementById('userScore' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][1];
-                        document.getElementById('userDate' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][2];
+                        if(highScoreData[difficultyType()][highestScore][1] !== 0)
+                        {
+                            document.getElementById('userName' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][0];
+                            document.getElementById('userScore' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][1];
+                            document.getElementById('userDate' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][2];
+                        }
+                        else{
+                            document.getElementById('userName' + (a+1)).innerHTML="-";
+                            document.getElementById('userScore' + (a+1)).innerHTML="-";
+                            document.getElementById('userDate' + (a+1)).innerHTML="-";
+                        }
                     }
                     
                 }

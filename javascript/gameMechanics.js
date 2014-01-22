@@ -306,10 +306,10 @@
 	function generateQuestion(){
             var info = new Array();
             info[0] = Math.floor(Math.random() * 4);  
-            info[2] = createTerm(info[0]);
-            info[3] = createTerm(info[0]);
             
             do{
+            info[2] = createTerm(info[0]);
+            info[3] = createTerm(info[0]);
                 switch(info[0])
                 {
                     case 0:
@@ -372,7 +372,7 @@
                 var info = generateQuestion();
                 mathAnswer = info[3];
                 mathQuestion = info[2] + " " + determineOperator(info[0]) + " ___ = " + info[1];
-            }while(mathAnswer < 0);
+            }while(mathAnswer < 0 ||(info[0] === 2 && info[1] === 0));
 	}
 	
 	function determineOperator(operator){
@@ -422,7 +422,7 @@
          }
             
         function languageSet(){
-            if(localStorage.getItem('language') === 'english'){
+            if(sessionStorage.getItem('language') === 'english'){
                 document.getElementById('lives').style.backgroundImage = 'url(images/livesEnglish.png)';
                 document.getElementById('points').style.backgroundImage = 'url(images/pointsEnglish.png)';
                 document.getElementById('time').style.backgroundImage = 'url(images/timeEnglish.png)';
