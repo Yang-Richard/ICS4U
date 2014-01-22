@@ -1,43 +1,73 @@
 div{
 	text-align: center;
 	background-color: #8B4513;
-	height: 675px;
-}
-
-#veryBack {
 	height: 600px;
-	width: 1024px;
 }
 
 #back1{
-	width: 25%;
+	width: 324px;
 	float: left;
 	height: 600px;
 	border: 2px solid #000000;	
 }
 
-#back2{
-        
-	width: 74%;
-	float: right;
+#table{
         background-image:url(../images/highscoreNew.png);
 	background-size: 100%;
-	height: 600px;
 	border: 2px solid #000000;
+        margin-left:324px;
 }
 
-body{
-	background-color: #8B4513;
+th{
+    padding:40px 0px 60px 0px;
+    font-size: 30px;
+    font-family: Lucida Console; 
+}
+
+#rank{
+    padding-left:40px;
+    padding-right:40px;
+}
+
+#name{
+    padding-left:110px;
+    padding-right:110px;
+}
+
+#score{
+    padding-left:85px;
+    padding-right:85px;
+}
+
+#date{
+    padding-left:95px;
+    padding-right:95px;
+}
+
+td{
+    padding:9px 0px 9px 0px;
+    font-size: 25px;
+    font-family: Lucida Console;
+}
+
+#name{
+    
+}
+
+#score{
+    
+}
+
+#date{
+    
 }
 
 button{
 	height: 180px;
-	width: 100%;
+	width: 324px;
 	background-color: #32CD32;
 	display: block;
 	border: 2px solid #000000;
-	border-left: none;
-	border-right: none;
 	font-size: 30px;
 	font-family: Lucida Console;
 }
@@ -58,165 +88,4 @@ button{
 
 #hard {
 	background-color: #FF0000;
-}
-
-.headers{
-	text-align: center;
-	font-family: Lucida Console;
-	font-size: 30px;
-	clear:both;
-	font-weight:bold;
-}
-
-#title{
-	font-size: 50px;
-}
-
-#scoreType {
-	background-color: #8B4513;
-	height: 800px;
-	width: 298px;
-	float: left;
-}
-
-#scoreArea {
-	background-color: #00FFFF;
-	height: 800px;
-	width: 900px;
-	float: left;
-}
-
-#easyScores {
-	background-color: #00FFFF;
-	height: 800px;
-	/*width: 900px;*/
-	width: 100px;
-	float: left;
-}
-
-#mediumScores {
-	background-color: #FFFF33;
-	height: 800px;
-	/*width: 900px;*/
-	width: 100px;
-	float: left;
-}
-
-#hardScores {
-	background-color: #FF0000;
-	height: 800px;
-	/*width: 900px;*/
-	width: 100px;
-	float: left;
-}
-
-.ranks {
-	height: 30px;
-	background: transparent;
-	text-align: left;
-}
-
-#playerRank0{
-	margin-top: 30px;
-}
-
-#playerRank1{
-	margin-top: 45px;
-}
-
-#playerRank2{
-	margin-top: 15px;
-}
-
-#playerRank3{
-	margin-top: 15px;
-}
-
-#playerRank4{
-	margin-top: 15px;
-}
-
-#playerRank5{
-	margin-top: 15px;
-}
-
-#playerRank6{
-	margin-top: 15px;
-}
-
-#playerRank7{
-	margin-top: 15px;
-}
-
-#playerRank8{
-	margin-top: 15px;
-}
-
-#playerRank9{
-	margin-top: 15px;
-}
-
-#playerRank10{
-	margin-top: 15px;
-}
-
-.rank {
-	border-top:none;
-	border-bottom: none;
-	border-left:none;
-	height: 30px;
-	width: 19%;
-	background: transparent;
-	display:inline-block;
-}
-
-.name {
-	border-top:none;
-	border-bottom: none;
-	border-left:none;
-	height: 30px;
-	width: 26%;
-	background: transparent;
-	display:inline-block;
-}
-
-.playerScore {
-	border-top:none;
-	border-bottom: none;
-	border-left:none;
-	height: 30px;
-	width: 23%;
-	background: transparent;
-	display:inline-block;
-}
-
-.date {
-	border: none;
-	height: 30px;
-	width: 25%;
-	background: transparent;
-	display:inline-block;
-}
-
-#playerRank0{
-	border: none;
-}
-
-#rank0{
-	border: none;
-}
-
-#name0{
-	width: 31%;
-	border: none;
-}
-
-#playerScore0{
-	width: 23%;
-	border: none;
-}
-
-#date0{
-	width: 25%;
-	border: none;
 }

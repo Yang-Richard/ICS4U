@@ -4,88 +4,88 @@
 		<link type="text/css" rel="stylesheet" href="css/highScores.css"/>
 		<title>High Scores</title>
 	</head>
-	<body onload="displayScore(); languageSet()">
-		<div id="veryBack">
+	<body onload="languageSet(); writeHighscores()">
 			<div id="back1">
 				<button id="returnHome" onclick="goHome()">Back</button>
 				<button id="easy" onclick="highScoreEasy()">Easy</button>
 				<button id="medium" onclick="highScoreMedium()"> Medium</button>
 				<button id="hard" onclick="highScoreHard()">Hard</button>
 			</div>
-			<div id="back2">
-				<div class="ranks" id="playerRank0">
-					<div class="rank" id="rank0"></div>
-					<div class="name" id="name0"></div>
-					<div class="playerScore" id="playerScore0"></div>
-					<div class="date" id="date0">-</div>
-				</div>
-				<div class="ranks" id="playerRank1">
-					<div class="rank" id="rank1"></div>
-					<div class="name" id="name1"></div>
-					<div class="playerScore" id="playerScore1"></div>
-					<div class="date" id="date1">-</div>
-				</div>
-				<div class="ranks" id="playerRank2">
-					<div class="rank" id="rank2"></div>
-					<div class="name" id="name2"></div>
-					<div class="playerScore" id="playerScore2"></div>
-					<div class="date" id="date2"></div>
-				</div>
-				<div class="ranks" id="playerRank3">
-					<div class="rank" id="rank3"></div>
-					<div class="name" id="name3"></div>
-					<div class="playerScore" id="playerScore3"></div>
-					<div class="date" id="date3"></div>
-				</div>
-				<div class="ranks" id="playerRank4">
-					<div class="rank" id="rank4"></div>
-					<div class="name" id="name4"></div>
-					<div class="playerScore" id="playerScore4"></div>
-					<div class="date" id="date4"></div>
-				</div>
-				<div class="ranks" id="playerRank5">
-					<div class="rank" id="rank5"></div>
-					<div class="name" id="name5"></div>
-					<div class="playerScore" id="playerScore5"></div>
-					<div class="date" id="date5"></div>
-				</div>
-				<div class="ranks" id="playerRank6">
-					<div class="rank" id="rank6"></div>
-					<div class="name" id="name6"></div>
-					<div class="playerScore" id="playerScore6"></div>
-					<div class="date" id="date6"></div>
-				</div>
-				<div class="ranks" id="playerRank7">
-					<div class="rank" id="rank7"></div>
-					<div class="name" id="name7"></div>
-					<div class="playerScore" id="playerScore7"></div>
-					<div class="date" id="date7"></div>
-				</div>
-				<div class="ranks" id="playerRank8">
-					<div class="rank" id="rank8"></div>
-					<div class="name" id="name8"></div>
-					<div class="playerScore" id="playerScore8"></div>
-					<div class="date" id="date8"></div>
-				</div>
-				<div class="ranks" id="playerRank9">
-					<div class="rank" id="rank9"></div>
-					<div class="name" id="name9"></div>
-					<div class="playerScore" id="playerScore9"></div>
-					<div class="date" id="date9"></div>
-				</div>
-				<div class="ranks" id="playerRank10">
-					<div class="rank" id="rank10"></div>
-					<div class="name" id="name10"></div>
-					<div class="playerScore" id="playerScore10"></div>
-					<div class="date" id="date10"></div>
-				</div>
-			</div>
-		</div>
+                    <div id="table">
+                        <table border="1">
+                            <tr>
+                            <th id="rank">Rank</th>
+                            <th id="name">Name</th>
+                            <th id="score">Score</th>
+                            <th id="date">Date</th>
+                            </tr>
+                            <tr>
+                            <td>1</td>
+                            <td id="userName1"></td>
+                            <td id="userScore1"></td>
+                            <td id="userDate1"></td>
+                            </tr>
+                            <tr>
+                            <td>2</td>
+                            <td id="userName2"></td>
+                            <td id="userScore2"></td>
+                            <td id="userDate2"></td>
+                            </tr>
+                            <tr>
+                            <td>3</td>
+                            <td id="userName3"></td>
+                            <td id="userScore3"></td>
+                            <td id="userDate3"></td>
+                            </tr>
+                            <tr>
+                            <td>4</td>
+                            <td id="userName4"></td>
+                            <td id="userScore4"></td>
+                            <td id="userDate4"></td>
+                            </tr>
+                            <tr>
+                            <td>5</td>
+                            <td id="userName5"></td>
+                            <td id="userScore5"></td>
+                            <td id="userDate5"></td>
+                            </tr>
+                            <tr>
+                            <td>6</td>
+                            <td id="userName6"></td>
+                            <td id="userScore6"></td>
+                            <td id="userDate6"></td>
+                            </tr>
+                            <tr>
+                            <td>7</td>
+                            <td id="userName7"></td>
+                            <td id="userScore7"></td>
+                            <td id="userDate7"></td>
+                            </tr>
+                            <tr>
+                            <td>8</td>
+                            <td id="userName8"></td>
+                            <td id="userScore8"></td>
+                            <td id="userDate8"></td>
+                            </tr>
+                            <tr>
+                            <td>9</td>
+                            <td id="userName9"></td>
+                            <td id="userScore9"></td>
+                            <td id="userDate9"></td>
+                            </tr>
+                            <tr>
+                            <td>10</td>
+                            <td id="userName10"></td>
+                            <td id="userScore10"></td>
+                            <td id="userDate10"></td>
+                            </tr>
+                        </table>    
+                </div>
 	<script>
-		var scoreId = "easy";
-		
+		var scoreId = 'easy';
+                
 		function buttonSound(){
-			if(sessionStorage.getItem('sound') != 'off'){
+			if(sessionStorage.getItem('sound') !== 'off'){
 				var clickSound = new Audio('music/click.mp3');
 				clickSound.play();
 			}
@@ -93,71 +93,83 @@
 		
 		function goHome(){
 			buttonSound();
-			setTimeout(function(){window(location.href='mainMenu.html')}, 400);
+			window(location.href='mainMenu.html');
 		}
 		
 		function highScoreEasy() {
 			buttonSound();
-			scoreId = "easy";
-			displayScore();
+                        scoreId = 'easy';
+                        writeHighscores();
 		}
 	
 		function highScoreMedium() {
 			buttonSound();
-			scoreId = "medium";
-			displayScore();
+                        scoreId = 'medium';
+                        writeHighscores();
 		}
 		
 		function highScoreHard() {
 			buttonSound();
-			scoreId = "hard";
-			displayScore();
+                        scoreId = 'hard';
+                        writeHighscores();
 		}
+                
+                function difficultyType(){
+                switch(scoreId){
+                    case 'easy':
+                        return 0;
+                    case 'medium':
+                        return 1;
+                    case 'hard':
+                        return 2;  
+                    default:
+                        console.log("gameDifficulty can not be managed.");
+                        break;
+                }
+            }
+                
+                function writeHighscores(){
+                    var highScoreData;
+                    
+
+//                    if(localStorage.highScoreData){
+//                        highScoreData = JSON.parse(localStorage.highScoreData);
+//                    }
+//                    else{
+                      
+//                    }
+
+                        highScoreData = [[[0,23,0],[0,21,0],[0,43,0],[0,21,0],[0,42,0],[0,25,0],[0,23,0],[0,324,0],[0,23,0],[0,5,0]],
+                                        [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]],
+                                        [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]];
+                                  
+                        var alreadyInput = "";
+                        var lowestScore = 0;
+                        
+                       for(var a = 0; a < 10; a++){
+                            if (highScoreData[difficultyType()][a][1] < highScoreData[difficultyType()][lowestScore][1]){
+                                lowestScore=a;
+                            }
+                        }
+                                    
+                    for(var a = 0; a < 10; a++){
+                        var highestScore = lowestScore;// start it at the array number of the lowest score value
+                        for(var b = 0; b < 10; b++){
+                           
+                            if (highScoreData[difficultyType()][b][1] >= highScoreData[difficultyType()][highestScore][1] && alreadyInput.indexOf(b) === -1){
+                                highestScore=b;
+                                console.log(alreadyInput.indexOf(b) === -1);
+                            }
+                        }
+                        alreadyInput += "" + highestScore;
+                        console.log(alreadyInput);
+                        document.getElementById('userName' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][0];
+                        document.getElementById('userScore' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][1];
+                        document.getElementById('userDate' + (a+1)).innerHTML=highScoreData[difficultyType()][highestScore][2];
+                    }
+                    
+                }
 		
-		function scoreCheck(){
-			for(var k = 1; k < 4; k++){
-				var diff;
-				
-				if(k == 1){
-					diff = "easy";
-				}
-				else if(k == 2){
-					diff = "medium";
-				}
-				else if(k == 3){
-					diff = "hard";
-				}
-				for(var j = 1; j < 11; j++){
-					if(localStorage.getItem(diff+'Score'+j) == 'null'){
-						localStorage.setItem(diff+'Score'+j, '0');
-					}
-				}
-			}
-		}
-		
-		function displayScore(){
-			for(var j = 1; j < 11; j++){
-				if(localStorage.getItem(scoreId+'Score'+j) == 'null'){
-					localStorage.setItem(scoreId+'Score'+j, '0');
-				}
-			}
-			for (var i = 1; i < 11; i++) {
-				if(localStorage.getItem(scoreId+'Score'+i) != '0' &&
-					localStorage.getItem(scoreId+'Score'+i) != null){
-		//			alert(localStorage.getItem(scoreId+'Score'+i));
-					document.getElementById('rank'+i).innerHTML=i;
-					document.getElementById('name'+i).innerHTML=localStorage.getItem(scoreId+'Name'+i);
-					document.getElementById('playerScore'+i).innerHTML=localStorage.getItem(scoreId+'Score'+i);
-					document.getElementById('date'+i).innerHTML=localStorage.getItem(scoreId+'Date'+i);
-				}
-				else {
-					document.getElementById('rank'+i).innerHTML="";
-					document.getElementById('name'+i).innerHTML="";
-					document.getElementById('playerScore'+i).innerHTML="";
-					document.getElementById('date'+i).innerHTML="";
-				}
-			}
-		}
 			
 		function languageSet() {
 			if(sessionStorage.getItem('language') == 'english'){
@@ -165,10 +177,11 @@
 				document.getElementById("medium").innerHTML="Medium";
 				document.getElementById("hard").innerHTML="Hard";
 				document.getElementById("returnHome").innerHTML="Back";
-				document.getElementById("rank0").innerHTML="Place";
-				document.getElementById("name0").innerHTML="Name";
-				document.getElementById("playerScore0").innerHTML="Score";
-				document.getElementById("date0").innerHTML="Date";
+                                document.getElementById("rank").innerHTML="Rank";
+				document.getElementById("name").innerHTML="Name";
+				document.getElementById("score").innerHTML="Score";
+				document.getElementById("date").innerHTML="Date";
+
 				
 			}
 			else {
@@ -176,10 +189,11 @@
 				document.getElementById("medium").innerHTML="Moyen";
 				document.getElementById("hard").innerHTML="Difficile";
 				document.getElementById("returnHome").innerHTML="Retourner";
-				document.getElementById("rank0").innerHTML="Place";
-				document.getElementById("name0").innerHTML="Nom";
-				document.getElementById("playerScore0").innerHTML="Score";
-				document.getElementById("date0").innerHTML="Date";
+                                document.getElementById("rank").innerHTML="Place";
+				document.getElementById("name").innerHTML="Nom";
+				document.getElementById("score").innerHTML="Score";
+				document.getElementById("date").innerHTML="Jour";
+			
 			}
 		}
 	</script>

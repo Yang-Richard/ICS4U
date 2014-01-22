@@ -9,6 +9,7 @@ body{
 	height: 600px;
 	width: 1024px;
 	position: fixed;
+        outline:none;
 }
 
 .title {
