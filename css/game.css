@@ -1,33 +1,33 @@
 body{
-	height: 600px;
-	width: 1024px;
+    height: 600px;
+    width: 1024px;
 }
 
 #lives{
-	background-size: 524px 50px;
-	height: 50px;
-	width: 524px;
-	position: fixed;
-        border: 2px solid #000000;
-        float: left;
+    background-size: 524px 50px;
+    height: 50px;
+    width: 524px;
+    position: fixed;
+    border: 2px solid #000000;
+    float: left;
 }
 
 #points{
-	background-size: 300px 50px;
-	height: 50px;
-	width: 300px;
-	position: fixed;
-        border: 2px solid #000000;
-        margin-left: 524px;
+    background-size: 300px 50px;
+    height: 50px;
+    width: 300px;
+    position: fixed;
+    border: 2px solid #000000;
+    margin-left: 524px;
 }
 
 #time{
-	background-size: 200px 50px;
-	height: 50px;
-	width: 200px;
-	position: fixed;
-        border: 2px solid #000000;
-        margin-left: 824px;
+    background-size: 200px 50px;
+    height: 50px;
+    width: 200px;
+    position: fixed;
+    border: 2px solid #000000;
+    margin-left: 824px;
 }
 
 #calculator{
@@ -48,37 +48,33 @@ body{
 }
 
 #footer{
-        background-image: url(../images/footer.png);
-        margin-top: 550px;
-	height: 50px;
-	width: 1024px;
-	position: fixed;
-        border: 2px solid #000000;
-        float:bottom;
-        position:fixed;
-       
-        line-height: 50px;
-        text-align: center;
-        font-size: 30px;
-        font-family: Comic Sans;
+    background-image: url(../images/footer.png);
+    margin-top: 550px;
+    height: 50px;
+    width: 1024px;
+    position: fixed;
+    border: 2px solid #000000;
+    float:bottom;
+    position:fixed;
+
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Comic Sans;
 }
 
 #timer{
-        margin-top: 3px;
-        font-size:40px;
-        font-family: Comic Sans;
-        margin-left: 130px;
+    margin-top: 3px;
+    font-size:40px;
+    font-family: Comic Sans;
+    margin-left: 130px;
 }
 
 #score{
-        margin-top: 3px;
-        font-size:40px;
-        font-family: Comic Sans;
-        margin-left: 175px;
-}
-
-.heart{
-    content:url(../images/heart.png);
+    margin-top: 3px;
+    font-size:40px;
+    font-family: Comic Sans;
+    margin-left: 175px;
 }
 
 #life1{

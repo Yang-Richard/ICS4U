@@ -1,106 +1,44 @@
 <!DOCTYPE html>
 <html>
- 	<head>
-		<!--<meta charset="utf-8" />-->
-		<!--<link href="styles/styles.css" rel="stylesheet" type="text/css" />-->
-  
-		<link type="text/css" rel="stylesheet" href="css/mainMenu.css"/>
-		<!--<script src="Splash_JS.js" type="text/javascript></script>-->
-		<title>Swinging Monkey</title>
-		</head>
-		<body onload="languageSet(); musicSet()">
-		<div id="divBack">
-                    <button id="settings" onclick="goSettings()"></button>
-				<img id ="monkey" onclick ="monkeyAnimation()" src="images/monkeySwingingNew.png"/>
-				<button id ="startButton" onclick="gameStart()"></button>
-				<button id ="tutorialButton" onclick="goInstructions()"></button>
-				<button id ="highScoresButton" onclick="goScores()"></button>
-                                <button id ="easterEgg" onclick="easterEgg()"></button>
-				<object id="music" height="1" width="1"></object>
-				<div id="credit">Music by www.audionautix.com, Sounds by www.SoundBible.com, snottyboy, Delsym, and Mike Koenig</div>
-		</div>
-		<script>
-			var monkeyDistance = document.getElementById("monkey").offsetLeft;
-			var object = document.getElementById("monkey");
-			var facingRight = false;
-			var music = new Audio('music/panamaHatNV.mp3');
-                        music.loop = true;
-			
-			function gameStart(){
-				buttonSound();
-				window(location.href='chooseDifficulty.html')
-			}
-			
-			function goInstructions(){
-				buttonSound();
-				window(location.href='tutorial.html');
-			}
-			
-			function goScores(){
-				buttonSound();
-				window(location.href='highScores.html');
-			}
-			
-			function goSettings(){
-				buttonSound();
-				window(location.href='settings.html');
-			}
-			
-			function buttonSound(){
-				if(sessionStorage.getItem('sound') != 'off'){
-					var clickSound = new Audio('music/click.mp3');
-					clickSound.play();
-				}
-			}
-			
-			setInterval(
-				function monkeyAnimation(){
-					if(facingRight == false){
-						monkeyDistance = monkeyDistance - 2;
-						object.style.marginLeft = monkeyDistance + 'px';
-						if(monkeyDistance < 30){
-							facingRight = true;
-							object.src = 'images/monkeySwingingNew2.png';
-						}
-					}
-					
-					if(facingRight == true){
-						monkeyDistance = monkeyDistance + 2;
-						object.style.marginLeft = monkeyDistance + 'px';
-						if(monkeyDistance > 890){
-							facingRight = false;
-							object.src = 'images/monkeySwingingNew.png';
-						}
-					}
-				}
-			,8);
-			
-			function languageSet() {
-				if(sessionStorage.getItem('language') == 'english'){
-					document.getElementById("startButton").innerHTML="Start Game";
-					document.getElementById("tutorialButton").innerHTML="Instructions";
-					document.getElementById("highScoresButton").innerHTML="High Scores"
-				}
-				else {
-					document.getElementById("startButton").innerHTML="Joue";
-					document.getElementById("tutorialButton").innerHTML="Instructions";
-					document.getElementById("highScoresButton").innerHTML="Haut Scores"
-				}
-			}
-			
-			function musicSet(){
-				if(sessionStorage.getItem('music') == 'off'){
-                                   music.stop();
-				}
-				else {
-                                    music.play();
-				}
-			}
-                        
-                        function easterEgg(){
-                            document.getElementById('divBack').style.backgroundImage = 'url(images/easterEgg.png)';
+    <head>
+        <script src="javascript/mainMenu.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/mainMenu.css"/>
+        <title>Swinging Monkey</title>
+    </head>
+        <body onload="languageSet(); musicSet()">
+        <div id="divBack">
+            <button id="settings" onclick="goSettings()"></button>
+            <img id ="monkey" onclick ="monkeyAnimation()" src="images/monkeySwingingNew.png"/>
+            <button id ="startButton" onclick="gameStart()"></button>
+            <button id ="tutorialButton" onclick="goInstructions()"></button>
+            <button id ="highScoresButton" onclick="goScores()"></button>
+            <object id="music" height="1" width="1"></object>
+            <div id="credit">Music by www.audionautix.com, Sounds by www.SoundBible.com, snottyboy, Delsym, and Mike Koenig</div>
+        </div>
+        <script>
+            var monkeyDistance = document.getElementById("monkey").offsetLeft;
+            var object = document.getElementById("monkey");
+            var facingRight = false;
+            setInterval(
+                function monkeyAnimation(){
+                    if(facingRight == false){
+                        monkeyDistance = monkeyDistance - 2;
+                        object.style.marginLeft = monkeyDistance + 'px';
+                        if(monkeyDistance < 30){
+                                facingRight = true;
+                                object.src = 'images/monkeySwingingNew2.png';
                         }
-                      
-		</script>
-	</body>
+                    }
+
+                    if(facingRight == true){
+                        monkeyDistance = monkeyDistance + 2;
+                        object.style.marginLeft = monkeyDistance + 'px';
+                        if(monkeyDistance > 890){
+                                facingRight = false;
+                                object.src = 'images/monkeySwingingNew.png';
+                        }
+                    }
+                },8);
+        </script>
+    </body>
 </html>

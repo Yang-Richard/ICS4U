@@ -1,36 +1,34 @@
 div{
     text-align: center;
-	width: 100%;
+    width: 100%;
 }
 
 #divBack {
-	background-image:url(../images/titlePageNew.png);
-	background-size: 1024px 600px;
-	width: 1024px;
-	height: 600px;
-	
-	/*background-size: 100%;*/
+    background-image:url(../images/titlePageNew.png);
+    background-size: 1024px 600px;
+    width: 1024px;
+    height: 600px;
 }
 
 #credit{
-	margin-top: 515px;
-	margin-left: 810px;
-	height: 20px;
-	width: 200px;
-	font-size: 12px;
+    margin-top: 515px;
+    margin-left: 810px;
+    height: 20px;
+    width: 200px;
+    font-size: 12px;
     font-family: Lucida Console;
 }
 
 body{
     background-color: #8B4513;
-	height: 600px;
-	width: 1024px;
+    height: 600px;
+    width: 1024px;
 }
 
 #companyLogo{
-	text-align: auto;
-	height: 1000px;
-	width: 1000px;
+    text-align: auto;
+    height: 1000px;
+    width: 1000px;
 }
     
 #settings{
@@ -48,46 +46,36 @@ button{
     height: 50px;
     width: 200px;
     border-radius: 5px;
-    /*margin:auto;*/
     margin-top:10px;
     margin-bottom: 10px;
     display: block;
-   /* border: 2px solid #000000;*/
     font-size: 18px;
     font-family: Lucida Console;
     position: fixed;
 }
 
 #startButton{
-	margin-top: 330px;
-	margin-left: 340px;
-	
-	/*margin-left: 34%;
-	margin-top: 41%;*/
-	background: transparent;
-	border: none;
-        outline:none;
+    margin-top: 330px;
+    margin-left: 340px;
+    background: transparent;
+    border: none;
+    outline:none;
 }
 
 #tutorialButton{
-	margin-top: 395px;
-	margin-left: 340px;
-	
-	/*margin-left: 34%;
-	margin-top: 50%;*/
-	background: transparent;
-	border: none;
-        outline:none;
+    margin-top: 395px;
+    margin-left: 340px;
+    background: transparent;
+    border: none;
+    outline:none;
 }
 
 #highScoresButton{
-	margin-top: 475px;
-	margin-left: 340px;
-	/*margin-left: 34%;
-	margin-top: 60%;*/
-	background: transparent;
-	border: none;
-        outline:none;
+    margin-top: 475px;
+    margin-left: 340px;
+    background: transparent;
+    border: none;
+    outline:none;
 }
     
 .headers{
@@ -100,40 +88,12 @@ button{
 
 #title{
     font-size: 50px;
-	/*display:none;*/
-}
-
-#companyTitle{
-	/*display:none;*/
 }
 
 #monkey {
-	display: block;
-	position: fixed;
-	height: 200px;
-	width: 90px;
-	margin-left: 900px;
-	/*margin-left: 90%;
-	margin-right: 0px;
-	animation: slidein 3s;
-	@-webkit-keyframes slidein {
-		from {
-			margin-left: 50%;
-		}
-
-		to {
-			margin-left: 0%;
-		}*/
-}
-
-
-#easterEgg{
-    margin-top: 450px;
-    margin-left: 40px;
+    display: block;
     position: fixed;
-    height: 100px;
-    width: 100px;
-    float: left; 
-    background: transparent;
-    border: none;
+    height: 200px;
+    width: 90px;
+    margin-left: 900px;
 }
