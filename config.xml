@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets"
-   xmlns:rim="http://www.blackberry.com/ns/widgets"
-   version="1.0.0.0" id="swingingMonkey">
- 
-   <name>Studio de Singe</name>
-   <description>Aidez le petit singe à ramasser les bananes en utilisant les mathématiques!</description>
-   <author>Richard Yang and Sagar Patel</author>
-   <icon src="icon.png"/>
-   <content src="logo.html"/>
+<?xml version="1.0" encoding="UTF-8"?> 
+<widget xmlns="http://www.w3.org/ns/widgets" 
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    version="1.0.0.0" id="HelloWorldApp">   
+   
+    <name>Studio de Singe</name> 
+    <author>Studio de Singe</author>
+    <description>Studio de Singe</description>
+    <icon src="images/icon.png"/>
+    <content src="index.html"/> 
 
 </widget>

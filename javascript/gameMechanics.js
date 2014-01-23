@@ -109,7 +109,7 @@
                     clickSound.play();
             }
             
-            if (userAnswer.length < 2){
+            if (userAnswer.length < 3){
                 userAnswer += value + "";
                 editFooter();
             }
@@ -328,7 +328,7 @@
                             info[2] = temp;
                             return info; 
                 }
-            } while(info[0] === 3 && info[1] === 0);
+            } while(info[0] === 3 && info[3] === 0);
 	}
         
        function generateEasyQuestion(){
