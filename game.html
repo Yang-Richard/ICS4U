@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game Play</title>
+        <script src="javascript/gameMechanics.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/game.css"/>
+    </head>
+    <body onload="init(); countdown(); languageSet()">
+        <div id="lives">
+            <img class="heart" id="life1" src="images/heart.png" alt="">
+            <img class="heart" id="life2" src="images/heart.png" alt="">
+            <img class="heart" id="life3" src="images/heart.png" alt="">
+            <img class="heart" id="life4" src="images/heart.png" alt="">
+            <img class="heart" id="life5" src="images/heart.png" alt="">
+        </div>
+        
+
+        <div id="points">
+            <p id="score">0</p>
+        </div>
+        <div id="time">
+            <p id="timer"></p>
+        </div>
+
+        <canvas id="jungleAnimation" width="680" height="500"></canvas>
+        <div id="calculator">
+            <button id="calc1" onclick="calculatorClicked(1)"></button>
+            <button id="calc2" onclick="calculatorClicked(2)"></button>
+            <button id="calc3" onclick="calculatorClicked(3)"></button>
+            <button id="calc4" onclick="calculatorClicked(4)"></button>
+            <button id="calc5" onclick="calculatorClicked(5)"></button>
+            <button id="calc6" onclick="calculatorClicked(6)"></button>
+            <button id="calc7" onclick="calculatorClicked(7)"></button>
+            <button id="calc8" onclick="calculatorClicked(8)"></button>
+            <button id="calc9" onclick="calculatorClicked(9)"></button>
+            <button id="calc0" onclick="calculatorClicked(0)"></button>
+            <button id="backspace" onclick="backspace()"></button>
+        </div>
+
+        <div id="footer"></div>
+</html>
